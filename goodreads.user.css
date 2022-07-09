@@ -1,0 +1,144 @@
+/* ==UserStyle==
+@name           Goodreads personal modifications
+@namespace      github.com/holyspiritomb
+@version        2022.07.08
+@description    Making goodreads look nicer for me
+@author         holyspiritomb
+@updateURL		https://github.com/holyspiritomb/personal-userstyles/raw/main/goodreads.user.css
+==/UserStyle== */
+
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+@-moz-document url-prefix("https://www.goodreads.com/") {
+
+	#bookTitle,
+	h1.bookTitle cite,
+	cite.bookTitle,
+	#bookAuthors .authorName,
+	#bookAuthors .by,
+	#description,
+	h1,
+	* {
+		font-family: 'Lato', 'Segoe UI', Roboto, sans-serif !important;
+	}
+
+	div.libraryExtension,
+	div.libraryExtension #libraryUserMessage {
+		font-family: unset !important;
+		background-color: unset !important;
+		color: #666 !important;
+	}
+
+	div.libraryExtension #libraryUserMessage {
+		border: unset !important;
+	}
+
+	div.libraryExtension {
+		border: 1px dashed #555 !important;
+		background: unset !important
+	}
+
+	div.libraryExtension .libSearch {
+		background: -webkit-linear-gradient(top, #111111 0%, #333333 100%) !important;
+		border: unset !important;
+		font-size: unset !important;
+		color: #49fb97 !important;
+	}
+
+	div.libraryExtension a,
+	div.libraryExtension .libextTitle,
+	div.libraryExtension a.libTitle:link,
+	div.libraryExtension .Library,
+	div.ondemand a.libSearch.searchOne {
+		color: #49fb97 !important;
+		font-family: unset !important;
+	}
+
+	div.libraryExtension .libextTitle {
+		padding-top: 10px;
+		padding-bottom: 10px;
+		font-size: large !important;
+		text-decoration: underline;
+		font-weight: bold;
+	}
+
+}
+
+@-moz-document url-prefix("https://www.goodreads.com/review/list/") {
+
+	div#leftCol,
+	div#leaderCol,
+	div.siteHeader,
+	div.siteHeaderBottomSpacer,
+	div#controls,
+	th.header.date_added,
+	th.header.date_pub,
+	td.field.date_added,
+	td.field.date_pub,
+	td.field.actions,
+	th.header.actions,
+	html.mobile li[id^="book_list_item_"]>div[id]:not(:nth-child(5)) {
+		display: none;
+	}
+
+	#AGtable .AGAVAIL,
+	.libraryExtension {
+		font-size: 12pt !important;
+	}
+
+	div.libraryExtension {
+		width: 100% !important;
+		margin: auto;
+	}
+
+	html.desktop table#books {
+		width: 100% !important;
+	}
+
+	html.mobile * {
+		font-size: 12pt;
+		line-height: 1.5em;
+	}
+
+	html.desktop * {
+		font-size: 22pt;
+		line-height: 1.5em;
+	}
+
+	div.right.uitext {
+		float: left !important;
+	}
+}
+
+@-moz-document url-prefix("https://www.goodreads.com/book/") {
+
+	div.rightContainer,
+	div#controls,
+	div.siteHeader,
+	.siteHeaderBottomSpacer,
+	#premiumAdTop {
+		display: none;
+	}
+
+	html.desktop * {
+		font-size: 22pt;
+		line-height: 2em;
+	}
+
+	html.desktop div.leftContainer {
+		width: 800px;
+	}
+
+	html.desktop #metacol {
+		width: 625px;
+	}
+
+	div#AGtable table tr td:first-child {
+		display: none !important;
+	}
+
+	html.mobile * {
+		font-size: 14pt !important;
+		line-height: 1.5em;
+	}
+}
