@@ -75,6 +75,13 @@
 	}
 
 
+
+}
+
+@-moz-document url-prefix("https://www.goodreads.com/list/show/") {
+	div.rightContainer{
+		display:none;
+	}
 }
 
 @-moz-document url-prefix("https://www.goodreads.com/review/list/") {
@@ -132,6 +139,10 @@
 	div#reviewPagination{
     		display:block;
 	}
+	
+	form#sortForm a{
+        	display:none;
+    	}
 
 }
 
