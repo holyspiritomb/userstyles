@@ -61,6 +61,19 @@
 		text-decoration: underline;
 		font-weight: bold;
 	}
+	
+	html[data-darkreader-scheme="dark"] img.AGaudio{
+		filter:invert(100%);
+	}
+	/* display which library has the book */
+	html.desktop td.AGcol > div::before{
+		content:attr(class)":";
+		font-weight:bold;
+	}
+	html.desktop footer.responsiveSiteFooter{
+		display:none;
+	}
+
 
 }
 
@@ -76,7 +89,12 @@
 	td.field.date_added,
 	td.field.date_pub,
 	td.field.actions,
-	th.header.actions,
+	th.header.actions{
+		display: none;
+	}
+	
+	/* to prevent Available Reads on mobile from displaying its search results multiple times */
+	/* this is cosmetic and not actually preventing it from re-running search on already-searched books */
 	html.mobile li[id^="book_list_item_"]>div[id]:not(:nth-child(5)) {
 		display: none;
 	}
@@ -108,6 +126,13 @@
 	div.right.uitext {
 		float: left !important;
 	}
+	/* to make the page stay a certain width on my phone */
+	form#perPageForm,
+	form#sortForm,
+	div#reviewPagination{
+    		display:block;
+	}
+
 }
 
 @-moz-document url-prefix("https://www.goodreads.com/book/") {
