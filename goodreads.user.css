@@ -2,9 +2,9 @@
 @name           Goodreads personal modifications
 @namespace      github.com/holyspiritomb
 @version        1.22.7-8
-@description    Making goodreads look nicer for me
+@description    Making goodreads look nicer for me on my phone
 @author         holyspiritomb
-@updateURL	https://github.com/holyspiritomb/personal-userstyles/raw/main/goodreads.user.css
+@updateURL		https://github.com/holyspiritomb/personal-userstyles/raw/main/goodreads.user.css
 ==/UserStyle== */
 
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
@@ -40,6 +40,7 @@
 
 	div.libraryExtension .libSearch {
 		background: -webkit-linear-gradient(top, #111111 0%, #333333 100%) !important;
+		background: linear-gradient(top, #111111 0%, #333333 100%) !important;
 		border: unset !important;
 		font-size: unset !important;
 		color: #49fb97 !important;
@@ -62,9 +63,10 @@
 		font-weight: bold;
 	}
 	
-	html[data-darkreader-scheme="dark"] img.AGaudio{
-		filter:invert(100%);
-	}
+    html[data-darkreader-scheme="dark"] img.AGaudio,
+    html[data-darkreader-scheme="dark"] a[href^="http://libgen.rs"] img {
+        filter: invert(100%);
+    }
 	/* display which library has the book */
 	html.desktop td.AGcol > div::before{
 		content:attr(class)":";
@@ -74,14 +76,23 @@
 		display:none;
 	}
 
-
-
 }
 
 @-moz-document url-prefix("https://www.goodreads.com/list/show/") {
-	div.rightContainer{
-		display:none;
-	}
+    /* listopia */
+    div.rightContainer {
+        display: none;
+    }
+    html.desktop .content {
+        width: 100%;
+    }
+
+    html.desktop .mainContentContainer,
+    html.desktop .mainContentContainer .mainContent,
+    html.desktop .mainContentContainer .mainContent .mainContentFloat,
+    html.desktop .mainContentContainer .mainContent .mainContentFloat .leftContainer {
+        width: unset;
+    }
 }
 
 @-moz-document url-prefix("https://www.goodreads.com/review/list/") {
