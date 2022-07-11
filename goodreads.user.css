@@ -6,9 +6,9 @@
 @author         holyspiritomb
 @homepageURL	https://github.com/holyspiritomb/personal-userstyles/blob/main/goodreads.user.css
 @updateURL		https://github.com/holyspiritomb/personal-userstyles/raw/main/goodreads.user.css
-@advanced text	mobile-font-size "mobile font size" "12pt"
-@advanced text	desktop-font-size "desktop font size" "22pt"
-@advanced text	default-font "default font" "Lato"
+@var text		mobile-font-size "Mobile site font size" 12pt
+@var text		desktop-font-size "Desktop site font size" 22pt
+@var text		default-font "Default font" Lato
 ==/UserStyle== */
 
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
@@ -28,7 +28,7 @@
 
 	div.libraryExtension,
 	div.libraryExtension #libraryUserMessage {
-		font-family: unset !important;
+		font-family: var(--default-font), unset !important;
 		background-color: unset !important;
 		color: #666 !important;
 	}
@@ -125,8 +125,9 @@
         width: 100%;
     }
 	
-	/* to prevent Available Reads on mobile from displaying its search results multiple times */
+	/* to prevent Available Reads and Available Reads 2 on mobile from displaying its search results multiple times */
 	/* this is cosmetic and not actually preventing it from re-running search on already-searched books */
+	
 	html.mobile li[id^="book_list_item_"]>div[id]:not(:nth-child(5)) {
 		display: none;
 	}
@@ -137,7 +138,7 @@
 	}
 
 	div.libraryExtension {
-		width: 100% !important;
+		width: 70% !important;
 		margin: auto;
 	}
 
@@ -152,7 +153,7 @@
 
 	html.desktop * {
 		font-size: var(--desktop-font-size);
-		line-height: 1.5em;
+		line-height: 2em;
 	}
 
 	div.right.uitext {
@@ -200,6 +201,6 @@
 
 	html.mobile * {
 		font-size: var(--mobile-font-size) !important;
-		line-height: 1.5em;
+		line-height: 2em;
 	}
 }
