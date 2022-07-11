@@ -1,12 +1,14 @@
 /* ==UserStyle==
 @name           Goodreads personal modifications
 @namespace      github.com/holyspiritomb
-@version        1.22.7-11.1
+@version        1.22.7-11.2
 @description    Making goodreads look nicer for me on my phone
 @author         holyspiritomb
-@updateURL	https://github.com/holyspiritomb/personal-userstyles/raw/main/goodreads.user.css
-@advanced text mobile-font-size "mobile font size" "12pt"
-@advanced text desktop-font-size "desktop font size" "22pt"
+@homepageURL	https://github.com/holyspiritomb/personal-userstyles/blob/main/goodreads.user.css
+@updateURL		https://github.com/holyspiritomb/personal-userstyles/raw/main/goodreads.user.css
+@advanced text	mobile-font-size "mobile font size" "12pt"
+@advanced text	desktop-font-size "desktop font size" "22pt"
+@advanced text	default-font "default font" "Lato"
 ==/UserStyle== */
 
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
@@ -21,7 +23,7 @@
 	#description,
 	h1,
 	* {
-		font-family: 'Lato', 'Segoe UI', Roboto, sans-serif !important;
+		font-family: var(--default-font), Roboto, sans-serif !important;
 	}
 
 	div.libraryExtension,
@@ -70,10 +72,12 @@
         filter: invert(100%);
     }
 	/* display which library has the book */
-	html.desktop td.AGcol > div::before{
+	html.desktop td.AGcol > div::before,
+	td.AGAVAILSINGLEBOOK > div::before{
 		content:attr(class)":";
 		font-weight:bold;
 	}
+	
 	html.desktop footer.responsiveSiteFooter{
 		display:none;
 	}
