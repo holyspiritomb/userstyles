@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Goodreads personal modifications
 @namespace      github.com/holyspiritomb
-@version        1.22.7-10
+@version        1.22.7-11
 @description    Making goodreads look nicer for me on my phone
 @author         holyspiritomb
 @updateURL		https://github.com/holyspiritomb/personal-userstyles/raw/main/goodreads.user.css
@@ -91,7 +91,7 @@
     html.desktop .mainContentContainer .mainContent,
     html.desktop .mainContentContainer .mainContent .mainContentFloat,
     html.desktop .mainContentContainer .mainContent .mainContentFloat .leftContainer {
-        width: unset;
+        width: 100%;
     }
 }
 
@@ -99,6 +99,8 @@
 
 	div#leftCol,
 	div#leaderCol,
+	div#leadercol,
+	div#flashContainer,
 	div.siteHeader,
 	div.siteHeaderBottomSpacer,
 	div#controls,
@@ -110,6 +112,12 @@
 	th.header.actions{
 		display: none;
 	}
+    html.desktop .mainContentContainer,
+    html.desktop .mainContentContainer .mainContent,
+    html.desktop .mainContentContainer .mainContent .mainContentFloat,
+    html.desktop .mainContentContainer .mainContent .mainContentFloat .leftContainer {
+        width: 100%;
+    }
 	
 	/* to prevent Available Reads on mobile from displaying its search results multiple times */
 	/* this is cosmetic and not actually preventing it from re-running search on already-searched books */
@@ -153,7 +161,7 @@
 	
 	form#sortForm a{
         	display:none;
-    	}
+    }
 
 }
 
