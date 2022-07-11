@@ -4,7 +4,9 @@
 @version        1.22.7-11
 @description    Making goodreads look nicer for me on my phone
 @author         holyspiritomb
-@updateURL		https://github.com/holyspiritomb/personal-userstyles/raw/main/goodreads.user.css
+@updateURL	https://github.com/holyspiritomb/personal-userstyles/raw/main/goodreads.user.css
+@advanced text mobile-font-size "mobile font size" "12pt"
+@advanced text desktop-font-size "desktop font size" "22pt"
 ==/UserStyle== */
 
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
@@ -127,7 +129,7 @@
 
 	#AGtable .AGAVAIL,
 	.libraryExtension {
-		font-size: 12pt !important;
+		font-size: var(--mobile-font-size) !important;
 	}
 
 	div.libraryExtension {
@@ -140,12 +142,12 @@
 	}
 
 	html.mobile * {
-		font-size: 12pt;
+		font-size: var(--mobile-font-size);
 		line-height: 1.5em;
 	}
 
 	html.desktop * {
-		font-size: 22pt;
+		font-size: var(--desktop-font-size);
 		line-height: 1.5em;
 	}
 
@@ -176,7 +178,7 @@
 	}
 
 	html.desktop * {
-		font-size: 22pt;
+		font-size: var(--desktop-font-size);
 		line-height: 2em;
 	}
 
@@ -193,7 +195,7 @@
 	}
 
 	html.mobile * {
-		font-size: 14pt !important;
+		font-size: var(--mobile-font-size) !important;
 		line-height: 1.5em;
 	}
 }
