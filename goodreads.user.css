@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Goodreads personal modifications
 @namespace      github.com/holyspiritomb
-@version        1.22.7-11.4
+@version        1.22.7-12.0
 @description    Making goodreads look nicer for me on my phone
 @author         holyspiritomb
 @homepageURL	https://github.com/holyspiritomb/personal-userstyles/blob/main/goodreads.user.css
@@ -40,6 +40,12 @@
 	h1,
 	* {
 		font-family: var(--default-font), Roboto, sans-serif !important;
+	}
+	
+	#bookTitle,
+	h1.bookTitle cite,
+	cite.bookTitle{
+		font-size: 20pt;
 	}
 
 	div.libraryExtension,
