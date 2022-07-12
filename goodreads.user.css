@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Goodreads personal modifications
 @namespace      github.com/holyspiritomb
-@version        1.22.7-11.3
+@version        1.22.7-11.4
 @description    Making goodreads look nicer for me on my phone
 @author         holyspiritomb
 @homepageURL	https://github.com/holyspiritomb/personal-userstyles/blob/main/goodreads.user.css
@@ -9,11 +9,31 @@
 @var text		mobile-font-size "Mobile site font size" 12pt
 @var text		desktop-font-size "Desktop site font size" 22pt
 @var text		default-font "Default font" Lato
+@var select		showheaders "Header visibility" {
+					"Visible":"block",
+					"Hidden":"none"
+				}
 ==/UserStyle== */
 
-@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
-
 @-moz-document url-prefix("https://www.goodreads.com/") {
+	
+	@font-face {
+    	font-family: 'Lato';
+  		font-style: normal;
+  		font-weight: 400;
+  		font-display: swap;
+  		src: url(https://fonts.gstatic.com/s/lato/v23/S6uyw4BMUTPHjxAwXjeu.woff2) format('woff2');
+  		unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+	}
+	/* latin */
+	@font-face {
+  		font-family: 'Lato';
+  		font-style: normal;
+  		font-weight: 400;
+  		font-display: swap;
+  		src: url(https://fonts.gstatic.com/s/lato/v23/S6uyw4BMUTPHjx4wXg.woff2) format('woff2');
+  		unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+	}
 
 	#bookTitle,
 	h1.bookTitle cite,
@@ -71,6 +91,20 @@
     html[data-darkreader-scheme="dark"] a[href^="http://libgen.rs"] img {
         filter: invert(100%);
     }
+	
+	html.desktop img.AGaudio{
+		height: var(--desktop-font-size) !important;
+		width: var(--desktop-font-size) !important;
+	}
+	html.mobile img.AGaudio{
+		height: var(--mobile-font-size) !important;
+		width: var(--mobile-font-size) !important;
+	}
+	
+	tbody#booksBody{
+		line-height:2em;
+	}
+
 	/* display which library has the book */
 	html.desktop td.AGcol > div::before,
 	td.AGAVAILSINGLEBOOK > div::before{
@@ -78,7 +112,8 @@
 		font-weight:bold;
 	}
 	
-	html.desktop footer.responsiveSiteFooter{
+	html.desktop footer.responsiveSiteFooter,
+	.siteHeader__topFullImageContainer{
 		display:none;
 	}
 
@@ -107,8 +142,6 @@
 	div#leaderCol,
 	div#leadercol,
 	div#flashContainer,
-	div.siteHeader,
-	div.siteHeaderBottomSpacer,
 	div#controls,
 	th.header.date_added,
 	th.header.date_pub,
@@ -124,8 +157,21 @@
     html.desktop .mainContentContainer .mainContent .mainContentFloat .leftContainer {
         width: 100%;
     }
+
+	.siteHeader {
+  		display: var(--showheader);
+		line-height:unset !important;
+	}
+
+	.siteHeaderBottomSpacer {
+  		display: var(--showheader);
+	}
+
+	html.withSiteHeaderTopFullImage .siteHeaderBottomSpacer {
+  		padding-bottom: 6rem;
+	}
 	
-	/* to prevent Available Reads and Available Reads 2 on mobile from displaying its search results multiple times */
+	/* to prevent Available Reads and Available Reads 2 on mobile from displaying their search results multiple times */
 	/* this is cosmetic and not actually preventing it from re-running search on already-searched books */
 	
 	html.mobile li[id^="book_list_item_"]>div[id]:not(:nth-child(5)) {
@@ -138,7 +184,7 @@
 	}
 
 	div.libraryExtension {
-		width: 70% !important;
+		width: 95% !important;
 		margin: auto;
 	}
 
@@ -153,7 +199,7 @@
 
 	html.desktop * {
 		font-size: var(--desktop-font-size);
-		line-height: 2em;
+		line-height:2em;
 	}
 
 	div.right.uitext {
@@ -176,15 +222,12 @@
 
 	div.rightContainer,
 	div#controls,
-	div.siteHeader,
-	.siteHeaderBottomSpacer,
 	#premiumAdTop {
 		display: none;
 	}
 
 	html.desktop * {
 		font-size: var(--desktop-font-size);
-		line-height: 2em;
 	}
 
 	html.desktop div.leftContainer {
