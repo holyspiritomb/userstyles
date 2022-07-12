@@ -225,11 +225,11 @@
 	}
 
 	html.desktop div.leftContainer {
-		width: fit-content;
+		width: 100%;
 	}
 
 	html.desktop #metacol {
-		width: fit-content;
+		width: 100%;
 	}
 
 	div#AGtable table tr td:first-child {
