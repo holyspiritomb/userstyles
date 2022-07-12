@@ -159,9 +159,11 @@
 
     html.desktop .mainContentContainer,
     html.desktop .mainContentContainer .mainContent,
-    html.desktop .mainContentContainer .mainContent .mainContentFloat,
     html.desktop .mainContentContainer .mainContent .mainContentFloat .leftContainer {
         width: 100%;
+    }
+    html.desktop .mainContentContainer .mainContent .mainContentFloat{
+        width:92%;
     }
 }
 
@@ -174,6 +176,8 @@
     div#controls,
     th.header.date_added,
     th.header.date_pub,
+    th.header.avg_rating,
+    td.field.avg_rating,
     td.field.date_added,
     td.field.date_pub,
     td.field.actions,
@@ -221,10 +225,12 @@
 
     html.mobile * {
         font-size: var(--mobile-font-size);
+        font-size: calc(2*var(--mobile-font-size));
     }
 
     html.desktop * {
         font-size: var(--desktop-font-size);
+        line-height: calc(2*var(--desktop-font-size));
     }
 
     div.right.uitext {
