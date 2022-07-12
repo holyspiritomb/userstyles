@@ -9,10 +9,6 @@
 @var text		mobile-font-size "Mobile site font size" 12pt
 @var text		desktop-font-size "Desktop site font size" 22pt
 @var text		default-font "Default font" Lato
-@var select		showheaders "Header visibility" {
-					"Visible":"block",
-					"Hidden":"none"
-				}
 ==/UserStyle== */
 
 @-moz-document url-prefix("https://www.goodreads.com/") {
@@ -159,12 +155,12 @@
     }
 
 	.siteHeader {
-  		display: var(--showheader);
+  		display: block;
 		line-height:unset !important;
 	}
 
 	.siteHeaderBottomSpacer {
-  		display: var(--showheader);
+  		display: block;
 	}
 
 	html.withSiteHeaderTopFullImage .siteHeaderBottomSpacer {
@@ -194,12 +190,10 @@
 
 	html.mobile * {
 		font-size: var(--mobile-font-size);
-		line-height: 1.5em;
 	}
 
 	html.desktop * {
 		font-size: var(--desktop-font-size);
-		line-height:2em;
 	}
 
 	div.right.uitext {
@@ -231,11 +225,11 @@
 	}
 
 	html.desktop div.leftContainer {
-		width: 800px;
+		width: fit-content;
 	}
 
 	html.desktop #metacol {
-		width: 625px;
+		width: fit-content;
 	}
 
 	div#AGtable table tr td:first-child {
