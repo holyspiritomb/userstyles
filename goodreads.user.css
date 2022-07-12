@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Goodreads personal modifications
 @namespace      github.com/holyspiritomb
-@version        1.22.7-12.3
+@version        1.22.7-12.4
 @description    Making goodreads look nicer for me on my phone
 @author         holyspiritomb
 @homepageURL	https://github.com/holyspiritomb/personal-userstyles/blob/main/goodreads.user.css
@@ -131,8 +131,12 @@
         width: calc(2*var(--mobile-font-size)) !important;
     }
 
-    tbody#booksBody {
-        line-height: 2em;
+    html.mobile tbody#booksBody {
+        line-height: calc(2*var(--mobile-font-size));
+    }
+    
+    html:not(.mobile) tbody#booksBody {
+        line-height: calc(2*var(--desktop-font-size));
     }
 
     /* display which library has the book */
