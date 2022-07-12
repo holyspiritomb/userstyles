@@ -131,6 +131,7 @@
         width: calc(2*var(--mobile-font-size)) !important;
     }
 
+    html.mobile,
     html.mobile tbody#booksBody {
         line-height: calc(2*var(--mobile-font-size));
     }
@@ -229,7 +230,7 @@
 
     html.mobile * {
         font-size: var(--mobile-font-size);
-        font-size: calc(2*var(--mobile-font-size));
+        line-height: calc(2*var(--mobile-font-size));
     }
 
     html.desktop * {
