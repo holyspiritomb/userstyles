@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Goodreads personal modifications
 @namespace      github.com/holyspiritomb
-@version        1.22.7-15.3
+@version        1.22.7-15.4
 @description    Making goodreads look nicer for me on my phone
 @author         holyspiritomb
 @homepageURL	https://github.com/holyspiritomb/personal-userstyles/blob/main/goodreads.user.css
@@ -40,7 +40,7 @@
     html.withSiteHeaderTopFullImage .siteHeaderBottomSpacer {
         padding-bottom: 7rem;
     }
-    html:not(.mobile) ul.siteHeader__menuList > li.siteHeader__topLevelItem > :is(a, div.primaryNavMenu){
+    html:not(.mobile) ul.siteHeader__menuList > li.siteHeader__topLevelItem > :is(a, div.primaryNavMenu span, div.primaryNavMenu a){
         line-height: calc(1.5*var(--desktop-font-size));
         font-size: calc(0.75*var(--desktop-font-size));
     }
