@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Goodreads personal modifications
 @namespace      github.com/holyspiritomb
-@version        1.22.7-15.0
+@version        1.22.7-15.2
 @description    Making goodreads look nicer for me on my phone
 @author         holyspiritomb
 @homepageURL	https://github.com/holyspiritomb/personal-userstyles/blob/main/goodreads.user.css
@@ -33,7 +33,7 @@
         font-size: var(--mobile-font-size);
         line-height: calc(2*var(--mobile-font-size));
     }
-    html.desktop *{
+    html.desktop * {
         font-size: var(--desktop-font-size);
         line-height: calc(2*var(--desktop-font-size));
     }
@@ -104,6 +104,7 @@
     }
     html[data-darkreader-scheme="dark"] img.AGaudio,
     html[data-darkreader-scheme="dark"] a[href^="http://libgen.rs"] img {
+        /* bc i use dark themes */
         filter: invert(100%);
     }
     html.desktop img.AGaudio {
@@ -160,19 +161,15 @@
 
 @-moz-document url-prefix("https://www.goodreads.com/review/list/") {
     /* my booklists */
-    div#leftCol,
-    div#leaderCol,
-    div#leadercol,
     div#flashContainer,
-    div#controls,
-    th.header.date_added,
-    th.header.date_pub,
-    th.header.avg_rating,
-    td.field.avg_rating,
-    td.field.date_added,
-    td.field.date_pub,
-    td.field.actions,
-    th.header.actions {
+    div#leaderCol,
+    div#leadercol div.myBooksNav > ul > li > a:not(#shelfSettingsLink),
+    div#leadercol :is(div.myBooksNav > ul > li > span, div#header),
+    div.myBooksSearch,
+    /*div#leadercol,*/
+    div#leftCol,
+    div#side,
+    :is(td.field,th.header):is(.actions,.avg_rating,.date_added,.date_pub,.date_pub_edition,.format,.rating) {
         display: none;
     }
     html.desktop .mainContentContainer .mainContent {
