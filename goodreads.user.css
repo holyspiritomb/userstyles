@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Goodreads personal modifications
 @namespace      github.com/holyspiritomb
-@version        1.22.7-15.4
+@version        1.22.7-15.5
 @description    Making goodreads look nicer for me on my phone
 @author         holyspiritomb
 @homepageURL	https://github.com/holyspiritomb/personal-userstyles/blob/main/goodreads.user.css
@@ -40,7 +40,8 @@
     html.withSiteHeaderTopFullImage .siteHeaderBottomSpacer {
         padding-bottom: 7rem;
     }
-    html:not(.mobile) ul.siteHeader__menuList > li.siteHeader__topLevelItem > :is(a, div.primaryNavMenu span, div.primaryNavMenu a){
+    html:not(.mobile) ul.siteHeader__menuList>li.siteHeader__topLevelItem>a,
+    html:not(.mobile) ul.siteHeader__menuList>li.siteHeader__topLevelItem>div>a>span {
         line-height: calc(1.5*var(--desktop-font-size));
         font-size: calc(0.75*var(--desktop-font-size));
     }
@@ -167,13 +168,13 @@
     /* my booklists */
     div#flashContainer,
     div#leaderCol,
-    div#leadercol div.myBooksNav > ul > li > a:not(#shelfSettingsLink),
+    div#leadercol div.myBooksNav>ul>li>a:not(#shelfSettingsLink),
     div#leadercol :is(div.myBooksNav > ul > li > span, div#header),
     div.myBooksSearch,
     /*div#leadercol,*/
     div#leftCol,
     div#side,
-    :is(td.field,th.header):is(.actions,.avg_rating,.date_added,.date_pub,.date_pub_edition,.format,.rating) {
+    :is(td.field, th.header):is(.actions, .avg_rating, .date_added, .date_pub, .date_pub_edition, .format, .rating) {
         display: none;
     }
     html.desktop .mainContentContainer .mainContent {
