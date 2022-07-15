@@ -178,9 +178,12 @@
     html.desktop .mainContentContainer .mainContent .mainContentFloat {
         width: 92% !important;
     }
-    .siteHeader {
+    html:not(.mobile) .siteHeader {
         display: block;
-        line-height: unset !important;
+    }
+    html:not(.mobile) ul[role="menu"] > li.siteHeader__menuList :is(a){
+        line-height: calc(1.5*var(--desktop-font-size));
+        font-size: calc(0.75*var(--desktop-font-size));
     }
     .siteHeaderBottomSpacer {
         display: block;
