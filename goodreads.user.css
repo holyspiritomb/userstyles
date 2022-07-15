@@ -40,6 +40,10 @@
     html.withSiteHeaderTopFullImage .siteHeaderBottomSpacer {
         padding-bottom: 7rem;
     }
+    html:not(.mobile) ul.siteHeader__menuList > li.siteHeader__topLevelItem > a{
+        line-height: calc(1.5*var(--desktop-font-size));
+        font-size: calc(0.75*var(--desktop-font-size));
+    }
     #bookTitle,
     h1.bookTitle cite,
     cite.bookTitle,
@@ -180,10 +184,6 @@
     }
     html:not(.mobile) .siteHeader {
         display: block;
-    }
-    html:not(.mobile) ul[role="menu"] > li.siteHeader__menuList :is(a){
-        line-height: calc(1.5*var(--desktop-font-size));
-        font-size: calc(0.75*var(--desktop-font-size));
     }
     .siteHeaderBottomSpacer {
         display: block;
