@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Goodreads personal modifications
 @namespace      github.com/holyspiritomb
-@version        1.22.7-15.6
+@version        1.22.7-15.7
 @description    Making goodreads look nicer for me on my phone
 @author         holyspiritomb
 @homepageURL	https://github.com/holyspiritomb/personal-userstyles/blob/main/goodreads.user.css
@@ -120,6 +120,11 @@
         width: calc(1.25*var(--desktop-font-size)) !important;
         image-rendering: crisp-edges;
     }
+    html.desktop a[href^="http://libgen.rs"] img:after{
+        content:'\21E4'
+        position:absolute;
+        transform:rotate(90deg);
+    }
     html.mobile a[href^="http://libgen.rs"] img {
         height: calc(2*var(--mobile-font-size));
         width: calc(2*var(--mobile-font-size)) !important;
@@ -174,7 +179,8 @@
     :is(td.field, th.header):is(.actions, .avg_rating, .date_added, .date_pub, .date_pub_edition, .format, .rating) {
         display: none;
     }
-    html.desktop .mainContentContainer .mainContent {
+    html.desktop .mainContentContainer .mainContent,
+    div#leadercol{
         width: 100% !important;
     }
     html.desktop .mainContentContainer .mainContent .mainContentFloat {
@@ -193,6 +199,9 @@
     /* this is cosmetic and not actually preventing it from re-running search on already-searched books */
     html.mobile li[id^="book_list_item_"]>div[id]:not(:nth-child(5)) {
         display: none;
+    }
+    ul.personalNav>li:not(:last-child){
+        display:none;
     }
     #AGtable .AGAVAIL,
     .libraryExtension {
@@ -226,7 +235,8 @@
     span#rating_graph,
     div#choiceBadge,
     div#flashContainer,
-    div.headroom-wrapper {
+    div.headroom-wrapper,
+    div.searchBox.searchBox--navbar{
         display: none;
     }
     html.desktop .mainContentContainer .mainContent,
@@ -251,7 +261,10 @@
     }
     @media (min-width:981px) {
         html.desktop .content {
-            width: 980px;
+            width: 960px;
+        }
+        html.desktop #imagecol{
+            float:right;
         }
     }
 }
