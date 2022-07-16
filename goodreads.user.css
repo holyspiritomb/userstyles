@@ -9,7 +9,6 @@
 @var text		mobile-font-size "Mobile site font size" 12pt
 @var text		desktop-font-size "Desktop site font size" 22pt
 @var text		default-font "Default font" Lato
-@var select     default-font 
 ==/UserStyle== */
 
 @-moz-document url-prefix("https://www.goodreads.com/") {
