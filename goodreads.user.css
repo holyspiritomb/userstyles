@@ -187,7 +187,7 @@
     /*div#leadercol,*/
     div#leftCol,
     div#side,
-    :is(td.field, th.header):is(.actions, .avg_rating, .date_added, .date_pub, .date_pub_edition, .asin: empty, .format, .rating) {
+    :is(td.field, th.header) :is(.actions, .avg_rating, .date_added, .date_pub, .date_pub_edition, .asin, .format, .rating) {
         display: none;
     }
     html.desktop .mainContentContainer .mainContent,
