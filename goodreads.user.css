@@ -10,6 +10,7 @@
 @var text		desktop-font-size "Desktop site font size" 22pt
 @var text		default-font "Default font" Lato
 ==/UserStyle== */
+
 @-moz-document url-prefix("https://www.goodreads.com/") {
     @media (max-width: 980px) {
         div.content {
@@ -34,8 +35,8 @@
     html.withSiteHeaderTopFullImage .siteHeaderBottomSpacer {
         padding-bottom: 7rem;
     }
-    html:not(.mobile) ul.siteHeader__menuList > li.siteHeader__topLevelItem > a,
-    html:not(.mobile) ul.siteHeader__menuList > li.siteHeader__topLevelItem > div > a > span {
+    html:not(.mobile) ul.siteHeader__menuList>li.siteHeader__topLevelItem>a,
+    html:not(.mobile) ul.siteHeader__menuList>li.siteHeader__topLevelItem>div>a>span {
         line-height: calc(1.5*var(--desktop-font-size));
         font-size: calc(0.75*var(--desktop-font-size));
     }
@@ -147,8 +148,8 @@
         line-height: calc(2*var(--desktop-font-size));
     }
     /* display which library has the book */
-    html.desktop td.AGcol > div::before,
-    td.AGAVAILSINGLEBOOK > div::before {
+    html.desktop td.AGcol>div::before,
+    td.AGAVAILSINGLEBOOK>div::before {
         content: attr(class)":";
         font-weight: bold;
     }
@@ -180,13 +181,13 @@
     /* my booklists */
     div#flashContainer,
     div#leaderCol,
-    div#leadercol div.myBooksNav > ul > li > a:not(#shelfSettingsLink),
+    div#leadercol div.myBooksNav>ul>li>a:not(#shelfSettingsLink),
     div#leadercol :is(div.myBooksNav > ul > li > span, div#header),
     div.myBooksSearch,
     /*div#leadercol,*/
     div#leftCol,
     div#side,
-    :is(td.field, th.header):is(.actions, .avg_rating, .date_added, .date_pub, .date_pub_edition, .asin:empty, .format, .rating) {
+    :is(td.field, th.header):is(.actions, .avg_rating, .date_added, .date_pub, .date_pub_edition, .asin: empty, .format, .rating) {
         display: none;
     }
     html.desktop .mainContentContainer .mainContent,
@@ -204,11 +205,10 @@
     }
     /* to prevent Available Reads and Available Reads 2 on mobile from displaying their search results multiple times */
     /* this is cosmetic and not actually preventing it from re-running search on already-searched books */
-    html.mobile li[id^="book_list_item_"] > div[id]:not(:nth-child(5)) {
+    html.mobile li[id^="book_list_item_"]>div[id]:not(:nth-child(5)) {
         display: none;
     }
-
-    ul.personalNav > li:not(:last-child) {
+    ul.personalNav>li:not(:last-child) {
         display: none;
     }
     #AGtable .AGAVAIL,
@@ -278,7 +278,6 @@
     span:is(#mobiasin, #calibreprefix):active {
         color: red;
     }
-
     @media (max-width: 980px) {
         html.desktop #imagecol {
             position: absolute;
@@ -294,7 +293,7 @@
         td.AGAVAILSINGLEBOOK {
             width: 500px;
         }
-        td.AGAVAILSINGLEBOOK > div {
+        td.AGAVAILSINGLEBOOK>div {
             width: 50%;
         }
     }
