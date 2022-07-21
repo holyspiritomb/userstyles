@@ -4,7 +4,7 @@
 // @match       https://www.goodreads.com/review/list/*
 // @grant       GM_setClipboard
 // @require     https://code.jquery.com/jquery-latest.min.js
-// @version     1.0.2
+// @version     1.22.7.21.0
 // @author      holyspiritomb
 // @run-at      document-end
 // @icon        https://www.google.com/s2/favicons?domain=goodreads.com
