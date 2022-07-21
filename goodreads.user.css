@@ -16,12 +16,14 @@
         div.content {
             width: 95vw;
             margin: auto;
+            box-sizing:border-box;
         }
     }
     @media (min-width: 981px) {
         div.content {
             width: 960px;
             margin: auto;
+            box-sizing:border-box;
         }
     }
     html.mobile * {
@@ -74,7 +76,8 @@
         border-top: 1px solid #555 !important;
         border-left: 0 !important;
         border-right: 0 !important;
-        background: unset !important
+        background: unset !important;
+        box-sizing:border-box;
     }
     div.libraryExtension .libSearch {
         background: -webkit-linear-gradient(top, #111111 0%, #333333 100%) !important;
@@ -82,10 +85,12 @@
         border: unset !important;
         font-size: unset !important;
         color: #49fb97 !important;
+        box-sizing:border-box;
     }
     div.bigBox[style] {
         border-bottom: 0 !important;
         border-top: 1px solid #555 !important;
+        box-sizing:border-box;
     }
     div.libraryExtension a,
     div.libraryExtension .libextTitle,
@@ -143,9 +148,11 @@
     }
     html.mobile tbody#booksBody {
         line-height: calc(2*var(--mobile-font-size));
+        box-sizing:border-box;
     }
     html:not(.mobile) tbody#booksBody {
         line-height: calc(2*var(--desktop-font-size));
+        box-sizing:border-box;
     }
     /* display which library has the book */
     html.desktop td.AGcol>div::before,
@@ -166,14 +173,17 @@
     }
     html.desktop .content {
         width: 100%;
+        box-sizing:border-box;
     }
     html.desktop .mainContentContainer,
     html.desktop .mainContentContainer .mainContent,
     html.desktop .mainContentContainer .mainContent .mainContentFloat .leftContainer {
         width: 100%;
+        box-sizing:border-box;
     }
     html.desktop .mainContentContainer .mainContent .mainContentFloat {
         width: 92%;
+        box-sizing:border-box;
     }
 }
 
@@ -193,9 +203,11 @@
     html.desktop .mainContentContainer .mainContent,
     div#leadercol {
         width: 100% !important;
+        box-sizing:border-box;
     }
     html.desktop .mainContentContainer .mainContent .mainContentFloat {
         width: 92% !important;
+        box-sizing:border-box;
     }
     .siteHeaderBottomSpacer {
         display: block;
@@ -214,12 +226,15 @@
     #AGtable .AGAVAIL,
     .libraryExtension {
         font-size: var(--mobile-font-size) !important;
+        box-sizing:border-box;
     }
     div.libraryExtension {
         width: 100% !important;
+        box-sizing:border-box;
     }
     html.desktop table#books {
         width: 100% !important;
+        box-sizing:border-box;
     }
     div.right.uitext {
         float: left !important;
@@ -253,6 +268,7 @@
         width:350px!important;
         display:block;
         visibility:visible;
+        box-sizing:border-box;
     }
     html.mobile div.bigBox{
         width:80% !important;
@@ -260,24 +276,29 @@
         padding-right: 10px !important;
         margin-left:auto !important;
         margin-right:auto !important;
+        box-sizing:border-box;
     }
     html.mobile :is(div#AGtable>table,div#AGtable>table>tbody,div#AGtable>table>tbody>tr:nth-child(2),div#AGtable td.AGAVAILbookDetails){
         width:100%!important;
         height:100%!important;
         visibility:inherit;
+        box-sizing:border-box;
     }
     html.mobile div#AGtable td.AGAVAILbookDetails{
         display:table-cell !important;
+        box-sizing:border-box;
     }
     html.desktop .mainContentContainer .mainContent,
     html.desktop .mainContentContainer .mainContent .mainContentFloat .leftContainer {
         width: 100% !important;
+        box-sizing:border-box;
     }
     html.withSiteHeaderTopFullImage .siteHeaderBottomSpacer {
         padding-bottom: 4rem;
     }
     html.desktop .mainContentContainer .mainContent .mainContentFloat {
-        width: 92%
+        width: 92%;
+        box-sizing:border-box;
     }
     html.desktop div[id].wtrButtonContainer,
     html.desktop .wtrButtonContainer .wtrLeft,
@@ -291,11 +312,13 @@
     html.desktop .wtrButtonContainer .wtrLeft.wtrDown {
         padding: 0;
         border: 0;
+        box-sizing:border-box;
     }
     html.desktop .wtrButtonContainer .wtrLeft button {
         position: relative;
         top: 3px;
         left: 2px;
+        box-sizing:border-box;
     }
     span:is(#mobiasin, #calibreprefix):active {
         color:limegreen;
@@ -304,27 +327,33 @@
         html.desktop #imagecol {
             position: absolute;
             left: 68%;
+            box-sizing:border-box;
             /*top: 175px;*/
         }
         html.desktop #metacol {
             width: 67%;
+            box-sizing:border-box;
         }
         div#AGtable table tr td:first-child {
             display: none !important;
         }
         td.AGAVAILSINGLEBOOK {
             width: 500px;
+            box-sizing:border-box;
         }
         td.AGAVAILSINGLEBOOK>div {
             width: 50%;
+            box-sizing:border-box;
         }
     }
     @media (min-width: 981px) {
         html.desktop .content {
             width: 960px;
+            box-sizing:border-box;
         }
         html.desktop #imagecol {
             float: right;
+            box-sizing:border-box;
         }
     }
 }
