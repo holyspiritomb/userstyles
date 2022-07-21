@@ -240,7 +240,7 @@
     }
     @media (min-width: 500px){
         html.desktop.withSiteHeaderTopFullImage .siteHeaderBottomSpacer {
-            padding-bottom: 4rem !important;
+            padding-bottom: 100px !important;
         }
     }
     /* to prevent Available Reads and Available Reads 2 on mobile from displaying their search results multiple times */
