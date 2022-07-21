@@ -21,7 +21,8 @@
         div#shell{
             background-color:rgba(0,0,0,0.7);
         }
-        html{
+        html,
+        html.mobile.mobileTemplate.withSiteHeaderTopFullImage.picture.touchevents.flexbox.withAppInstallationBanner{
             margin-top:50px;
         }
         div.siteHeader{
