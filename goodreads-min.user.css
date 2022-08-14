@@ -1,0 +1,263 @@
+/* ==UserStyle==
+@name           Goodreads personal modifications (addons and sizes only)
+@namespace      github.com/holyspiritomb
+@version        1.22.7-21.2
+@description    Making goodreads look nicer for me on my phone
+@author         holyspiritomb
+@homepageURL	https://github.com/holyspiritomb/personal-userstyles/blob/main/goodreads-min.user.css
+@updateURL		https://github.com/holyspiritomb/personal-userstyles/raw/main/goodreads-min.user.css
+@var text		mobile-font-size "Mobile site font size" 12pt
+@var text		desktop-font-size "Desktop site font size" 22pt
+@var text		default-font "Default font" Lato
+==/UserStyle== */
+
+@-moz-document url-prefix("https://www.goodreads.com/") {
+    @media (max-width: 980px) {
+        div#shell{
+            background-color:rgba(0,0,0,0.7);
+        }
+    
+    }
+    @media (min-width: 981px) {
+        div.content {
+            width: 960px;
+            margin: auto;
+            box-sizing:border-box;
+        }
+    }
+    html.mobile * {
+        font-size: var(--mobile-font-size);
+        line-height: calc(2*var(--mobile-font-size));
+    }
+    html.desktop * {
+        font-size: var(--desktop-font-size);
+        line-height: calc(2*var(--desktop-font-size));
+    }
+    html:not(.mobile) ul.siteHeader__menuList>li.siteHeader__topLevelItem>a,
+    html:not(.mobile) ul.siteHeader__menuList>li.siteHeader__topLevelItem>div>a>span {
+        line-height: calc(1.5*var(--desktop-font-size));
+        font-size: calc(0.75*var(--desktop-font-size));
+    }
+    #bookTitle,
+    h1.bookTitle cite,
+    cite.bookTitle,
+    #bookAuthors .authorName,
+    #bookAuthors .by,
+    #description,
+    h1,
+    * {
+        font-family: var(--default-font), Roboto, sans-serif !important;
+    }
+    h2.brownBackground,
+    h2.brownBackground a {
+        font-size: var(--desktop-font-size) !important;
+    }
+    #bookTitle {
+        font-size: calc(2*var(--desktop-font-size));
+    }
+    div.libraryExtension,
+    div.libraryExtension #libraryUserMessage {
+        font-family: var(--default-font), unset !important;
+        background-color: unset !important;
+        color: #666 !important;
+    }
+    div.libraryExtension #libraryUserMessage {
+        border: unset !important;
+    }
+    div.libraryExtension {
+        border-bottom: 1px solid #555 !important;
+        border-top: 1px solid #555 !important;
+        border-left: 0 !important;
+        border-right: 0 !important;
+        background: unset !important;
+        box-sizing:border-box;
+    }
+    div.libraryExtension .libSearch {
+        background: -webkit-linear-gradient(top, #111111 0%, #333333 100%) !important;
+        background: linear-gradient(top, #111111 0%, #333333 100%) !important;
+        border: unset !important;
+        font-size: unset !important;
+        color: #49fb97 !important;
+        box-sizing:border-box;
+    }
+    div.bigBox[style] {
+        border-bottom: 0 !important;
+        border-top: 1px solid #555 !important;
+        box-sizing:border-box;
+    }
+    div.libraryExtension a,
+    div.libraryExtension .libextTitle,
+    div.libraryExtension a.libTitle:link,
+    div.libraryExtension .Library,
+    div.ondemand a.libSearch.searchOne {
+        color: #49fb97 !important;
+        font-family: unset !important;
+    }
+    div.libraryExtension .libextTitle {
+        padding-top: 10px;
+        padding-bottom: 10px;
+        font-size: large !important;
+        text-decoration: underline;
+        font-weight: bold;
+    }
+    img.AGaudio {
+        /* bc i use dark themes */
+        filter: invert(100%);
+    }
+    html.desktop img.AGaudio {
+        height: calc(var(--desktop-font-size)/2) !important;
+        width: calc(var(--desktop-font-size)/2) !important;
+    }
+    html.mobile img.AGaudio {
+        height: calc(var(--mobile-font-size)/2) !important;
+        width: calc(var(--mobile-font-size)/2) !important;
+    }
+    html.desktop a[href^="http://libgen"] img {
+        height: calc(1.25*var(--desktop-font-size));
+        width: calc(1.25*var(--desktop-font-size)) !important;
+        image-rendering: crisp-edges;
+        display: none;
+    }
+    a[href^="http://libgen"]::after {
+        content: '\2193';
+        color: #111;
+        background-color: #fff;
+        font-size: var(--desktop-font-size);
+        line-height: calc(2*var(--desktop-font-size));
+        font-family: "Noto Sans", monospace;
+        padding: calc(var(--desktop-font-size)*0.85);
+        clip-path: circle(25%);
+        position: relative;
+        bottom: calc(var(--desktop-font-size)*0.25);
+        display: inline-block;
+    }
+    a[href^="http://libgen"]::after:active {
+        background-color: #f00;
+    }
+    html.mobile a[href^="http://libgen"] img {
+        height: calc(2*var(--mobile-font-size));
+        width: calc(2*var(--mobile-font-size)) !important;
+        image-rendering: crisp-edges;
+    }
+    html.mobile tbody#booksBody {
+        line-height: calc(2*var(--mobile-font-size));
+        box-sizing:border-box;
+    }
+    html:not(.mobile) tbody#booksBody {
+        line-height: calc(2*var(--desktop-font-size));
+        box-sizing:border-box;
+    }
+    /* display which library has the book */
+    html.desktop td.AGcol>div::before,
+    td.AGAVAILSINGLEBOOK>div::before {
+        content: attr(class)":";
+        font-weight: bold;
+    }
+}
+
+
+@-moz-document url-prefix("https://www.goodreads.com/review/list/") {
+    /* my booklists */
+    div#flashContainer,
+    div#leaderCol,
+    div#leadercol div.myBooksNav>ul>li>a:not(#shelfSettingsLink),
+    div#leadercol :is(div.myBooksNav > ul > li > span, div#header),
+    div.myBooksSearch,
+    /*div#leadercol,*/
+    div#leftCol,
+    div#side{
+        /* display: none; */
+    }
+    .siteHeaderBottomSpacer {
+        display: block;
+    }
+    /* to prevent Available Reads and Available Reads 2 on mobile from displaying their search results multiple times */
+    /* this is cosmetic and not actually preventing it from re-running search on already-searched books */
+    html.mobile li[id^="book_list_item_"]>div[id]:not(:nth-child(5)) {
+        display: none;
+    }
+    #AGtable .AGAVAIL,
+    .libraryExtension {
+        font-size: var(--mobile-font-size) !important;
+        box-sizing:border-box;
+    }
+    div.libraryExtension {
+        width: 100% !important;
+        box-sizing:border-box;
+    }
+    html.desktop table#books {
+        width: 100% !important;
+        box-sizing:border-box;
+    }
+    /* to make the page stay a certain width on my phone */
+    form#perPageForm,
+    form#sortForm,
+    div#reviewPagination {
+        display: block;
+    }
+    form#sortForm a {
+        display: none;
+    }
+}
+
+@-moz-document url-prefix("https://www.goodreads.com/book/") {
+    /* single book page */
+    div.rightContainer,
+    #premiumAdTop,
+    span#rating_graph,
+    div#choiceBadge,
+    div#flashContainer,
+    div#smartbanner {
+        /* display: none; */
+    }
+    html.mobile div#AGtable{
+        height:auto!important;
+        overflow-y:auto!important;
+        width:300px !important;
+        display:block;
+        visibility:visible;
+        box-sizing:border-box;
+    }
+    html.mobile div.bigBox{
+        width:80% !important;
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+        margin-left:auto !important;
+        margin-right:auto !important;
+        box-sizing:border-box;
+    }
+    html.mobile :is(div#AGtable>table,div#AGtable>table>tbody,div#AGtable>table>tbody>tr:nth-child(2),div#AGtable td.AGAVAILbookDetails){
+        width:100%!important;
+        height:100%!important;
+        visibility:inherit;
+        box-sizing:border-box;
+    }
+    html.mobile div#AGtable td.AGAVAILbookDetails{
+        display:table-cell !important;
+        box-sizing:border-box;
+    }
+    html.desktop .mainContentContainer .mainContent,
+    html.desktop .mainContentContainer .mainContent .mainContentFloat .leftContainer {
+        width: 100% !important;
+        box-sizing:border-box;
+    }
+    span:is(#mobiasin, #calibreprefix):active {
+        color:limegreen;
+    }
+    td.AGAVAILSINGLEBOOK>div {
+        display:flex;
+        box-sizing:border-box;
+    }
+    @media (max-width: 980px) {
+        div#AGtable table tr td:first-child {
+            display: none !important;
+        }
+        td.AGAVAILSINGLEBOOK {
+            width: 500px;
+            box-sizing:border-box;
+        }
+        td.AGAVAILSINGLEBOOK>div {
+            width: 50%;
+        }
+    }
+}
