@@ -100,9 +100,10 @@
         text-decoration: underline;
         font-weight: bold;
     }
-    img.AGaudio {
-        /* bc i use dark themes */
+    html[data-darkreader-scheme="dark"] img.AGaudio,
+    html[data-theme="dark"] img.AGaudio {
         filter: invert(100%);
+        display:inline;
     }
     html.desktop img.AGaudio {
         height: calc(var(--desktop-font-size)/2) !important;
