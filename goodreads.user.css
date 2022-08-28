@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Goodreads personal modifications
 @namespace      github.com/holyspiritomb
-@version        1.22.7-21.2
+@version        1.22.8.28.0
 @description    Making goodreads look nicer for me on my phone
 @author         holyspiritomb
 @homepageURL	https://github.com/holyspiritomb/personal-userstyles/blob/main/goodreads.user.css
@@ -76,7 +76,7 @@
     #description,
     h1,
     * {
-        font-family: var(--default-font), Roboto, sans-serif !important;
+        font-family: var(--default-font), "Roboto", sans-serif !important;
     }
     h2.brownBackground,
     h2.brownBackground a {
@@ -165,9 +165,6 @@
         bottom: calc(var(--desktop-font-size)*0.25);
         display: inline-block;
     }
-    a[href^="http://libgen.rs"]::after:active {
-        background-color: #f00;
-    }
     html.mobile a[href^="http://libgen.rs"] img {
         height: calc(2*var(--mobile-font-size));
         width: calc(2*var(--mobile-font-size)) !important;
@@ -217,11 +214,8 @@
 @-moz-document url-prefix("https://www.goodreads.com/review/list/") {
     /* my booklists */
     div#flashContainer,
-    div#leaderCol,
-    div#leadercol div.myBooksNav>ul>li>a:not(#shelfSettingsLink),
     div#leadercol :is(div.myBooksNav > ul > li > span, div#header),
     div.myBooksSearch,
-    /*div#leadercol,*/
     div#leftCol,
     div#side{
         display: none;
@@ -246,9 +240,9 @@
     }
     /* to prevent Available Reads and Available Reads 2 on mobile from displaying their search results multiple times */
     /* this is cosmetic and not actually preventing it from re-running search on already-searched books */
-    html.mobile li[id^="book_list_item_"]>div[id]:not(:nth-child(5)) {
-        display: none;
-    }
+    html.mobile div#AGtable + div#AGtable{
+        display: none; 
+    } 
     ul.personalNav>li:not(:last-child) {
         display: none;
     }
@@ -274,9 +268,6 @@
     div#reviewPagination {
         display: block;
     }
-    form#sortForm a {
-        display: none;
-    }
 }
 
 @-moz-document url-prefix("https://www.goodreads.com/book/") {
@@ -287,9 +278,7 @@
     span#rating_graph,
     div#choiceBadge,
     div#flashContainer,
-    div.headroom-wrapper,
-    div#smartbanner,
-    div.searchBox.searchBox--navbar {
+    div#smartbanner {
         display: none;
     }
     html.mobile div#AGtable{
@@ -368,9 +357,9 @@
             width: 67%;
             box-sizing:border-box;
         }
-        /*div#AGtable table tr td:first-child {
+        div#AGtable table tr:first-child td:first-child {
             display: none !important;
-        }*/
+        }
         td.AGAVAILSINGLEBOOK {
             width: 500px;
             box-sizing:border-box;
@@ -378,10 +367,10 @@
         td.AGAVAILSINGLEBOOK>div {
             width: 50%;
         }
-        html.withAppInstallationBanner .siteHeader{
-            top:0px;
-            width:100vw;
-        }
+        /* html.withAppInstallationBanner .siteHeader{ */
+        /*     top:0px; */
+        /*     width:100vw; */
+        /* } */
         html.mobile div.bookInfoGroup{
             width:calc(414px-75px);
         }
