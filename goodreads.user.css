@@ -43,6 +43,8 @@
     main.PageFrame__main.BookPage{
         background-color:rgba(0,0,0,0.7);
         border-radius:5px;
+        padding:10px;
+        box-sizing:border-box;
     }
     @media (min-width: 981px) {
         div.content {
