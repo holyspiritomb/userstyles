@@ -22,6 +22,8 @@
     main.PageFrame__main.BookPage{
         background-color:rgba(0,0,0,0.7);
         border-radius:5px;
+        padding:10px;
+        box-sizing:border-box;
     }
 
     @media (min-width: 981px) {
@@ -200,11 +202,6 @@
     }
     html.mobile div#AGtable td.AGAVAILbookDetails{
         /* display:table-cell !important; */
-        box-sizing:border-box;
-    }
-    html.desktop .mainContentContainer .mainContent,
-    html.desktop .mainContentContainer .mainContent .mainContentFloat .leftContainer {
-        width: 100% !important;
         box-sizing:border-box;
     }
     td.AGAVAILSINGLEBOOK>div {
