@@ -39,6 +39,11 @@
         }
     
     }
+    /* new goodreads book pages*/
+    main.PageFrame__main.BookPage{
+        background-color:rgba(0,0,0,0.7);
+        border-radius:5px;
+    }
     @media (min-width: 981px) {
         div.content {
             width: 960px;
@@ -75,6 +80,8 @@
     #bookAuthors .by,
     #description,
     h1,
+    h1[data-testid="bookTitle"],
+    span.ContributorLink__name[data-testid="name"],
     * {
         font-family: var(--default-font), "Roboto", sans-serif !important;
     }
@@ -146,13 +153,13 @@
         height: calc(var(--mobile-font-size)/2) !important;
         width: calc(var(--mobile-font-size)/2) !important;
     }
-    html.desktop a[href^="http://libgen.rs"] img {
+    /* html.desktop a[href^="http://libgen.rs"] img {
         height: calc(1.25*var(--desktop-font-size));
         width: calc(1.25*var(--desktop-font-size)) !important;
         image-rendering: crisp-edges;
         display: none;
-    }
-    a[href^="http://libgen.rs"]::after {
+    } */
+    /* a[href^="http://libgen.rs"]::after {
         content: '\2193';
         color: #111;
         background-color: #fff;
@@ -164,12 +171,12 @@
         position: relative;
         bottom: calc(var(--desktop-font-size)*0.25);
         display: inline-block;
-    }
-    html.mobile a[href^="http://libgen.rs"] img {
+    } */
+    /* html.mobile a[href^="http://libgen.rs"] img {
         height: calc(2*var(--mobile-font-size));
         width: calc(2*var(--mobile-font-size)) !important;
         image-rendering: crisp-edges;
-    }
+    } */
     html.mobile tbody#booksBody {
         line-height: calc(2*var(--mobile-font-size));
         box-sizing:border-box;
@@ -304,7 +311,7 @@
         box-sizing:border-box;
     }
     html.mobile div#AGtable td.AGAVAILbookDetails{
-        display:table-cell !important;
+        /* display:table-cell !important; */
         box-sizing:border-box;
     }
     html.desktop .mainContentContainer .mainContent,
@@ -338,9 +345,6 @@
         top: 3px;
         left: 2px;
         box-sizing:border-box;
-    }
-    span:is(#mobiasin, #calibreprefix):active {
-        color:limegreen;
     }
     td.AGAVAILSINGLEBOOK>div {
         display:flex;

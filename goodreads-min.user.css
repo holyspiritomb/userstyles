@@ -18,6 +18,12 @@
         }
     
     }
+    /* new goodreads book pages*/
+    main.PageFrame__main.BookPage{
+        background-color:rgba(0,0,0,0.7);
+        border-radius:5px;
+    }
+
     @media (min-width: 981px) {
         div.content {
             width: 960px;
@@ -40,6 +46,8 @@
     #bookAuthors .by,
     #description,
     h1,
+    h1[data-testid="bookTitle"],
+    span.ContributorLink__name[data-testid="name"],
     * {
         font-family: var(--default-font), Roboto, sans-serif !important;
     }
@@ -50,6 +58,8 @@
     #bookTitle {
         font-size: calc(2*var(--desktop-font-size));
     }
+
+    /* LIbrary Extension */
     div.libraryExtension,
     div.libraryExtension #libraryUserMessage {
         font-family: var(--default-font), unset !important;
@@ -75,11 +85,7 @@
         color: #49fb97 !important;
         box-sizing:border-box;
     }
-    div.bigBox[style] {
-        border-bottom: 0 !important;
-        border-top: 1px solid #555 !important;
-        box-sizing:border-box;
-    }
+
     div.libraryExtension a,
     div.libraryExtension .libextTitle,
     div.libraryExtension a.libTitle:link,
@@ -95,6 +101,15 @@
         text-decoration: underline;
         font-weight: bold;
     }
+
+    /*bunken */
+    div.bigBox[style] {
+        border-bottom: 0 !important;
+        border-top: 1px solid #555 !important;
+        box-sizing:border-box;
+    }
+
+    /*Available Reads*/
     html[data-darkreader-scheme="dark"] img.AGaudio,
     html[data-theme="dark"] img.AGaudio {
         filter: invert(100%);
@@ -107,30 +122,6 @@
     html.mobile img.AGaudio {
         height: calc(var(--mobile-font-size)/2) !important;
         width: calc(var(--mobile-font-size)/2) !important;
-    }
-    html.desktop a[href^="http://libgen"] img {
-        height: calc(1.25*var(--desktop-font-size));
-        width: calc(1.25*var(--desktop-font-size)) !important;
-        image-rendering: crisp-edges;
-        display: none;
-    }
-    a[href^="http://libgen"]::after {
-        content: '\2193';
-        color: #111;
-        background-color: #fff;
-        font-size: var(--desktop-font-size);
-        line-height: calc(2*var(--desktop-font-size));
-        font-family: "Noto Sans", monospace;
-        padding: calc(var(--desktop-font-size)*0.85);
-        clip-path: circle(25%);
-        position: relative;
-        bottom: calc(var(--desktop-font-size)*0.25);
-        display: inline-block;
-    }
-    html.mobile a[href^="http://libgen"] img {
-        height: calc(2*var(--mobile-font-size));
-        width: calc(2*var(--mobile-font-size)) !important;
-        image-rendering: crisp-edges;
     }
     html.mobile tbody#booksBody {
         line-height: calc(2*var(--mobile-font-size));
@@ -146,26 +137,13 @@
         content: attr(class)":";
         font-weight: bold;
     }
+
 }
 
 
 @-moz-document url-prefix("https://www.goodreads.com/review/list/") {
     /* my booklists */
-    div#flashContainer,
-    div#leaderCol,
-    div#leadercol div.myBooksNav>ul>li>a:not(#shelfSettingsLink),
-    div#leadercol :is(div.myBooksNav > ul > li > span, div#header),
-    div.myBooksSearch,
-    /*div#leadercol,*/
-    div#leftCol,
-    div#side{
-        /* display: none; */
-    }
-    /* to prevent Available Reads and Available Reads 2 on mobile from displaying their search results multiple times */
-    /* this is cosmetic and not actually preventing it from re-running search on already-searched books */
-    /* html.mobile li[id^="book_list_item_"]>div[id]:not(:nth-child(5)) { 
-        display: none;
-    }*/
+
     #AGtable .AGAVAIL,
     .libraryExtension {
         font-size: var(--mobile-font-size) !important;
@@ -185,14 +163,10 @@
     div#reviewPagination {
         display: block;
     }
-    /* form#sortForm a { */
-    /*     display: none; */
-    /* } */
 }
 
 @-moz-document url-prefix("https://www.goodreads.com/book/") {
     /* single book page */
-    div.rightContainer,
     #premiumAdTop,
     span#rating_graph,
     div#choiceBadge,
@@ -200,20 +174,22 @@
     div#smartbanner {
         /* display: none; */
     }
-    html.mobile div#AGtable{
-        height:auto!important;
-        overflow-y:auto!important;
-        width:300px !important;
-        display:block;
-        visibility:visible;
-        box-sizing:border-box;
-    }
+    /*bunken*/
     html.mobile div.bigBox{
         width:80% !important;
         padding-left: 10px !important;
         padding-right: 10px !important;
         margin-left:auto !important;
         margin-right:auto !important;
+        box-sizing:border-box;
+    }
+    /*Available Reads*/
+    html.mobile div#AGtable{
+        height:auto!important;
+        overflow-y:auto!important;
+        width:300px !important;
+        display:block;
+        visibility:visible;
         box-sizing:border-box;
     }
     html.mobile :is(div#AGtable>table,div#AGtable>table>tbody,div#AGtable>table>tbody>tr:nth-child(2),div#AGtable td.AGAVAILbookDetails){
@@ -223,16 +199,13 @@
         box-sizing:border-box;
     }
     html.mobile div#AGtable td.AGAVAILbookDetails{
-        display:table-cell !important;
+        /* display:table-cell !important; */
         box-sizing:border-box;
     }
     html.desktop .mainContentContainer .mainContent,
     html.desktop .mainContentContainer .mainContent .mainContentFloat .leftContainer {
         width: 100% !important;
         box-sizing:border-box;
-    }
-    span:is(#mobiasin, #calibreprefix):active {
-        color:limegreen;
     }
     td.AGAVAILSINGLEBOOK>div {
         display:flex;
