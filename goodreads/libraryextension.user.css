@@ -49,7 +49,7 @@
     div.libraryExtension {
         width: 100% !important;
         box-sizing: border-box;
-        font-size: var(--mobile-font-size) !important;
+        font-size: inherit !important;
         box-sizing: border-box;
     }
 }
