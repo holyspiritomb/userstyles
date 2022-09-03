@@ -12,28 +12,25 @@
 ==/UserStyle== */
 
 @-moz-document url-prefix("https://www.goodreads.com/") {
-    @media (max-width: 980px) {
-        div#shell{
-            background-color:rgba(0,0,0,0.7);
-        }
-    
+    div#shell {
+        background-color: rgba(0, 0, 0, 0.7);
     }
     /* new goodreads book pages*/
-    main.PageFrame__main.BookPage{
-        background-color:rgba(0,0,0,0.7);
-        border-radius:5px;
-        padding:10px;
-        box-sizing:border-box;
+    main.PageFrame__main.BookPage {
+        background-color: rgba(0, 0, 0, 0.7);
+        border-radius: 5px;
+        padding: 10px;
+        box-sizing: border-box;
     }
-    @media (min-width: 1200px){
-        main.PageFrame__main.BookPage{
-            max-width:90vw;
-        }    
+    @media (min-width: 1200px) {
+        main.PageFrame__main.BookPage {
+            max-width: 90vw;
+        }
     }
     @media (min-width: 981px) {
         div.content {
             margin: auto;
-            box-sizing:border-box;
+            box-sizing: border-box;
         }
     }
     html.mobile * {
@@ -63,24 +60,27 @@
     #bookTitle {
         font-size: calc(2*var(--desktop-font-size));
     }
-
+    h1.bookTitle cite,
+    cite.bookTitle {
+        font-size: calc(2*var(--mobile-font-size));
+    }
     /* LIbrary Extension */
-    div.libraryExtension,
-    div.libraryExtension #libraryUserMessage {
-        font-family: var(--default-font), unset !important;
-        background-color: unset !important;
-        color: #666 !important;
-    }
-    div.libraryExtension #libraryUserMessage {
-        border: unset !important;
-    }
     div.libraryExtension {
         border-bottom: 1px solid #555 !important;
         border-top: 1px solid #555 !important;
         border-left: 0 !important;
         border-right: 0 !important;
         background: unset !important;
-        box-sizing:border-box;
+        box-sizing: border-box;
+        font-family: var(--default-font), unset !important;
+        background-color: unset !important;
+        color: #666 !important;
+    }
+    div.libraryExtension #libraryUserMessage {
+        font-family: var(--default-font), unset !important;
+        background-color: unset !important;
+        color: #666 !important;
+        border: unset !important;
     }
     div.libraryExtension .libSearch {
         background: -webkit-linear-gradient(top, #111111 0%, #333333 100%) !important;
@@ -88,37 +88,38 @@
         border: unset !important;
         font-size: unset !important;
         color: #49fb97 !important;
-        box-sizing:border-box;
+        box-sizing: border-box;
     }
-
     div.libraryExtension a,
     div.libraryExtension .libextTitle,
     div.libraryExtension a.libTitle:link,
     div.libraryExtension .Library,
     div.ondemand a.libSearch.searchOne {
-        color: #49fb97 !important;
-        font-family: unset !important;
+        color: initial !important;
+        font-family: var(--default-font), unset !important;
     }
     div.libraryExtension .libextTitle {
         padding-top: 10px;
         padding-bottom: 10px;
         font-size: large !important;
         text-decoration: underline;
+        font-family: var(--default-font), unset !important;
         font-weight: bold;
     }
-
     /*bunken */
     div.bigBox[style] {
-        border-bottom: 0 !important;
+        border-bottom: 0px !important;
         border-top: 1px solid #555 !important;
-        box-sizing:border-box;
+        box-sizing: border-box;
+        font-family: var(--default-font), unset !important;
     }
-
     /*Available Reads*/
+    img.AGaudio {
+        display: inline-block;
+    }
     html[data-darkreader-scheme="dark"] img.AGaudio,
     html[data-theme="dark"] img.AGaudio {
         filter: invert(100%);
-        display:inline;
     }
     html.desktop img.AGaudio {
         height: calc(var(--desktop-font-size)/2) !important;
@@ -128,13 +129,14 @@
         height: calc(var(--mobile-font-size)/2) !important;
         width: calc(var(--mobile-font-size)/2) !important;
     }
+    tbody#booksBody {
+        box-sizing: border-box;
+    }
     html.mobile tbody#booksBody {
-        line-height: calc(2*var(--mobile-font-size));
-        box-sizing:border-box;
+        line-height: calc(1.5*var(--mobile-font-size));
     }
     html:not(.mobile) tbody#booksBody {
-        line-height: calc(2*var(--desktop-font-size));
-        box-sizing:border-box;
+        line-height: calc(1.5*var(--desktop-font-size));
     }
     /* display which library has the book */
     html.desktop td.AGcol>div::before,
@@ -142,25 +144,20 @@
         content: attr(class)":";
         font-weight: bold;
     }
-
 }
-
 
 @-moz-document url-prefix("https://www.goodreads.com/review/list/") {
     /* my booklists */
-
     #AGtable .AGAVAIL,
     .libraryExtension {
         font-size: var(--mobile-font-size) !important;
-        box-sizing:border-box;
     }
     div.libraryExtension {
         width: 100% !important;
-        box-sizing:border-box;
     }
     html.desktop table#books {
         width: 100% !important;
-        box-sizing:border-box;
+        box-sizing: border-box;
     }
     /* to make the page stay a certain width on my phone */
     form#perPageForm,
@@ -177,50 +174,49 @@
     div#choiceBadge,
     div#flashContainer,
     div#smartbanner {
-        /* display: none; */
+        display: none;
     }
     /*bunken*/
-    html.mobile div.bigBox{
-        width:80% !important;
+    html.mobile div.bigBox,
+    html.mobile div.bigBox[style] {
+        width: 80% !important;
         padding-left: 10px !important;
         padding-right: 10px !important;
-        margin-left:auto !important;
-        margin-right:auto !important;
-        box-sizing:border-box;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        font-family: var(--default-font), unset !important;
     }
     /*Available Reads*/
-    html.mobile div#AGtable{
-        height:auto!important;
-        overflow-y:auto!important;
-        width:300px !important;
-        display:block;
-        visibility:visible;
-        box-sizing:border-box;
+    html.mobile div#AGtable {
+        max-height: 50vh !important;
+        overflow-y: auto !important;
+        width: 300px !important;
+        display: block;
+        visibility: visible;
+        box-sizing: border-box;
     }
-    html.mobile :is(div#AGtable>table,div#AGtable>table>tbody,div#AGtable>table>tbody>tr:nth-child(2),div#AGtable td.AGAVAILbookDetails){
-        width:100%!important;
-        height:100%!important;
-        visibility:inherit;
-        box-sizing:border-box;
-    }
-    html.mobile div#AGtable td.AGAVAILbookDetails{
-        /* display:table-cell !important; */
-        box-sizing:border-box;
+    html.mobile :is(div#AGtable>table, div#AGtable>table>tbody, div#AGtable>table>tbody>tr:nth-child(2), div#AGtable td.AGAVAILbookDetails) {
+        width: 100% !important;
+        height: 100% !important;
+        visibility: inherit;
+        box-sizing: border-box;
     }
     td.AGAVAILSINGLEBOOK>div {
-        display:flex;
-        box-sizing:border-box;
+        display: flex;
+        flex-direction:row;
+        box-sizing: border-box;
+    }
+    div#AGtable table tr td {
+        display: flex;
+        flex-direction: column;
     }
     @media (max-width: 980px) {
-        div#AGtable table tr:first-child td:first-child {
-            /* display: none !important; */
-        }
         td.AGAVAILSINGLEBOOK {
             width: 500px;
-            box-sizing:border-box;
+            box-sizing: border-box;
         }
         td.AGAVAILSINGLEBOOK>div {
-            width: 50%;
+            width: 100%;
         }
     }
 }
