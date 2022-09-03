@@ -102,14 +102,11 @@
     #bookTitle {
         font-size: calc(2*var(--desktop-font-size));
     }
-    div.libraryExtension,
     div.libraryExtension #libraryUserMessage {
+        border: unset !important;
         font-family: var(--default-font), unset !important;
         background-color: unset !important;
         color: #666 !important;
-    }
-    div.libraryExtension #libraryUserMessage {
-        border: unset !important;
     }
     div.libraryExtension {
         border-bottom: 1px solid #555 !important;
@@ -118,6 +115,9 @@
         border-right: 0 !important;
         background: unset !important;
         box-sizing:border-box;
+        font-family: var(--default-font), unset !important;
+        background-color: unset !important;
+        color: #666 !important;
     }
     div.libraryExtension .libSearch {
         background: -webkit-linear-gradient(top, #111111 0%, #333333 100%) !important;
@@ -150,7 +150,9 @@
     html[data-darkreader-scheme="dark"] img.AGaudio,
     html[data-theme="dark"] img.AGaudio {
         filter: invert(100%);
-        display:inline;
+    }
+    img.AGaudio {
+        display:inline-block;
     }
     html.desktop img.AGaudio {
         height: calc(var(--desktop-font-size)/2) !important;
@@ -185,11 +187,11 @@
         image-rendering: crisp-edges;
     } */
     html.mobile tbody#booksBody {
-        line-height: calc(2*var(--mobile-font-size));
+        line-height: calc(1.5*var(--mobile-font-size));
         box-sizing:border-box;
     }
     html:not(.mobile) tbody#booksBody {
-        line-height: calc(2*var(--desktop-font-size));
+        line-height: calc(1.5*var(--desktop-font-size));
         box-sizing:border-box;
     }
     /* display which library has the book */
@@ -235,8 +237,7 @@
         display: none;
     }
 
-    html.desktop .mainContentContainer .mainContent,
-    div#leadercol {
+    html.desktop .mainContentContainer .mainContent {
         width: 100% !important;
         box-sizing:border-box;
     }
@@ -254,9 +255,6 @@
     }
     /* to prevent Available Reads and Available Reads 2 on mobile from displaying their search results multiple times */
     /* this is cosmetic and not actually preventing it from re-running search on already-searched books */
-    html.mobile div#AGtable + div#AGtable{
-        display: none; 
-    } 
     ul.personalNav>li:not(:last-child) {
         display: none;
     }
@@ -296,7 +294,7 @@
         display: none;
     }
     html.mobile div#AGtable{
-        height:auto!important;
+        max-height: 50vh !important;
         overflow-y:auto!important;
         width:300px !important;
         display:block;
@@ -314,20 +312,16 @@
     html.mobile :is(div#AGtable>table,div#AGtable>table>tbody,div#AGtable>table>tbody>tr:nth-child(2),div#AGtable td.AGAVAILbookDetails){
         width:100%!important;
         height:100%!important;
-        visibility:inherit;
+        visibility:visible;
         box-sizing:border-box;
     }
     html.mobile div#AGtable td.AGAVAILbookDetails{
-        /* display:table-cell !important; */
         box-sizing:border-box;
     }
     html.desktop .mainContentContainer .mainContent,
     html.desktop .mainContentContainer .mainContent .mainContentFloat .leftContainer {
         width: 100% !important;
         box-sizing:border-box;
-    }
-    html.withSiteHeaderTopFullImage .siteHeaderBottomSpacer {
-        padding-bottom: 4rem;
     }
     html.desktop .mainContentContainer .mainContent .mainContentFloat {
         width: 92%;
@@ -355,6 +349,7 @@
     }
     td.AGAVAILSINGLEBOOK>div {
         display:flex;
+        flex-direction: row;
         box-sizing:border-box;
     }
     @media (max-width: 980px) {
@@ -368,15 +363,16 @@
             width: 67%;
             box-sizing:border-box;
         }
-        div#AGtable table tr:first-child td:first-child {
-            display: none !important;
+        div#AGtable table tr td {
+            display: flex;
+            flex-direction:column;
         }
         td.AGAVAILSINGLEBOOK {
             width: 500px;
             box-sizing:border-box;
         }
         td.AGAVAILSINGLEBOOK>div {
-            width: 50%;
+            width: 100%;
         }
         /* html.withAppInstallationBanner .siteHeader{ */
         /*     top:0px; */
