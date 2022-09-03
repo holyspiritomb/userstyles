@@ -101,104 +101,6 @@
     h1.bookTitle {
         font-size: calc(2*var(--mobile-font-size));
     }
-    div.libraryExtension #libraryUserMessage {
-        border: unset !important;
-        font-family: var(--default-font), unset !important;
-        background-color: unset !important;
-        color: #111 !important;
-    }
-    div.libraryExtension {
-        border-bottom: 1px solid #555 !important;
-        border-top: 1px solid #555 !important;
-        border-left: 0 !important;
-        border-right: 0 !important;
-        background: unset !important;
-        box-sizing: border-box;
-        font-family: var(--default-font), unset !important;
-        background-color: unset !important;
-        color: #111 !important;
-    }
-    div.libraryExtension .libSearch {
-        background: -webkit-linear-gradient(top, #111111 0%, #333333 100%) !important;
-        background: linear-gradient(top, #111111 0%, #333333 100%) !important;
-        border: unset !important;
-        font-size: unset !important;
-        color: #111 !important;
-        box-sizing: border-box;
-    }
-    div.bigBox[style] {
-        border-bottom: 0 !important;
-        border-top: 1px solid #555 !important;
-        box-sizing: border-box;
-    }
-    div.libraryExtension a,
-    div.libraryExtension .libextTitle,
-    div.libraryExtension a.libTitle:link,
-    div.libraryExtension .Library,
-    div.ondemand a.libSearch.searchOne {
-        color: #111 !important;
-        font-family: unset !important;
-    }
-    div.libraryExtension .libextTitle {
-        padding-top: 10px;
-        padding-bottom: 10px;
-        font-size: large !important;
-        text-decoration: underline;
-        font-weight: bold;
-    }
-    html[data-darkreader-scheme="dark"] img.AGaudio,
-    html[data-theme="dark"] img.AGaudio {
-        filter: invert(100%);
-    }
-    img.AGaudio {
-        display: inline-block;
-    }
-    html.desktop img.AGaudio {
-        height: calc(var(--desktop-font-size)/2) !important;
-        width: calc(var(--desktop-font-size)/2) !important;
-    }
-    html.mobile img.AGaudio {
-        height: calc(var(--mobile-font-size)/2) !important;
-        width: calc(var(--mobile-font-size)/2) !important;
-    }
-    /* html.desktop a[href^="http://libgen.rs"] img {
-        height: calc(1.25*var(--desktop-font-size));
-        width: calc(1.25*var(--desktop-font-size)) !important;
-        image-rendering: crisp-edges;
-        display: none;
-    } */
-    /* a[href^="http://libgen.rs"]::after {
-        content: '\2193';
-        color: #111;
-        background-color: #fff;
-        font-size: var(--desktop-font-size);
-        line-height: calc(2*var(--desktop-font-size));
-        font-family: "Noto Sans", monospace;
-        padding: calc(var(--desktop-font-size)*0.85);
-        clip-path: circle(25%);
-        position: relative;
-        bottom: calc(var(--desktop-font-size)*0.25);
-        display: inline-block;
-    } */
-    /* html.mobile a[href^="http://libgen.rs"] img {
-        height: calc(2*var(--mobile-font-size));
-        width: calc(2*var(--mobile-font-size)) !important;
-        image-rendering: crisp-edges;
-    } */
-    html.mobile tbody#booksBody {
-        line-height: calc(1.3*var(--mobile-font-size));
-        box-sizing: border-box;
-    }
-    html:not(.mobile) tbody#booksBody {
-        line-height: calc(1.3*var(--desktop-font-size));
-        box-sizing: border-box;
-    }
-    /* display which library has the book */
-    html.desktop td.AGcol>div::before,
-    td.AGAVAILSINGLEBOOK>div::before {
-        content: attr(class)":";
-        font-weight: bold;
-    }
     html.desktop footer.responsiveSiteFooter,
     .siteHeader__topFullImageContainer {
         display: none;
@@ -227,7 +129,6 @@
 }
 
 @-moz-document url-prefix("https://www.goodreads.com/review/list/") {
-    /* my booklists */
     div#flashContainer,
     div#leadercol :is(div.myBooksNav > ul > li > span, div#header),
     div.myBooksSearch,
@@ -254,15 +155,6 @@
     ul.personalNav>li:not(:last-child) {
         display: none;
     }
-    #AGtable .AGAVAIL,
-    .libraryExtension {
-        font-size: var(--mobile-font-size) !important;
-        box-sizing: border-box;
-    }
-    div.libraryExtension {
-        width: 100% !important;
-        box-sizing: border-box;
-    }
     html.desktop table#books {
         width: 100% !important;
         box-sizing: border-box;
@@ -288,31 +180,6 @@
     div#flashContainer,
     div#smartbanner {
         display: none;
-    }
-    html.mobile div#AGtable {
-        max-height: 50vh !important;
-        overflow-y: auto !important;
-        width: 300px !important;
-        display: block;
-        visibility: visible;
-        box-sizing: border-box;
-    }
-    html.mobile div.bigBox {
-        width: 80% !important;
-        padding-left: 10px !important;
-        padding-right: 10px !important;
-        margin-left: auto !important;
-        margin-right: auto !important;
-        box-sizing: border-box;
-    }
-    html.mobile :is(div#AGtable>table, div#AGtable>table>tbody, div#AGtable>table>tbody>tr:nth-child(2), div#AGtable td.AGAVAILbookDetails) {
-        width: 100% !important;
-        height: 100% !important;
-        visibility: visible;
-        box-sizing: border-box;
-    }
-    html.mobile div#AGtable td.AGAVAILbookDetails {
-        box-sizing: border-box;
     }
     html.desktop .mainContentContainer .mainContent,
     html.desktop .mainContentContainer .mainContent .mainContentFloat .leftContainer {
@@ -343,11 +210,6 @@
         left: 2px;
         box-sizing: border-box;
     }
-    td.AGAVAILSINGLEBOOK>div {
-        display: flex;
-        flex-direction: row;
-        box-sizing: border-box;
-    }
     @media (max-width: 980px) {
         html.desktop #imagecol {
             position: absolute;
@@ -359,21 +221,6 @@
             width: 67%;
             box-sizing: border-box;
         }
-        div#AGtable table tr td {
-            display: flex;
-            flex-direction: column;
-        }
-        td.AGAVAILSINGLEBOOK {
-            width: 500px;
-            box-sizing: border-box;
-        }
-        td.AGAVAILSINGLEBOOK>div {
-            width: 100%;
-        }
-        /* html.withAppInstallationBanner .siteHeader{ */
-        /*     top:0px; */
-        /*     width:100vw; */
-        /* } */
         html.mobile div.bookInfoGroup {
             width: calc(414px-75px);
         }
