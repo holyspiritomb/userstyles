@@ -1,0 +1,61 @@
+/* ==UserStyle==
+@name           Goodreads: Available Reads Styling
+@namespace      github.com/holyspiritomb
+@version        0.0.1
+@description    Modifications to make Available Reads look better, to be used along with my main Goodreads styles.
+@author         holyspiritomb
+@homepageURL	https://github.com/holyspiritomb/personal-userstyles/blob/main/goodreads/available-reads-extension.user.css
+@updateURL	https://github.com/holyspiritomb/personal-userstyles/raw/main/goodreads/available-reads-extension.user.css
+==/UserStyle== */
+@-moz-document url-prefix("https://www.goodreads.com/") {
+    img.AGaudio {
+        display: inline-block;
+        height:calc(inherit/2);
+        width:calc(inherit/2);
+    }
+    html[data-darkreader-scheme="dark"] img.AGaudio,
+    html[data-theme="dark"] img.AGaudio {
+        filter: invert(100%);
+    }
+    tbody#booksBody {
+        box-sizing: border-box;
+    }
+    /* display which library has the book */
+    html:not(.mobile) td.AGcol>div::before {
+        content: attr(class)":";
+        font-weight: bold;
+    }
+    td.AGAVAILSINGLEBOOK>div::before {
+        content: attr(class)":";
+        font-weight: bold;
+    }
+}
+
+@-moz-document url-prefix("https://www.goodreads.com/book/") {
+    html.mobile div#AGtable {
+        max-height: 50vh !important;
+        overflow-y: auto !important;
+        width: 300px !important;
+        display: block;
+        visibility: visible;
+        box-sizing: border-box;
+    }
+    div#AGtable td.AGAVAILbookDetails {
+        box-sizing: border-box;
+        visibility: visible;
+    }
+    td.AGAVAILSINGLEBOOK>div {
+        display: flex;
+        flex-direction: row;
+    }
+    html.mobile :is(div#AGtable>table, div#AGtable>table>tbody, div#AGtable>table>tbody>tr) {
+        width: 100% !important;
+        height: 100% !important;
+        visibility: visible;
+        box-sizing: border-box;
+    }
+    div#AGtable table tr td {
+        display: flex;
+        flex-direction: column;
+    }
+}
