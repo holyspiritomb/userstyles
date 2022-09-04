@@ -37,6 +37,9 @@
         top:0px !important;
         margin-top:0px !important;
     }
+    html.withSiteHeaderTopFullImage .siteHeaderBottomSpacer{
+        padding-bottom:6rem !important;
+    }
     html.mobile * {
         font-size: var(--mobile-font-size);
         line-height: calc(2*var(--mobile-font-size));
