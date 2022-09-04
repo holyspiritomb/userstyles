@@ -23,7 +23,7 @@
         background-color: inherit !important;
         color: inherit !important;
     }
-    div.libraryExtension (a, .libextTitle, a.libTitle:link, .Library)
+    div.libraryExtension (a, .libextTitle, a.libTitle:link, .Library),
     div.ondemand a.libSearch.searchOne {
         color: initial !important;
         font-family: inherit !important;
