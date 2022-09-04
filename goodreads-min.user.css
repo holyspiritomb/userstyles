@@ -59,7 +59,18 @@
     #description,
     h1,
     h1[data-testid="bookTitle"],
+    .gr-h1--serif,
+    .gr-h2--serif,
+    .gr-h3--serif,
+    .gr-h4--serif,
+    .gr-h5--serif,
     span.ContributorLink__name[data-testid="name"],
+    .readable,
+    .readable p,
+    .readable ol,
+    .readable ul,
+    .readable td,
+    .readable th,
     * {
         font-family: var(--default-font), Roboto, sans-serif !important;
     }
