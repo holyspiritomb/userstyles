@@ -1,48 +1,42 @@
 /* ==UserStyle==
 @name           Goodreads: Library Extension Styling
 @namespace      github.com/holyspiritomb
-@version        0.0.1
+@version        0.0.2
 @description    Modifications to make LibraryExtension look better, to be used along with my main Goodreads styles.
 @author         holyspiritomb
 @homepageURL	https://github.com/holyspiritomb/personal-userstyles/blob/main/goodreads/libraryextension.user.css
 @updateURL	https://github.com/holyspiritomb/personal-userstyles/raw/main/goodreads/libraryextension.user.css
 ==/UserStyle== */
-@-moz-document url-prefix("https://www.goodreads.com/book/") {
+@-moz-document url-prefix("https://www.goodreads.com/") {
     div.libraryExtension {
-        border-bottom: 1px solid #555 !important;
-        border-top: 1px solid #555 !important;
-        border-left: 0 !important;
-        border-right: 0 !important;
-        background: transparent !important;
-        box-sizing: border-box;
-        font-family: "Lato",sans-serif !important;
-        background-color: #131516 !important;
-        color: #d8d4cf !important;
+        border-left: 0px !important;
+        border-right: 0px !important;
+        border-radius: 0% !important;
+        background-color: transparent !important;
+        font-family: inherit !important;
+        color: inherit !important;
     }
-    div.libraryExtension #libraryUserMessage {
+    div.libraryExtension #libraryUserMessage[data-name="demand"] {
         border: unset !important;
         font-size: inherit;
-        font-family: "Lato",sans-serif !important;
-        background-color: #131516 !important;
-        color: #d8d4cf !important;
+        font-family: inherit !important;
+        background-color: inherit !important;
+        color: inherit !important;
     }
     div.libraryExtension (a, .libextTitle, a.libTitle:link, .Library)
     div.ondemand a.libSearch.searchOne {
-        color: #d8d4cf !important;
-        font-family: "Lato",sans-serif !important;
+        color: initial !important;
+        font-family: inherit !important;
         font-size: inherit !important;
     }
     div.libraryExtension .libextTitle {
-        padding-top: 10px;
-        padding-bottom: 10px;
         text-decoration: underline;
         font-weight: bold;
     }
-    div.libraryExtension .libSearch {
+    div.libraryExtension a.libSearch {
         background: -webkit-linear-gradient(top, #111111 0%, #333333 100%) !important;
         background: linear-gradient(top, #111111 0%, #333333 100%) !important;
-        border: unset !important;
-        color: #d8d4cf !important;
+        border: 0px !important;
     }
 }
 @-moz-document url-prefix("https://www.goodreads.com/review/list/") {
@@ -50,9 +44,18 @@
         width: 100% !important;
         box-sizing: border-box;
         font-size: inherit !important;
-        box-sizing: border-box;
     }
 }
 
 
 
+@-moz-document url-prefix("https://www.goodreads.com/book/") {
+    div.libraryExtension {
+        border-bottom: 1px solid #555 !important;
+        border-top: 1px solid #555 !important;
+    }
+    div.libraryExtension .libextTitle {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+}
