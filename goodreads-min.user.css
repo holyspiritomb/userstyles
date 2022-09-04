@@ -1,17 +1,29 @@
 /* ==UserStyle==
 @name           Goodreads personal modifications (addons and sizes only)
 @namespace      github.com/holyspiritomb
-@version        1.22.9-3.1
+@version        1.22.9-4.0
 @description    Making goodreads look nicer for me on my phone
 @author         holyspiritomb
 @homepageURL	https://github.com/holyspiritomb/personal-userstyles/blob/main/goodreads-min.user.css
 @updateURL		https://github.com/holyspiritomb/personal-userstyles/raw/main/goodreads-min.user.css
 @var text		mobile-font-size "Mobile site font size" 12pt
-@var text		desktop-font-size "Desktop site font size" 22pt
+@var text		desktop-font-size "Desktop site font size" 18pt
 @var text		default-font "Default font" Lato
 ==/UserStyle== */
 
 @-moz-document url-prefix("https://www.goodreads.com/") {
+    @media (min-width: 981px) {
+        div.content {
+            margin: auto;
+            box-sizing: border-box;
+        }
+    }
+    @media (min-width: 1200px) {
+        main.PageFrame__main.BookPage {
+            max-width: 90vw;
+        }
+    }
+    main.PageFrame__main.BookPage,
     div.pageContent{
         background-color:rgba(0,0,0,0.4);
         border-radius:5px;
@@ -24,24 +36,6 @@
     html.withAppInstallationBanner .siteHeader {
         top:0px !important;
         margin-top:0px !important;
-    }
-    /* new goodreads book pages*/
-    main.PageFrame__main.BookPage {
-        background-color: rgba(0, 0, 0, 0.4);
-        border-radius: 5px;
-        padding: 10px;
-        box-sizing: border-box;
-    }
-    @media (min-width: 1200px) {
-        main.PageFrame__main.BookPage {
-            max-width: 90vw;
-        }
-    }
-    @media (min-width: 981px) {
-        div.content {
-            margin: auto;
-            box-sizing: border-box;
-        }
     }
     html.mobile * {
         font-size: var(--mobile-font-size);
