@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Goodreads personal modifications (addons and sizes only)
 @namespace      github.com/holyspiritomb
-@version        1.22.9-4.2
+@version        1.22.9-5.0
 @description    Making goodreads look nicer for me on my phone
 @author         holyspiritomb
 @homepageURL	https://github.com/holyspiritomb/personal-userstyles/blob/main/goodreads-min.user.css
@@ -25,7 +25,7 @@
     }
     main.PageFrame__main.BookPage,
     div.pageContent{
-        background-color:rgba(0,0,0,0.4);
+        background-color:rgba(0,0,0,0.5);
         border-radius:5px;
         padding:10px;
         box-sizing:border-box;
