@@ -40,7 +40,7 @@
     html.withSiteHeaderTopFullImage .siteHeaderBottomSpacer{
         padding-bottom:6rem !important;
     }
-    html.mobile * {
+    html.mobile {
         font-size: var(--mobile-font-size);
         line-height: calc(2*var(--mobile-font-size));
     }
