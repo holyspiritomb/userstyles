@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Goodreads: Available Reads Styling
 @namespace      github.com/holyspiritomb
-@version        0.0.5
+@version        0.0.6
 @description    Modifications to make Available Reads look better for my own use, to be used along with my main Goodreads styles.
 @author         holyspiritomb
 @homepageURL	https://github.com/holyspiritomb/personal-userstyles/blob/main/goodreads/available-reads-extension.user.css
@@ -34,14 +34,12 @@
 
 @-moz-document url-prefix("https://www.goodreads.com/book/") {
     html.mobile div#AGtable {
-        max-height: 40vh !important;
+        max-height: 30vh !important;
         overflow-y: auto !important;
         width: 80vw !important;
         display: block;
         visibility: visible;
         box-sizing: border-box;
-        position:relative;
-        right:10vw;
         backdrop-filter: blur(2px);
         /* background-color:rgba(0,0,0,0.3); */
         border-radius:5px;
@@ -53,7 +51,6 @@
     td.AGAVAILSINGLEBOOK>div {
         display: flex;
         flex-direction: row;
-        font-size:inherit;
     }
     html.mobile :is(div#AGtable>table, div#AGtable>table>tbody, div#AGtable>table>tbody>tr) {
         width: 100% !important;
