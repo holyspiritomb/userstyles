@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Goodreads: Available Reads Styling
 @namespace      github.com/holyspiritomb
-@version        0.0.1
+@version        0.0.2
 @description    Modifications to make Available Reads look better, to be used along with my main Goodreads styles.
 @author         holyspiritomb
 @homepageURL	https://github.com/holyspiritomb/personal-userstyles/blob/main/goodreads/available-reads-extension.user.css
@@ -28,6 +28,7 @@
     td.AGAVAILSINGLEBOOK>div::before {
         content: attr(class)":";
         font-weight: bold;
+        flex-basis:7em;
     }
 }
 
