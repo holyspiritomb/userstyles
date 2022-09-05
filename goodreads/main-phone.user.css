@@ -1,0 +1,239 @@
+/* ==UserStyle==
+@name           Goodreads personal modifications
+@namespace      github.com/holyspiritomb
+@version        1.22.9-3.1
+@description    Making goodreads look nicer for me on my phone
+@author         holyspiritomb
+@homepageURL	https://github.com/holyspiritomb/personal-userstyles/blob/main/goodreads.user.css
+@updateURL		https://github.com/holyspiritomb/personal-userstyles/raw/main/goodreads.user.css
+@var text		mobile-font-size "Mobile site font size" 12pt
+@var text		desktop-font-size "Desktop site font size" 22pt
+@var text		default-font "Default font" Lato
+==/UserStyle== */
+
+@-moz-document url-prefix("https://www.goodreads.com/") {
+    @media (max-width: 980px) {
+        div.content {
+            margin: auto;
+            box-sizing: border-box;
+        }
+        div.pageContent {
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+        html.mobile[style],
+        html.mobile div.siteHeader,
+        html.withSiteHeaderTopFullImage .siteHeaderBottomSpacer,
+        html.withAppInstallationBanner .siteHeader {
+            top: 0px !important;
+            margin-top: 0px !important;
+        }
+        html.mobile div#smartbanner {
+            display: none;
+        }
+        :is(td.field, th.header):is(.actions, .avg_rating, .date_added, .date_pub, .date_pub_edition, .asin, .format, .rating) {
+            display: none;
+        }
+    }
+    /* new goodreads book pages*/
+    main.PageFrame__main.BookPage {
+        background-color: rgba(0, 0, 0, 0.4);
+        border-radius: 5px;
+        padding: 10px;
+        box-sizing: border-box;
+    }
+    @media (min-width: 1200px) {
+        main.PageFrame__main.BookPage {
+            max-width: 90vw;
+        }
+    }
+    @media (min-width: 981px) {
+        div.content {
+            width: 960px;
+            margin: auto;
+            box-sizing: border-box;
+        }
+        div.siteHeader {
+            left: 0px !important;
+        }
+        html.withSiteHeaderTopFullImage .siteHeaderBottomSpacer {
+            padding-bottom: 5rem !important;
+        }
+    }
+    html.mobile * {
+        font-size: var(--mobile-font-size);
+        line-height: calc(2*var(--mobile-font-size));
+    }
+    html.desktop * {
+        font-size: var(--desktop-font-size);
+        line-height: calc(2*var(--desktop-font-size));
+    }
+    html.withSiteHeaderTopFullImage .siteHeaderBottomSpacer {
+        padding-bottom: 7rem;
+    }
+    html:not(.mobile) ul.siteHeader__menuList>li.siteHeader__topLevelItem>a,
+    html:not(.mobile) ul.siteHeader__menuList>li.siteHeader__topLevelItem>div>a>span {
+        line-height: calc(1.5*var(--desktop-font-size));
+        font-size: calc(0.75*var(--desktop-font-size));
+    }
+    #bookTitle,
+    h1.bookTitle,
+    h1.bookTitle cite,
+    cite.bookTitle,
+    #bookAuthors .authorName,
+    #bookAuthors .by,
+    #description,
+    h1,
+    h1[data-testid="bookTitle"],
+    span.ContributorLink__name[data-testid="name"],
+    * {
+        font-family: var(--default-font), "Roboto", sans-serif !important;
+    }
+    h2.brownBackground,
+    h2.brownBackground a {
+        font-size: var(--desktop-font-size) !important;
+    }
+    span.headerPersonalNav__flag {
+        display: none;
+    }
+    #bookTitle {
+        font-size: calc(2*var(--desktop-font-size));
+    }
+    h1.bookTitle {
+        font-size: calc(2*var(--mobile-font-size));
+    }
+    html.desktop footer.responsiveSiteFooter,
+    .siteHeader__topFullImageContainer {
+        display: none;
+    }
+}
+
+@-moz-document url-prefix("https://www.goodreads.com/list/show/") {
+    /* listopia */
+    div.rightContainer {
+        display: none;
+    }
+    html.desktop .content {
+        width: 100%;
+        box-sizing: border-box;
+    }
+    html.desktop .mainContentContainer,
+    html.desktop .mainContentContainer .mainContent,
+    html.desktop .mainContentContainer .mainContent .mainContentFloat .leftContainer {
+        width: 100%;
+        box-sizing: border-box;
+    }
+    html.desktop .mainContentContainer .mainContent .mainContentFloat {
+        width: 92%;
+        box-sizing: border-box;
+    }
+}
+
+@-moz-document url-prefix("https://www.goodreads.com/review/list/") {
+    div#flashContainer,
+    div#leadercol :is(div.myBooksNav > ul > li > span, div#header),
+    div.myBooksSearch,
+    div#leftCol,
+    div#side {
+        display: none;
+    }
+    html.desktop .mainContentContainer .mainContent {
+        width: 100% !important;
+        box-sizing: border-box;
+    }
+    html.desktop .mainContentContainer .mainContent .mainContentFloat {
+        width: 98% !important;
+        box-sizing: border-box;
+    }
+    .siteHeaderBottomSpacer {
+        display: block;
+    }
+    @media (min-width: 500px) {
+        html.desktop.withSiteHeaderTopFullImage .siteHeaderBottomSpacer {
+            padding-bottom: 100px !important;
+        }
+    }
+    ul.personalNav>li:not(:last-child) {
+        display: none;
+    }
+    html.desktop table#books {
+        width: 100% !important;
+        box-sizing: border-box;
+    }
+    div.right.uitext {
+        float: left !important;
+    }
+    /* to make the page stay a certain width on my phone */
+    form#perPageForm,
+    form#sortForm,
+    div#reviewPagination {
+        display: block;
+    }
+}
+
+@-moz-document url-prefix("https://www.goodreads.com/book/") {
+    /* single book page */
+    div.rightContainer,
+    div#controls,
+    #premiumAdTop,
+    span#rating_graph,
+    div#choiceBadge,
+    div#flashContainer,
+    div#smartbanner {
+        display: none;
+    }
+    html.desktop .mainContentContainer .mainContent,
+    html.desktop .mainContentContainer .mainContent .mainContentFloat .leftContainer {
+        width: 100% !important;
+        box-sizing: border-box;
+    }
+    html.desktop .mainContentContainer .mainContent .mainContentFloat {
+        width: 92%;
+        box-sizing: border-box;
+    }
+    html.desktop div[id].wtrButtonContainer,
+    html.desktop .wtrButtonContainer .wtrLeft,
+    html.desktop .wtrButtonContainer .wtrLeft span,
+    html.desktop .wtrButtonContainer .wtrLeft button {
+        font-size: 12px;
+        line-height: 15px;
+        vertical-align: 100%;
+        height: 28px;
+    }
+    html.desktop .wtrButtonContainer .wtrLeft.wtrDown {
+        padding: 0;
+        border: 0;
+        box-sizing: border-box;
+    }
+    html.desktop .wtrButtonContainer .wtrLeft button {
+        position: relative;
+        top: 3px;
+        left: 2px;
+        box-sizing: border-box;
+    }
+    @media (max-width: 980px) {
+        html.desktop #imagecol {
+            position: absolute;
+            left: 68%;
+            box-sizing: border-box;
+            /*top: 175px;*/
+        }
+        html.desktop #metacol {
+            width: 67%;
+            box-sizing: border-box;
+        }
+        html.mobile div.bookInfoGroup {
+            width: calc(414px-75px);
+        }
+    }
+    @media (min-width: 981px) {
+        html.desktop .content,
+        html.desktop header {
+            width: 960px;
+            box-sizing: border-box;
+        }
+        html.desktop #imagecol {
+            float: right;
+            box-sizing: border-box;
+        }
+    }
+}
