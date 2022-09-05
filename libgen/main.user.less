@@ -9,11 +9,6 @@
 @preprocessor   less
 ==/UserStyle== */
 
-@font-main: "Lato","Roboto",sans-serif;
-@fg: #ddd;
-@fg-accent: #dc3357;
-@bg: #111;
-@bg-accent: lighten(@bg,10%);
 
 @-moz-document domain("185.39.10.101"),
 domain("93.174.95.27"),
@@ -28,6 +23,12 @@ domain("libgen.lc"),
 domain("libgen.li"),
 domain("libgen.rs"),
 domain("library.lol") {
+    @font-main: "Lato","Roboto",sans-serif;
+    @fg: #ddd;
+    @fg-accent: #dc3357;
+    @bg: #111;
+    @bg-accent: lighten(@bg,10%);
+
     @font-face {
         font-family: 'Lato';
         font-style: normal;
@@ -35,8 +36,6 @@ domain("library.lol") {
         font-display: swap;
         src: url(https://fonts.gstatic.com/s/lato/v23/S6uyw4BMUTPHvxk.ttf) format('truetype');
     }
-    a[title] font,
-    a[title],
     body,
     font,
     form,
@@ -47,6 +46,19 @@ domain("library.lol") {
     textarea {
         font-family: @font-main;
         color: @fg;
+    }
+    body {
+        background-color: @bg;
+    }
+    a{
+        color: @fg-accent;
+        &[title]{
+            color: @fg-accent;
+            font{
+                color: @fg-accent;
+            }
+        }
+
     }
     input,
     select {
