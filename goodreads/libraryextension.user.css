@@ -1,12 +1,13 @@
 /* ==UserStyle==
 @name           Goodreads: Library Extension Styling
 @namespace      github.com/holyspiritomb
-@version        0.0.2
+@version        0.0.3
 @description    Modifications to make LibraryExtension look better, to be used along with my main Goodreads styles.
 @author         holyspiritomb
 @homepageURL	https://github.com/holyspiritomb/personal-userstyles/blob/main/goodreads/libraryextension.user.css
 @updateURL	https://github.com/holyspiritomb/personal-userstyles/raw/main/goodreads/libraryextension.user.css
 ==/UserStyle== */
+
 @-moz-document url-prefix("https://www.goodreads.com/") {
     div.libraryExtension {
         border-left: 0px !important;
@@ -23,7 +24,9 @@
         background-color: inherit !important;
         color: inherit !important;
     }
-    div.libraryExtension (a, .libextTitle, a.libTitle:link, .Library),
+    div.libraryExtension a, 
+    .libextTitle,
+    a.libTitle:link, .Library,
     div.ondemand a.libSearch.searchOne {
         color: initial !important;
         font-family: inherit !important;
@@ -39,6 +42,7 @@
         border: 0px !important;
     }
 }
+
 @-moz-document url-prefix("https://www.goodreads.com/review/list/") {
     div.libraryExtension {
         width: 100% !important;
@@ -46,8 +50,6 @@
         font-size: inherit !important;
     }
 }
-
-
 
 @-moz-document url-prefix("https://www.goodreads.com/book/") {
     div.libraryExtension {
