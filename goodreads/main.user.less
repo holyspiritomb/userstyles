@@ -6,17 +6,14 @@
 @author         holyspiritomb
 @homepageURL	https://github.com/holyspiritomb/personal-userstyles/blob/main/goodreads/main.user.less
 @updateURL		https://github.com/holyspiritomb/personal-userstyles/raw/main/goodreads/main.user.less
-@var text		mobile-font-size "Mobile site font size" 12pt
-@var text		desktop-font-size "Desktop site font size" 18pt
-@var text		default-font "Default font" Lato
 @preprocessor   less
 ==/UserStyle== */
 @-moz-document regexp('https://www\\.goodreads\\.com/(?!book/add_to_books_widget/).*') {
 
     html {
         &.desktop{
-            font-size: var(--desktop-font-size);
-            line-height: calc(2*var(--desktop-font-size));
+            font-size: 18pt;
+            line-height: calc(1.4*18pt);
         }
         &.withAppInstallationBanner {
             .siteHeader{
@@ -31,8 +28,8 @@
             }
         }
         &.mobile{
-            font-size: var(--mobile-font-size);
-            line-height: calc(2*var(--mobile-font-size));
+            font-size: 12pt;
+            line-height: calc(1.4*12pt);
             &[style]{
                 
             }
