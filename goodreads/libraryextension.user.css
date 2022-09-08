@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Goodreads: Library Extension Styling
 @namespace      github.com/holyspiritomb
-@version        0.0.3
+@version        0.0.4
 @description    Modifications to make LibraryExtension look better, to be used along with my main Goodreads styles.
 @author         holyspiritomb
 @homepageURL	https://github.com/holyspiritomb/personal-userstyles/blob/main/goodreads/libraryextension.user.css
@@ -25,8 +25,9 @@
         color: inherit !important;
     }
     div.libraryExtension a, 
-    .libextTitle,
-    a.libTitle:link, .Library,
+    div.libraryExtension .libextTitle,
+    div.libraryExtension a.libTitle:link, 
+    div.libraryExtension .Library,
     div.ondemand a.libSearch.searchOne {
         color: initial !important;
         font-family: inherit !important;
