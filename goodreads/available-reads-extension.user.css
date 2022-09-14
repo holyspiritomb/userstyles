@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Goodreads: Available Reads Styling
 @namespace      github.com/holyspiritomb
-@version        0.0.7
+@version        0.0.8
 @description    Modifications to make Available Reads look better for my own use, to be used along with my main Goodreads styles.
 @author         holyspiritomb
 @homepageURL	https://github.com/holyspiritomb/personal-userstyles/blob/main/goodreads/available-reads-extension.user.css
@@ -25,7 +25,8 @@
         content: attr(class)":";
         font-weight: bold;
     }
-    td.AGAVAILSINGLEBOOK>div::before {
+    td.AGAVAILSINGLEBOOK>div::before,
+    #libby-results>div::before{
         content: attr(class)":";
         font-weight: bold;
         flex-basis:6.5em;
@@ -33,7 +34,8 @@
 }
 
 @-moz-document url-prefix("https://www.goodreads.com/book/") {
-    html.mobile div#AGtable {
+    html.mobile div#AGtable,
+    html.mobile #libby-results{
         max-height: 30vh !important;
         overflow-y: auto !important;
         width: 80vw !important;
@@ -52,7 +54,8 @@
         box-sizing: border-box;
         visibility: visible;
     }
-    td.AGAVAILSINGLEBOOK>div {
+    td.AGAVAILSINGLEBOOK>div,
+    #libby-results>div{
         display: flex;
         flex-direction: row;
     }
@@ -62,7 +65,8 @@
         visibility: visible;
         box-sizing: border-box;
     }
-    div#AGtable table tr td {
+    div#AGtable table tr td,
+    #libby-results{
         display: flex;
         flex-direction: column;
     }
