@@ -8,7 +8,8 @@
 @updateURL	https://github.com/holyspiritomb/personal-userstyles/raw/main/goodreads/libraryextension.user.css
 ==/UserStyle== */
 
-@-moz-document url-prefix("https://www.goodreads.com/") {
+@-moz-document url-prefix('https://www.goodreads.com/') {
+
     div.libraryExtension {
         border-left: 0px !important;
         border-right: 0px !important;
@@ -17,20 +18,22 @@
         font-family: inherit !important;
         color: inherit !important;
     }
+
     div.libraryExtension #libraryUserMessage,
     div.libraryExtension #libraryUserMessage div,
-    div.libraryExtension #libraryUserMessage[data-name="demand"] {
+    div.libraryExtension #libraryUserMessage[data-name='demand'] {
         border: unset !important;
         font-size: inherit;
         font-family: inherit !important;
         background-color: inherit !important;
         color: inherit !important;
     }
-    div.libraryExtension a, 
+
+    div.libraryExtension a,
     div.libraryExtension .libextTitle,
     div.libraryExtension .libextTitle span,
     div.libraryExtension .libextTitle span a,
-    div.libraryExtension a.libTitle:link, 
+    div.libraryExtension a.libTitle:link,
     div.libraryExtension .Library a.libTitle span,
     div.ondemand,
     div.ondemand a.libSearch.searchOne {
@@ -38,10 +41,12 @@
         font-family: inherit !important;
         font-size: inherit !important;
     }
+
     div.libraryExtension .libextTitle {
         text-decoration: underline;
         font-weight: bold;
     }
+
     div.libraryExtension a.libSearch {
         background: -webkit-linear-gradient(top, #111111 0%, #333333 100%) !important;
         background: linear-gradient(top, #111111 0%, #333333 100%) !important;
@@ -49,7 +54,8 @@
     }
 }
 
-@-moz-document url-prefix("https://www.goodreads.com/review/list/") {
+@-moz-document url-prefix('https://www.goodreads.com/review/list/') {
+
     div.libraryExtension {
         width: 100% !important;
         box-sizing: border-box;
@@ -57,11 +63,13 @@
     }
 }
 
-@-moz-document url-prefix("https://www.goodreads.com/book/") {
+@-moz-document url-prefix('https://www.goodreads.com/book/') {
+
     div.libraryExtension {
         border-bottom: 1px solid #555 !important;
         border-top: 1px solid #555 !important;
     }
+
     div.libraryExtension .libextTitle {
         padding-top: 10px;
         padding-bottom: 10px;
