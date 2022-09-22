@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Goodreads personal modifications
 @namespace      github.com/holyspiritomb
-@version        1.22.9-5.0
+@version        1.22.9-21.0
 @description    Making goodreads look nicer for me on my phone
 @author         holyspiritomb
 @homepageURL	https://github.com/holyspiritomb/personal-userstyles/blob/main/goodreads/main-phoneuser.css
@@ -21,9 +21,9 @@
         }
 
         div.pageContent {
-            background-color: rgba(0, 0, 0, 0.4);
+            background-color: rgba(0, 0, 0, 40%);
         }
-        
+
         html.mobile[style],
         html.mobile div.siteHeader,
         html.withSiteHeaderTopFullImage .siteHeaderBottomSpacer,
@@ -31,7 +31,7 @@
             top: 0px !important;
             margin-top: 0px !important;
         }
-        
+
         html.mobile div#smartbanner {
             display: none;
         }
@@ -67,16 +67,20 @@
             padding-bottom: 5rem !important;
         }
     }
-    html.mobile * {
+    html.mobile {
         font-size: var(--mobile-font-size);
         line-height: calc(2*var(--mobile-font-size));
     }
-    html.desktop * {
+    html.desktop {
         font-size: var(--desktop-font-size);
         line-height: calc(2*var(--desktop-font-size));
     }
     html.withSiteHeaderTopFullImage .siteHeaderBottomSpacer {
         padding-bottom: 7rem;
+    }
+    h2.brownBackground,
+    h2.brownBackground a {
+        font-size: var(--desktop-font-size) !important;
     }
     html:not(.mobile) ul.siteHeader__menuList > li.siteHeader__topLevelItem > a,
     html:not(.mobile) ul.siteHeader__menuList > li.siteHeader__topLevelItem > div > a > span {
@@ -92,13 +96,8 @@
     #description,
     h1,
     h1[data-testid='bookTitle'],
-    span.ContributorLink__name[data-testid='name'],
-    * {
-        font-family: var(--default-font), 'Roboto', sans-serif !important;
-    }
-    h2.brownBackground,
-    h2.brownBackground a {
-        font-size: var(--desktop-font-size) !important;
+    span.ContributorLink__name[data-testid='name'] {
+        font-family: var(--default-font), Roboto, sans-serif !important;
     }
     span.headerPersonalNav__flag {
         display: none;
