@@ -59,11 +59,13 @@
         display: flex;
         flex-direction: row;
     }
-    html.mobile :is(div#AGtable>table, div#AGtable>table>tbody, div#AGtable>table>tbody>tr) {
+    html :is(div#AGtable>table, div#AGtable>table>tbody, div#AGtable>table>tbody>tr) {
         width: 100% !important;
-        height: 100% !important;
         visibility: visible;
         box-sizing: border-box;
+    }
+    html.mobile :is(div#AGtable>table, div#AGtable>table>tbody, div#AGtable>table>tbody>tr) {
+        height: 100% !important;
     }
     div#AGtable table tr td,
     #libby-results{
