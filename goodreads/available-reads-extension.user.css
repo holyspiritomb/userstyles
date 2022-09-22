@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Goodreads: Available Reads Styling
 @namespace      github.com/holyspiritomb
-@version        0.0.9
+@version        0.0.10
 @description    Modifications to make Available Reads look better for my own use, to be used along with my main Goodreads styles.
 @author         holyspiritomb
 @homepageURL	https://github.com/holyspiritomb/personal-userstyles/blob/main/goodreads/available-reads-extension.user.css
@@ -39,7 +39,7 @@
     html.mobile #libby-results {
         max-height: 30vh !important;
         overflow-y: auto !important;
-        width: 80vw !important;
+        width: 70vw !important;
         display: block;
         visibility: visible;
         box-sizing: border-box;
