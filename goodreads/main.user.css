@@ -13,8 +13,8 @@
 @-moz-document regexp('https://www\\.goodreads\\.com/(?!book/add_to_books_widget/).*') {
     @media (min-width: 981px) {
         div.content {
-            margin: auto;
             box-sizing: border-box;
+            margin: auto;
         }
     }
     @media (min-width: 1200px) {
@@ -23,21 +23,21 @@
         }
     }
     main.PageFrame__main.BookPage,
-    div.pageContent{
-        background-color:rgba(0,0,0,0.5);
-        border-radius:5px;
-        padding:10px;
-        box-sizing:border-box;
+    div.pageContent {
+        background-color: rgba(0, 0, 0, 50%);
+        border-radius: 5px;
+        padding: 10px;
+        box-sizing: border-box;
     }
     html.mobile[style],
     html.mobile div.siteHeader,
     html.withSiteHeaderTopFullImage .siteHeaderBottomSpacer,
     html.withAppInstallationBanner .siteHeader {
-        top:0px !important;
-        margin-top:0px !important;
+        top: 0px !important;
+        margin-top: 0px !important;
     }
-    html.withSiteHeaderTopFullImage .siteHeaderBottomSpacer{
-        padding-bottom:6rem !important;
+    html.withSiteHeaderTopFullImage .siteHeaderBottomSpacer {
+        padding-bottom: 6rem !important;
     }
     html.mobile {
         font-size: var(--mobile-font-size);
@@ -54,20 +54,19 @@
     #bookAuthors .by,
     #description,
     h1,
-    h1[data-testid="bookTitle"],
+    h1[data-testid='bookTitle'],
     .gr-h1--serif,
     .gr-h2--serif,
     .gr-h3--serif,
     .gr-h4--serif,
     .gr-h5--serif,
-    span.ContributorLink__name[data-testid="name"],
+    span.ContributorLink__name[data-testid='name'],
     .readable,
     .readable p,
     .readable ol,
     .readable ul,
     .readable td,
-    .readable th,
-    * {
+    .readable th {
         font-family: var(--default-font), Roboto, sans-serif !important;
     }
     h2.brownBackground,
@@ -84,12 +83,13 @@
     }
 }
 
-@-moz-document url-prefix("https://www.goodreads.com/review/list/") {
+@-moz-document url-prefix('https://www.goodreads.com/review/list/') {
     /* my booklists */
     html.desktop table#books {
         width: 100% !important;
         box-sizing: border-box;
     }
+
     /* to make the page stay a certain width on my phone */
     form#perPageForm,
     form#sortForm,
@@ -98,7 +98,7 @@
     }
 }
 
-@-moz-document url-prefix("https://www.goodreads.com/book/") {
+@-moz-document url-prefix('https://www.goodreads.com/book/') {
     /* single book page */
     #premiumAdTop,
     span#rating_graph,
