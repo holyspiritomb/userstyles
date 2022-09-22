@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Dark and cleaned-up Library Genesis
 @namespace      github.com/holyspiritomb
-@version        0.0.1
+@version        0.0.2
 @description    Making libgen look nicer for me
 @author         holyspiritomb
 @homepageURL	https://github.com/holyspiritomb/personal-userstyles/blob/main/libgen/main.user.less
@@ -9,32 +9,31 @@
 @preprocessor   less
 ==/UserStyle== */
 
-
-@-moz-document domain("185.39.10.101"),
-domain("93.174.95.27"),
-domain("93.174.95.29"),
-domain("bkdscr.se"),
-domain("booksdescr.org"),
-domain("gen.lib.rus.ec"),
-domain("libgen.gs"),
-domain("libgen.io"),
-domain("libgen.is"),
-domain("libgen.lc"),
-domain("libgen.li"),
-domain("libgen.rs"),
-domain("library.lol") {
-    @font-main: "Lato","Roboto",sans-serif;
+@-moz-document domain('185.39.10.101'),
+    domain('93.174.95.27'),
+    domain('93.174.95.29'),
+    domain('bkdscr.se'),
+    domain('booksdescr.org'),
+    domain('gen.lib.rus.ec'),
+    domain('libgen.gs'),
+    domain('libgen.io'),
+    domain('libgen.is'),
+    domain('libgen.lc'),
+    domain('libgen.li'),
+    domain('libgen.rs'),
+    domain('library.lol') {
+    @font-main: 'Lato','Roboto',sans-serif;
     @fg: #ddd;
     @fg-accent: #dc3357;
     @bg: #111;
     @bg-accent: lighten(@bg,10%);
 
     @font-face {
-        font-family: 'Lato';
+        font-family: Lato;
         font-style: normal;
         font-weight: 400;
         font-display: swap;
-        src: url(https://fonts.gstatic.com/s/lato/v23/S6uyw4BMUTPHvxk.ttf) format('truetype');
+        src: url('https://fonts.gstatic.com/s/lato/v23/S6uyw4BMUTPHvxk.ttf') format('truetype');
     }
     font,
     input,
@@ -47,21 +46,20 @@ domain("library.lol") {
     body {
         background-color: @bg;
     }
-    a{
+    a {
         color: @fg-accent;
-        &[title]{
+        &[title] {
             color: @fg-accent;
-            font{
+            font {
                 color: @fg-accent;
             }
         }
-
     }
     input,
     select,
     textarea {
         accent-color: @fg-accent;
         color: @fg;
-        background-color:@bg-accent;
+        background-color: @bg-accent;
     }
 }
