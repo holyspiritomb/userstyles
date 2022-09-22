@@ -1,41 +1,42 @@
 /* ==UserStyle==
 @name           Goodreads: Available Reads Styling
 @namespace      github.com/holyspiritomb
-@version        0.0.8
+@version        0.0.9
 @description    Modifications to make Available Reads look better for my own use, to be used along with my main Goodreads styles.
 @author         holyspiritomb
 @homepageURL	https://github.com/holyspiritomb/personal-userstyles/blob/main/goodreads/available-reads-extension.user.css
 @updateURL      https://github.com/holyspiritomb/personal-userstyles/raw/main/goodreads/available-reads-extension.user.css
 ==/UserStyle== */
-@-moz-document url-prefix("https://www.goodreads.com/") {
+@-moz-document url-prefix('https://www.goodreads.com/') {
     img.AGaudio {
         display: inline-block;
-        height:calc(inherit/1.75);
-        width:calc(inherit/1.75);
+        height: calc(inherit/1.75);
+        width: calc(inherit/1.75);
     }
-    html[data-darkreader-scheme="dark"] img.AGaudio,
-    html[data-theme="dark"] img.AGaudio {
+    html[data-darkreader-scheme='dark'] img.AGaudio,
+    html[data-theme='dark'] img.AGaudio {
         filter: invert(100%);
     }
     tbody#booksBody {
         box-sizing: border-box;
     }
+
     /* display which library has the book */
-    td.AGcol>div::before {
-        content: attr(class)":";
+    td.AGcol > div::before {
+        content: attr(class) ':';
         font-weight: bold;
     }
-    td.AGAVAILSINGLEBOOK>div::before,
-    #libby-results>div::before{
-        content: attr(class)":";
+    td.AGAVAILSINGLEBOOK > div::before,
+    #libby-results > div::before {
+        content: attr(class) ':';
         font-weight: bold;
-        flex-basis:6.5em;
+        flex-basis: 6.5em;
     }
 }
 
-@-moz-document url-prefix("https://www.goodreads.com/book/") {
+@-moz-document url-prefix('https://www.goodreads.com/book/') {
     html.mobile div#AGtable,
-    html.mobile #libby-results{
+    html.mobile #libby-results {
         max-height: 30vh !important;
         overflow-y: auto !important;
         width: 80vw !important;
@@ -43,19 +44,15 @@
         visibility: visible;
         box-sizing: border-box;
         backdrop-filter: blur(2px);
-        /* background-color:rgba(0,0,0,0.3); */
-        border-radius:5px;
-    }
-    html.desktop div#AGtable>table {
-        width: 80vw;
+        border-radius: 5px;
     }
 
     div#AGtable td.AGAVAILbookDetails {
         box-sizing: border-box;
         visibility: visible;
     }
-    td.AGAVAILSINGLEBOOK>div,
-    #libby-results>div{
+    td.AGAVAILSINGLEBOOK > div,
+    #libby-results > div {
         display: flex;
         flex-direction: row;
     }
@@ -67,8 +64,8 @@
     html.mobile :is(div#AGtable>table, div#AGtable>table>tbody, div#AGtable>table>tbody>tr) {
         height: 100% !important;
     }
-    div#AGtable table tr td,
-    #libby-results{
+    #libby-results,
+    div#AGtable table tr td {
         display: flex;
         flex-direction: column;
     }
