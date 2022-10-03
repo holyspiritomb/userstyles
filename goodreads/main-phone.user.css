@@ -36,7 +36,7 @@
             display: none;
         }
 
-        :is(td.field, th.header):is(.actions, .avg_rating, .date_added, .date_pub, .date_pub_edition, .asin, .format, .rating) {
+        :is(td.field, th.header):is(.avg_rating, .date_added, .date_pub, .date_pub_edition, .asin, .format, .rating) {
             display: none;
         }
     }
@@ -223,7 +223,6 @@
             position: absolute;
             left: 68%;
             box-sizing: border-box;
-            /* top: 175px; */
         }
         html.desktop #metacol {
             width: 67%;
