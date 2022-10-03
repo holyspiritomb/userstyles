@@ -172,9 +172,11 @@
 
     /* to make the page stay a certain width on my phone */
     form#perPageForm,
-    form#sortForm,
     div#reviewPagination {
         display: block;
+    }
+    form#sortForm {
+        display: none;
     }
 }
 
