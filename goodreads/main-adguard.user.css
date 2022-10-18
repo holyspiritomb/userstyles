@@ -5,10 +5,7 @@
 @description    Making goodreads look nicer for me on my phone
 @author         holyspiritomb
 @homepageURL	https://github.com/holyspiritomb/personal-userstyles/blob/main/goodreads/main.user.css
-@updateURL		https://github.com/holyspiritomb/personal-userstyles/raw/main/goodreads/main.user.css
-@var text		mobile-font-size "Mobile site font size" 12pt
-@var text		desktop-font-size "Desktop site font size" 18pt
-@var text		default-font "Default font" Lato
+@updateURL		https://github.com/holyspiritomb/personal-userstyles/raw/main/goodreads/main-adguard.user.css
 ==/UserStyle== */
 @-moz-document regexp('https://www\\.goodreads\\.com/(?!book/add_to_books_widget/).*') {
     @media (min-width: 981px) {
@@ -40,12 +37,12 @@
         padding-bottom: 6rem !important;
     }
     html.mobile {
-        font-size: var(--mobile-font-size);
-        line-height: calc(2*var(--mobile-font-size));
+        font-size: 12pt;
+        line-height: calc(2*12pt);
     }
     html.desktop * {
-        font-size: var(--desktop-font-size);
-        line-height: calc(2*var(--desktop-font-size));
+        font-size: 18pt;
+        line-height: calc(2*18pt);
     }
     #bookTitle,
     h1.bookTitle,
@@ -68,19 +65,19 @@
     .readable ul,
     .readable td,
     .readable th {
-        font-family: var(--default-font), Roboto, sans-serif !important;
+        font-family: 'Lato', Lato, Roboto, sans-serif !important;
     }
     h2.brownBackground,
     h2.brownBackground a {
-        font-size: var(--desktop-font-size) !important;
+        font-size: 18pt !important;
     }
     #bookTitle {
-        font-size: calc(2*var(--desktop-font-size));
+        font-size: calc(2*18pt);
     }
     h1.bookTitle,
     h1.bookTitle cite,
     cite.bookTitle {
-        font-size: calc(2*var(--mobile-font-size));
+        font-size: calc(2*12pt);
     }
 }
 
