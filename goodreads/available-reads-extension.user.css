@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Goodreads: Available Reads Styling
 @namespace      github.com/holyspiritomb
-@version        0.0.11
+@version        0.0.12
 @description    Modifications to make Available Reads look better for my own use, supplementing my main Goodreads style.
 @author         holyspiritomb
 @homepageURL	https://github.com/holyspiritomb/personal-userstyles/blob/main/goodreads/available-reads-extension.user.css
@@ -10,8 +10,8 @@
 @-moz-document url-prefix('https://www.goodreads.com/') {
     img.AGaudio {
         display: inline-block;
-        height: calc(inherit/1.75);
-        width: calc(inherit/1.75);
+        height: calc(inherit/1.25);
+        width: calc(inherit/1.25);
     }
     html[data-darkreader-scheme='dark'] img.AGaudio,
     html[data-theme='dark'] img.AGaudio {
