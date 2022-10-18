@@ -4,6 +4,7 @@
 @version        1.0.1
 @description    Use Victor Mono as the monospace font on github.
 @author         holyspiritomb
+@license        MIT
 @updateURL		https://github.com/holyspiritomb/personal-userstyles/raw/main/github/fonts.user.css
 ==/UserStyle== */
 @import url('https://cdn.jsdelivr.net/npm/victormono@latest/dist/index.min.css');
