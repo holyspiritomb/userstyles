@@ -6,9 +6,8 @@
 @author         holyspiritomb
 @updateURL		https://github.com/holyspiritomb/personal-userstyles/raw/main/github/fonts.user.css
 ==/UserStyle== */
-
+@import url('https://cdn.jsdelivr.net/npm/victormono@latest/dist/index.min.css');
 @-moz-document url-prefix('https://github.com/') {
-    @import url('https://cdn.jsdelivr.net/npm/victormono@latest/dist/index.min.css');
 
     /* @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap'); */
 
