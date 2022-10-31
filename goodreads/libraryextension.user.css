@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Goodreads: Library Extension Styling
 @namespace      github.com/holyspiritomb
-@version        0.0.5
+@version        0.0.6
 @description    Modifications to make LibraryExtension look better, to be used along with my main Goodreads styles.
 @author         holyspiritomb
 @homepageURL	https://github.com/holyspiritomb/personal-userstyles/blob/main/goodreads/libraryextension.user.css
@@ -11,12 +11,16 @@
 @-moz-document url-prefix('https://www.goodreads.com/') {
 
     div.libraryExtension {
-        border-left: 0px !important;
-        border-right: 0px !important;
+        border-left: 0 !important;
+        border-right: 0 !important;
         border-radius: 0% !important;
         background-color: transparent !important;
-        font-family: inherit !important;
+        font-family: Lato, sans-serif !important;
         color: inherit !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        max-height:40vh !important;
+        overflow-y: auto !important;
     }
 
     div.libraryExtension #libraryUserMessage,
@@ -30,15 +34,24 @@
     }
 
     div.libraryExtension a,
+    div.libraryExtension .libTitle,
+    div.libraryExtension a .libTitle:link,
+    div.libraryExtension a .link,
+    div.libraryExtension .libName,
+    div.libraryExtension select,
     div.libraryExtension .libextTitle,
     div.libraryExtension .libextTitle span,
     div.libraryExtension .libextTitle span a,
-    div.libraryExtension a.libTitle:link,
     div.libraryExtension .Library a.libTitle span,
     div.ondemand,
-    div.ondemand a.libSearch.searchOne {
+    div.ondemand a.libSearch.searchOne,
+    div.libraryExtension .libSearch,
+    div.libraryExtension .libHold,
+    div.libraryExtension .libHold :link,
+    div.libraryExtension .libMoreResults,
+    div.libraryExtension .libMoreResults :link {
         color: inherit !important;
-        font-family: inherit !important;
+        font-family: Lato, sans-serif !important;
         font-size: inherit !important;
     }
 
@@ -50,7 +63,7 @@
     div.libraryExtension a.libSearch {
         background: -webkit-linear-gradient(top, #111111 0%, #333333 100%) !important;
         background: linear-gradient(top, #111111 0%, #333333 100%) !important;
-        border: 0px !important;
+        border: 0 !important;
     }
 }
 
@@ -64,10 +77,18 @@
 }
 
 @-moz-document url-prefix('https://www.goodreads.com/book/') {
-
     div.libraryExtension {
         border-bottom: 1px solid #555 !important;
         border-top: 1px solid #555 !important;
+        border-left: 0 !important;
+        border-right: 0 !important;
+    }
+
+    html:not(.desktop) div.libraryExtension {
+        border-left: 1px solid #555 !important;
+        border-right: 1px solid #555 !important;
+        background-color: rgba(0,0,0,0.5) !important;
+        backdrop-filter: blur(2px);
     }
 
     div.libraryExtension .libextTitle {

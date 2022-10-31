@@ -1,11 +1,11 @@
 /* ==UserStyle==
 @name           Goodreads personal modifications (sizes only)
 @namespace      github.com/holyspiritomb
-@version        1.22.10-18.0
+@version        1.22.10-31.0
 @description    Making goodreads look nicer for me on my phone
 @author         holyspiritomb
-@homepageURL	https://github.com/holyspiritomb/personal-userstyles/blob/main/goodreads/main.user.css
-@updateURL		https://github.com/holyspiritomb/personal-userstyles/raw/main/goodreads/main-adguard.user.css
+@homepageURL	https://github.com/holyspiritomb/userstyles/blob/main/goodreads/main.user.css
+@updateURL		https://github.com/holyspiritomb/userstyles/raw/main/goodreads/main-adguard.user.css
 ==/UserStyle== */
 @-moz-document regexp('https://www\\.goodreads\\.com/(?!book/add_to_books_widget/).*') {
     @media (min-width: 981px) {
@@ -26,21 +26,27 @@
         padding: 10px;
         box-sizing: border-box;
     }
+    div.mainContentFloat {
+        background-color: rgba(0, 0, 0, 50%) !important;
+        backdrop-filter: blur(2px);
+    }
     html.mobile[style],
     html.mobile div.siteHeader,
     html.withSiteHeaderTopFullImage .siteHeaderBottomSpacer,
     html.withAppInstallationBanner .siteHeader {
-        top: 0px !important;
-        margin-top: 0px !important;
+        top: 0 !important;
+        margin-top: 0 !important;
     }
     html.withSiteHeaderTopFullImage .siteHeaderBottomSpacer {
         padding-bottom: 6rem !important;
     }
-    html.mobile {
+    html.mobile,
+    html.mobile body {
         font-size: 12pt;
         line-height: calc(2*12pt);
     }
-    html.desktop * {
+    html.desktop,
+    html.desktop body {
         font-size: 18pt;
         line-height: calc(2*18pt);
     }

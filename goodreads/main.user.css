@@ -1,11 +1,11 @@
 /* ==UserStyle==
 @name           Goodreads personal modifications (sizes only)
 @namespace      github.com/holyspiritomb
-@version        1.22.10-18.0
+@version        1.22.10-31.0
 @description    Making goodreads look nicer for me on my phone
 @author         holyspiritomb
-@homepageURL	https://github.com/holyspiritomb/personal-userstyles/blob/main/goodreads/main.user.css
-@updateURL		https://github.com/holyspiritomb/personal-userstyles/raw/main/goodreads/main.user.css
+@homepageURL	https://github.com/holyspiritomb/userstyles/blob/main/goodreads/main.user.css
+@updateURL		https://github.com/holyspiritomb/userstyles/raw/main/goodreads/main.user.css
 @var text		mobile-font-size "Mobile site font size" 12pt
 @var text		desktop-font-size "Desktop site font size" 18pt
 @var text		default-font "Default font" Lato
@@ -24,26 +24,33 @@
     }
     main.PageFrame__main.BookPage,
     div.pageContent {
-        background-color: rgba(0, 0, 0, 50%);
+        background-color: rgba(0, 0, 0, 50%) !important;
+        backdrop-filter: blur(2px);
         border-radius: 5px;
         padding: 10px;
         box-sizing: border-box;
+    }
+    div.mainContentFloat {
+        background-color: rgba(0, 0, 0, 50%) !important;
+        backdrop-filter: blur(2px);
     }
     html.mobile[style],
     html.mobile div.siteHeader,
     html.withSiteHeaderTopFullImage .siteHeaderBottomSpacer,
     html.withAppInstallationBanner .siteHeader {
-        top: 0px !important;
-        margin-top: 0px !important;
+        top: 0 !important;
+        margin-top: 0 !important;
     }
     html.withSiteHeaderTopFullImage .siteHeaderBottomSpacer {
         padding-bottom: 6rem !important;
     }
-    html.mobile {
+    html.mobile,
+    html.mobile body {
         font-size: var(--mobile-font-size);
         line-height: calc(2*var(--mobile-font-size));
     }
-    html.desktop * {
+    html.desktop,
+    html.desktop body {
         font-size: var(--desktop-font-size);
         line-height: calc(2*var(--desktop-font-size));
     }
