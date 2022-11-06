@@ -2,12 +2,10 @@
 @name         Goodreads Dark Theme
 @version      1.0.0
 @description  A dark theme for Goodreads
-@namespace    https://github.com/moosedookie
-@author       obscuredetour, moosedookie
+@namespace    https://github.com/holyspiritomb
+@author       obscuredetour, moosedookie, holyspiritomb
 @license      CC-BY-SA-4.0
-@homepageURL  https://github.com/moosedookie/CustomCSS/tree/master/goodreads
-@supportURL   https://github.com/moosedookie/CustomCSS/issues
-@updateURL    https://moosedookie.github.io/CustomCSS/goodreads/goodreads.user.css
+@homepageURL  https://github.com/holyspiritomb/userstyles/tree/master/goodreads/dark-theme
 @preprocessor default
 ==/UserStyle== */
 /*       __  ___                          */
@@ -82,7 +80,7 @@
 	}
 	body,
 	.mainContent {
-		background: url("https://raw.githubusercontent.com/moosedookie/CustomCSS/master/goodreads/img/background.jpg") no-repeat center center fixed;
+		background: url("https://raw.githubusercontent.com/holyspiritomb/userstyles/master/goodreads/dark-theme/img/background.jpg") no-repeat center center fixed;
 		-webkit-background-size: cover;
 		-moz-background-size: cover;
 		-o-background-size: cover;
@@ -113,7 +111,7 @@
 		filter: brightness(4) sepia(55%) hue-rotate(115deg) saturate(34%)
 	}
 	.siteHeader__logo:not(.siteHeader__logo--doodle) {
-		background: url("https://raw.githubusercontent.com/moosedookie/CustomCSS/master/goodreads/img/goodreads_logo.svg") no-repeat;
+		background: url("https://raw.githubusercontent.com/holyspiritomb/usrstyles/master/goodreads/dark-theme/img/goodreads_logo.svg") no-repeat;
 		background-position: center;
 		background-size: 140px 30px;
 	}
@@ -1429,10 +1427,10 @@
 		-webkit-box-shadow: none;
 	}
 	main {
-		padding-top: 1rem
+		/* padding-top: 1rem */
 	}
 	.distractionless #header {
-		margin-bottom: 0
+		/* margin-bottom: 0 */
 	}
 	div.bannerYear[style] {
 		background-color: var(--elm) !important
@@ -1475,11 +1473,11 @@
 		display: none;
 	}
 	html.withSiteHeaderTopFullImage .siteHeaderBottomSpacer {
-		padding-bottom: 3rem;
+		/* padding-bottom: 3rem; */
 	}
 	html.withSiteHeaderTopFullImage .primaryNavMenu__menu,
 	html.withSiteHeaderTopFullImage .dropdown__menu--profileMenu,
 	html.withSiteHeaderTopFullImage .dropdown__menu--siteHeader {
-		top: initial
+		/* top: initial */
 	}
 }
