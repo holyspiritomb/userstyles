@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Goodreads: Bunken Extension/Userscript Styling
 @namespace      github.com/holyspiritomb
-@version        0.0.2
+@version        0.0.3
 @description    Modifications to make Bunken look better, to be used along with my main Goodreads styles.
 @author         holyspiritomb
 @homepageURL	https://github.com/holyspiritomb/userstyles/blob/main/goodreads/bunken.user.css
@@ -26,6 +26,8 @@
         margin-left: auto !important;
         margin-right: auto !important;
         font-family: Lato, sans-serif !important;
+        font-size: 12pt;
+        line-height: 16pt;
     }
     div.bigBox > h4 {
         display: none;
@@ -43,7 +45,7 @@
         margin-top: 10px;
         margin-bottom: 10px;
     }
-    div#ebookResults{
+    div#ebookResults {
         max-height: 30vh !important;
         padding-top: 10px;
         padding-bottom: 10px;

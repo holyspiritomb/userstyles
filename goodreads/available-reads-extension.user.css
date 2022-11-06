@@ -1,11 +1,11 @@
 /* ==UserStyle==
 @name           Goodreads: Available Reads Styling
 @namespace      github.com/holyspiritomb
-@version        0.0.12
+@version        0.0.13
 @description    Modifications to make Available Reads look better for my own use, supplementing my main Goodreads style.
 @author         holyspiritomb
-@homepageURL	https://github.com/holyspiritomb/personal-userstyles/blob/main/goodreads/available-reads-extension.user.css
-@updateURL      https://github.com/holyspiritomb/personal-userstyles/raw/main/goodreads/available-reads-extension.user.css
+@homepageURL	https://github.com/holyspiritomb/userstyles/blob/main/goodreads/available-reads-extension.user.css
+@updateURL      https://github.com/holyspiritomb/userstyles/raw/main/goodreads/available-reads-extension.user.css
 ==/UserStyle== */
 @-moz-document url-prefix('https://www.goodreads.com/') {
     img.AGaudio {
@@ -50,6 +50,7 @@
         box-sizing: border-box;
         backdrop-filter: blur(2px);
         border-radius: 5px;
+        font-size: 14pt;
     }
     div#AGtable table tr td {
         display: flex;
@@ -58,6 +59,7 @@
     html.mobile div#AGtable,
     html.mobile #libby-results {
         width: 70vw !important;
+        font-size: 12pt;
     }
 
     div#AGtable td.AGAVAILbookDetails {

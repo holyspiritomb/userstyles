@@ -1,17 +1,20 @@
 /* ==UserStyle==
-@name           Goodreads personal modifications
+@name           Goodreads personal modifications (phone)
 @namespace      github.com/holyspiritomb
-@version        1.22.10-31.0
+@version        1.22.11-6.0
 @description    Making goodreads look nicer for me on my phone
 @author         holyspiritomb
 @homepageURL	https://github.com/holyspiritomb/userstyles/blob/main/goodreads/main-phone.user.css
 @updateURL		https://github.com/holyspiritomb/userstyles/raw/main/goodreads/main-phone.user.css
-@var text		mobile-font-size 'Mobile site font size' 12pt
-@var text		desktop-font-size 'Desktop site font size' 22pt
-@var text		default-font 'Default font' Lato
 ==/UserStyle== */
 
 @-moz-document url-prefix('https://www.goodreads.com/') {
+
+    :root {
+        --mobile-font-size: 12pt;
+        --desktop-font-size: 22pt;
+        --default-font: 'Lato', sans-serif;
+    }
 
     @media (max-width: 980px) {
 
@@ -64,28 +67,31 @@
             left: 0px !important;
         }
         html.withSiteHeaderTopFullImage .siteHeaderBottomSpacer {
-            padding-bottom: 5rem !important;
+            /* padding-bottom: 5rem !important; */
         }
     }
-    html.mobile {
+    html.mobile,
+    html.mobile body {
         font-size: var(--mobile-font-size);
+        font-family: var(--default-font);
         line-height: calc(2*var(--mobile-font-size));
     }
-    html.desktop {
+    html.desktop,
+    html.desktop body {
         font-size: var(--desktop-font-size);
+        font-family: var(--default-font);
         line-height: calc(2*var(--desktop-font-size));
-    }
-    html.withSiteHeaderTopFullImage .siteHeaderBottomSpacer {
-        padding-bottom: 7rem;
     }
     h2.brownBackground,
     h2.brownBackground a {
         font-size: var(--desktop-font-size) !important;
+        font-family: var(--default-font);
     }
     html:not(.mobile) ul.siteHeader__menuList > li.siteHeader__topLevelItem > a,
     html:not(.mobile) ul.siteHeader__menuList > li.siteHeader__topLevelItem > div > a > span {
         line-height: calc(1.5*var(--desktop-font-size));
         font-size: calc(0.75*var(--desktop-font-size));
+        font-family: var(--default-font);
     }
     #bookTitle,
     h1.bookTitle,
@@ -97,16 +103,18 @@
     h1,
     h1[data-testid='bookTitle'],
     span.ContributorLink__name[data-testid='name'] {
-        font-family: var(--default-font), Roboto, sans-serif !important;
+        font-family: var(--default-font) !important;
     }
     span.headerPersonalNav__flag {
         display: none;
     }
     #bookTitle {
         font-size: calc(2*var(--desktop-font-size));
+        font-family: var(--default-font);
     }
     h1.bookTitle {
         font-size: calc(2*var(--mobile-font-size));
+        font-family: var(--default-font);
     }
     html.desktop footer.responsiveSiteFooter,
     .siteHeader__topFullImageContainer {
@@ -118,6 +126,9 @@
     /* listopia */
     div.rightContainer {
         display: none;
+    }
+    div#leaderCol {
+        width: 100vw !important;
     }
     html.desktop .content {
         width: 100%;
@@ -180,13 +191,14 @@
     }
 }
 
+/* single book page */
 @-moz-document url-prefix('https://www.goodreads.com/book/') {
-    /* single book page */
     div.rightContainer,
     div#controls,
     #premiumAdTop,
     span#rating_graph,
     div#choiceBadge,
+    div#flashMessages,
     div#flashContainer,
     div#smartbanner {
         display: none;
@@ -198,26 +210,6 @@
     }
     html.desktop .mainContentContainer .mainContent .mainContentFloat {
         width: 92%;
-        box-sizing: border-box;
-    }
-    html.desktop div[id].wtrButtonContainer,
-    html.desktop .wtrButtonContainer .wtrLeft,
-    html.desktop .wtrButtonContainer .wtrLeft span,
-    html.desktop .wtrButtonContainer .wtrLeft button {
-        font-size: 12px;
-        line-height: 15px;
-        vertical-align: 100%;
-        height: 28px;
-    }
-    html.desktop .wtrButtonContainer .wtrLeft.wtrDown {
-        padding: 0;
-        border: 0;
-        box-sizing: border-box;
-    }
-    html.desktop .wtrButtonContainer .wtrLeft button {
-        position: relative;
-        top: 3px;
-        left: 2px;
         box-sizing: border-box;
     }
     @media (max-width: 980px) {
