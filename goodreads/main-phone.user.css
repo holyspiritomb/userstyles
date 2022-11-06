@@ -1,11 +1,12 @@
 /* ==UserStyle==
 @name           Goodreads personal modifications (phone)
 @namespace      github.com/holyspiritomb
-@version        1.22.11-6.0
+@version        1.22.11-6.1
 @description    Making goodreads look nicer for me on my phone
 @author         holyspiritomb
-@homepageURL	https://github.com/holyspiritomb/userstyles/blob/main/goodreads/main-phone.user.css
-@updateURL		https://github.com/holyspiritomb/userstyles/raw/main/goodreads/main-phone.user.css
+@license        MIT
+@homepageURL    https://github.com/holyspiritomb/userstyles/blob/main/goodreads/main-phone.user.css
+@updateURL      https://github.com/holyspiritomb/userstyles/raw/main/goodreads/main-phone.user.css
 ==/UserStyle== */
 
 @-moz-document url-prefix('https://www.goodreads.com/') {
@@ -18,13 +19,8 @@
 
     @media (max-width: 980px) {
 
-        div.content {
-            margin: auto;
-            box-sizing: border-box;
-        }
-
-        div.pageContent {
-            background-color: rgba(0, 0, 0, 40%);
+        div.pageContent, div.mainContentFloat {
+            background-color: rgba(0, 0, 0, 85%);
         }
 
         html.mobile[style],
@@ -66,33 +62,25 @@
         div.siteHeader {
             left: 0px !important;
         }
-        html.withSiteHeaderTopFullImage .siteHeaderBottomSpacer {
-            /* padding-bottom: 5rem !important; */
-        }
     }
     html.mobile,
-    html.mobile body {
+    html.mobile body .pageContent {
         font-size: var(--mobile-font-size);
         font-family: var(--default-font);
-        line-height: calc(2*var(--mobile-font-size));
+        line-height: calc(1.45*var(--mobile-font-size));
     }
     html.desktop,
-    html.desktop body {
+    html.desktop body .mainContentContainer * {
         font-size: var(--desktop-font-size);
         font-family: var(--default-font);
-        line-height: calc(2*var(--desktop-font-size));
+        line-height: calc(1.5*var(--desktop-font-size));
     }
     h2.brownBackground,
     h2.brownBackground a {
         font-size: var(--desktop-font-size) !important;
         font-family: var(--default-font);
     }
-    html:not(.mobile) ul.siteHeader__menuList > li.siteHeader__topLevelItem > a,
-    html:not(.mobile) ul.siteHeader__menuList > li.siteHeader__topLevelItem > div > a > span {
-        line-height: calc(1.5*var(--desktop-font-size));
-        font-size: calc(0.75*var(--desktop-font-size));
-        font-family: var(--default-font);
-    }
+
     #bookTitle,
     h1.bookTitle,
     h1.bookTitle cite,
@@ -116,10 +104,27 @@
         font-size: calc(2*var(--mobile-font-size));
         font-family: var(--default-font);
     }
-    html.desktop footer.responsiveSiteFooter,
-    .siteHeader__topFullImageContainer {
+    li.siteHeader__topLevelItem--community,
+    .gr-col-lg-4,
+  div.responsiveSiteFooter__appLinksColumnBadges,
+  ul.responsiveSiteFooter__linkList li:first-child ,
+  footer > div > div.gr-row > div:first-child{
         display: none;
     }
+
+  a.siteHeader__topLevelLink,
+  a.primaryNavMenu__trigger--siteHeaderBrowseMenu span {
+    font-size:16px;
+  }
+  html.desktop a[href="/toggle_mobile"] {
+    font-size: 30pt;
+  }
+    html.mobile a[href="/toggle_mobile"] {
+    font-size: 16pt;
+  }
+  .responsiveSiteFooter__appLinksColumn{
+    flex-direction: column;
+  }
 }
 
 @-moz-document url-prefix('https://www.goodreads.com/list/show/') {
@@ -127,19 +132,7 @@
     div.rightContainer {
         display: none;
     }
-    div#leaderCol {
-        width: 100vw !important;
-    }
-    html.desktop .content {
-        width: 100%;
-        box-sizing: border-box;
-    }
-    html.desktop .mainContentContainer,
-    html.desktop .mainContentContainer .mainContent,
-    html.desktop .mainContentContainer .mainContent .mainContentFloat .leftContainer {
-        width: 100%;
-        box-sizing: border-box;
-    }
+
     html.desktop .mainContentContainer .mainContent .mainContentFloat {
         width: 92%;
         box-sizing: border-box;
@@ -151,17 +144,25 @@
     div#leadercol :is(div.myBooksNav > ul > li > span, div#header),
     div.myBooksSearch,
     div#leftCol,
-    div#side {
+    div#side,
+    .myBooksNav ul li:nth-child(3),
+    .myBooksNav ul li:nth-child(4),
+    .myBooksNav ul li:nth-child(5),
+    .myBooksNav ul li:nth-child(6),
+    .myBooksNav ul li:nth-child(7) {
         display: none;
     }
-    html.desktop .mainContentContainer .mainContent {
-        width: 100% !important;
-        box-sizing: border-box;
-    }
+  div#rightCol{
+    width: 95vw !important;
+  }
+
     html.desktop .mainContentContainer .mainContent .mainContentFloat {
-        width: 98% !important;
+        width: 98vw !important;
         box-sizing: border-box;
     }
+  html.desktop #leadercol {
+    width: 94vw !important;
+  }
     .siteHeaderBottomSpacer {
         display: block;
     }
@@ -185,7 +186,17 @@
     form#perPageForm,
     div#reviewPagination {
         display: block;
+        margin-top: 15px;
+        margin-bottom: 15px;
     }
+  div#reviewPagination a,
+  div#reviewPagination em,
+  form#perPageForm label,
+  form#perPageForm select,
+  a#batchEditLink,
+  a#shelfSettingsLink {
+    font-size: 26pt;
+  }
     form#sortForm {
         display: none;
     }
