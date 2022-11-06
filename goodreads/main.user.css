@@ -38,11 +38,11 @@
     html.mobile div.siteHeader,
     html.withSiteHeaderTopFullImage .siteHeaderBottomSpacer,
     html.withAppInstallationBanner .siteHeader {
-        top: 0 !important;
-        margin-top: 0 !important;
+        /* top: 0 !important; */
+        /* margin-top: 0 !important; */
     }
     html.withSiteHeaderTopFullImage .siteHeaderBottomSpacer {
-        padding-bottom: 6rem !important;
+        /* padding-bottom: 6rem !important; */
     }
     html.mobile,
     html.mobile body {
@@ -104,7 +104,7 @@
     div#reviewPagination {
         display: block;
     }
-    div#leftCol{
+    div#leftCol {
         display: none;
     }
 }
@@ -115,7 +115,9 @@
     span#rating_graph,
     div#choiceBadge,
     div#flashContainer,
-    div#smartbanner {
+    div#smartbanner,
+    div.siteHeader__topFullImageContainer,
+    div#flashMessages {
         display: none;
     }
 }
