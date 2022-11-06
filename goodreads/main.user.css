@@ -1,16 +1,18 @@
 /* ==UserStyle==
 @name           Goodreads personal modifications
 @namespace      github.com/holyspiritomb
-@version        1.22.11-6.0
+@version        1.22.11-6.1
 @description    Making goodreads look nicer for me on my phone
 @author         holyspiritomb
 @homepageURL	https://github.com/holyspiritomb/userstyles/blob/main/goodreads/main.user.css
 @updateURL		https://github.com/holyspiritomb/userstyles/raw/main/goodreads/main.user.css
-@var text		mobile-font-size "Mobile site font size" 12pt
-@var text		desktop-font-size "Desktop site font size" 18pt
-@var text		default-font "Default font" Lato
 ==/UserStyle== */
 @-moz-document regexp('https://www\\.goodreads\\.com/(?!book/add_to_books_widget/).*') {
+    :root {
+        --mobile-font-size: 12pt;
+        --desktop-font-size: 18pt;
+        --default-font: 'Lato', sans-serif;
+    }
     @media (min-width: 981px) {
         div.content {
             box-sizing: border-box;
@@ -27,7 +29,6 @@
         background-color: rgba(0, 0, 0, 50%) !important;
         backdrop-filter: blur(2px);
         border-radius: 5px;
-        /* padding-top: 10px; */
         box-sizing: border-box;
     }
     div.mainContentFloat {
@@ -36,7 +37,6 @@
     }
     html.mobile[style],
     html.mobile div.siteHeader,
-    /* html.withSiteHeaderTopFullImage .siteHeaderBottomSpacer, */
     html.withAppInstallationBanner .siteHeader {
         top: 0 !important;
         margin-top: 0 !important;
@@ -72,23 +72,27 @@
     .readable ul,
     .readable td,
     .readable th {
-        font-family: var(--default-font), Roboto, sans-serif !important;
+        font-family: var(--default-font) !important;
     }
     h2.brownBackground,
     h2.brownBackground a {
         font-size: var(--desktop-font-size) !important;
+        font-family: var(--default-font) !important;
     }
     html.mobile h2.brownBackground,
     html.mobile h2.brownBackground a {
         font-size: var(--mobile-font-size) !important;
+        font-family: var(--default-font) !important;
     }
     #bookTitle {
         font-size: calc(1.5*var(--desktop-font-size));
+        font-family: var(--default-font) !important;
     }
     h1.bookTitle,
     h1.bookTitle cite,
     cite.bookTitle {
         font-size: calc(1.5*var(--mobile-font-size));
+        font-family: var(--default-font) !important;
     }
 }
 
