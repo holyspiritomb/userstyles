@@ -1,7 +1,7 @@
 /* ==UserStyle==
-@name           Goodreads personal modifications (sizes only)
+@name           Goodreads personal modifications
 @namespace      github.com/holyspiritomb
-@version        1.22.10-31.0
+@version        1.22.11-06.0
 @description    Making goodreads look nicer for me on my phone
 @author         holyspiritomb
 @homepageURL	https://github.com/holyspiritomb/userstyles/blob/main/goodreads/main.user.css
@@ -27,7 +27,7 @@
         background-color: rgba(0, 0, 0, 50%) !important;
         backdrop-filter: blur(2px);
         border-radius: 5px;
-        padding: 10px;
+        /* padding-top: 10px; */
         box-sizing: border-box;
     }
     div.mainContentFloat {
@@ -36,23 +36,20 @@
     }
     html.mobile[style],
     html.mobile div.siteHeader,
-    html.withSiteHeaderTopFullImage .siteHeaderBottomSpacer,
+    /* html.withSiteHeaderTopFullImage .siteHeaderBottomSpacer, */
     html.withAppInstallationBanner .siteHeader {
-        /* top: 0 !important; */
-        /* margin-top: 0 !important; */
-    }
-    html.withSiteHeaderTopFullImage .siteHeaderBottomSpacer {
-        /* padding-bottom: 6rem !important; */
+        top: 0 !important;
+        margin-top: 0 !important;
     }
     html.mobile,
     html.mobile body {
         font-size: var(--mobile-font-size);
-        line-height: calc(2*var(--mobile-font-size));
+        line-height: calc(1.5*var(--mobile-font-size));
     }
     html.desktop,
     html.desktop body {
         font-size: var(--desktop-font-size);
-        line-height: calc(2*var(--desktop-font-size));
+        line-height: calc(1.5*var(--desktop-font-size));
     }
     #bookTitle,
     h1.bookTitle,
@@ -81,13 +78,17 @@
     h2.brownBackground a {
         font-size: var(--desktop-font-size) !important;
     }
+    html.mobile h2.brownBackground,
+    html.mobile h2.brownBackground a {
+        font-size: var(--mobile-font-size) !important;
+    }
     #bookTitle {
-        font-size: calc(2*var(--desktop-font-size));
+        font-size: calc(1.5*var(--desktop-font-size));
     }
     h1.bookTitle,
     h1.bookTitle cite,
     cite.bookTitle {
-        font-size: calc(2*var(--mobile-font-size));
+        font-size: calc(1.5*var(--mobile-font-size));
     }
 }
 
@@ -118,6 +119,6 @@
     div#smartbanner,
     div.siteHeader__topFullImageContainer,
     div#flashMessages {
-        display: none;
+        display: none !important;
     }
 }

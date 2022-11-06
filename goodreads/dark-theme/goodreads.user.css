@@ -77,6 +77,7 @@
 	#box #boxContents {
 		background-color: var(--bkg-main);
 		color: var(--txt-second);
+		font-family: 'Lato', sans-serif;
 	}
 	body,
 	.mainContent {
@@ -87,10 +88,10 @@
 		background-size: cover;
 	}
 	.mainContentContainer#topLanding {
-		padding: 25px 0
+		/* padding: 25px 0 */
 	}
 	.mainContent {
-		margin-top: 10px;
+		/* margin-top: 10px; */
 	}
 	@media (min-width: 1200px) {
 		main {
@@ -578,7 +579,8 @@
 	.keyValue .value,
 	.leadParagraph,
 	.gr-marketingPageH2 {
-		color: var(--txt-main)
+		color: var(--txt-main);
+		font-family: 'Lato', sans-serif;
 	}
 	.textColor {
 		color: var(--txt-main) !important
@@ -646,7 +648,8 @@
 	.newsfeedItemAnswerText .spoiler .spoilerAnswerText,
 	.reviewFormEdit .shelves,
 	.communityQuestionText {
-		color: var(--txt-second)
+		color: var(--txt-second);
+		font-family: 'Lato', sans-serif;
 	}
 	/* GREY TEXT */
 	.darkGreyText,
@@ -703,7 +706,8 @@
 	.giveawayTermsContent,
 	.jobsListItem__location,
 	.myBooksNav ul li span.greyText {
-		color: var(--txt-grey)
+		color: var(--txt-grey);
+		font-family: 'Lato', sans-serif;
 	}
 	/* Input & WHITE text*/
 	input[type="text"]::placeholder,
