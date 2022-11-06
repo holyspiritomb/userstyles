@@ -1477,7 +1477,7 @@
 		display: none;
 	}
 	html.withSiteHeaderTopFullImage .siteHeaderBottomSpacer {
-		/* padding-bottom: 3rem; */
+		padding-bottom: 3rem;
 	}
 	html.withSiteHeaderTopFullImage .primaryNavMenu__menu,
 	html.withSiteHeaderTopFullImage .dropdown__menu--profileMenu,
