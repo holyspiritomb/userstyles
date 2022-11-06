@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Goodreads Dark Theme (Fork)
-@version      1.0.1
+@version      1.0.2
 @description  A dark theme for Goodreads
 @namespace    https://github.com/holyspiritomb
 @author       obscuredetour, moosedookie, holyspiritomb
@@ -112,7 +112,7 @@
 		filter: brightness(4) sepia(55%) hue-rotate(115deg) saturate(34%)
 	}
 	.siteHeader__logo:not(.siteHeader__logo--doodle) {
-		background: url("https://raw.githubusercontent.com/holyspiritomb/usrstyles/master/goodreads/dark-theme/img/goodreads_logo.svg") no-repeat;
+		background: url("https://raw.githubusercontent.com/holyspiritomb/userstyles/main/goodreads/dark-theme/img/goodreads_logo.svg") no-repeat;
 		background-position: center;
 		background-size: 140px 30px;
 	}
@@ -751,6 +751,7 @@
 	.readingYearContent .standoutNumber,
 	.groupNav a.current {
 		color: white;
+		font-family: 'Lato', sans-serif;
 	}
 	select[class*='smallPicker'][style],
 	select[class*='largePicker'][style] > option,
@@ -791,6 +792,7 @@
 		background-color: var(--cape-cod);
 		border-color: transparent;
 		color: white;
+		font-family: 'Lato', sans-serif;
 	}
 	.wtrButtonContainer .wtrNewUserStatus input,
 	.wtrButtonContainer .wtrUserStatusConfirmation input {
@@ -1482,6 +1484,6 @@
 	html.withSiteHeaderTopFullImage .primaryNavMenu__menu,
 	html.withSiteHeaderTopFullImage .dropdown__menu--profileMenu,
 	html.withSiteHeaderTopFullImage .dropdown__menu--siteHeader {
-		/* top: initial */
+		top: initial
 	}
 }
