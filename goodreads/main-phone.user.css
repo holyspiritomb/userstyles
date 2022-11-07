@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Goodreads personal modifications (phone)
 @namespace      github.com/holyspiritomb
-@version        1.22.11-6.2
+@version        1.22.11-6.3
 @description    Making goodreads look nicer for me on my phone
 @author         holyspiritomb
 @license        MIT
@@ -23,19 +23,6 @@
         div.mainContentFloat {
             background-color: rgba(0, 0, 0, 85%);
         }
-
-        html.mobile[style],
-        html.mobile div.siteHeader,
-        html.withSiteHeaderTopFullImage .siteHeaderBottomSpacer,
-        html.withAppInstallationBanner .siteHeader {
-            top: 0px !important;
-            margin-top: 0px !important;
-        }
-
-        html.mobile div#smartbanner {
-            display: none;
-        }
-
         :is(td.field, th.header):is(.avg_rating, .date_added, .date_pub, .date_pub_edition, .asin, .format, .rating) {
             display: none;
         }
@@ -94,9 +81,6 @@
     span.ContributorLink__name[data-testid='name'] {
         font-family: var(--default-font) !important;
     }
-    span.headerPersonalNav__flag {
-        display: none;
-    }
     #bookTitle {
         font-size: calc(2*var(--desktop-font-size));
         font-family: var(--default-font);
@@ -104,13 +88,6 @@
     h1.bookTitle {
         font-size: calc(2*var(--mobile-font-size));
         font-family: var(--default-font);
-    }
-    li.siteHeader__topLevelItem--community,
-    .gr-col-lg-4,
-    div.responsiveSiteFooter__appLinksColumnBadges,
-    ul.responsiveSiteFooter__linkList li:first-child,
-    footer > div > div.gr-row > div:first-child {
-        display: none;
     }
     a.siteHeader__topLevelLink,
     a.primaryNavMenu__trigger--siteHeaderBrowseMenu span {
@@ -120,10 +97,20 @@
         font-size: 30pt;
     }
     html.mobile a[href='/toggle_mobile'] {
-        font-size: 16pt;
+        font-size: calc(inherit*1.5);
     }
     .responsiveSiteFooter__appLinksColumn {
         flex-direction: column;
+    }
+    .gr-col-lg-4,
+    div.responsiveSiteFooter__appLinksColumnBadges,
+    footer > div > div.gr-row > div:first-child,
+    header div.siteHeader__topFullImageContainer,
+    html.mobile div#smartbanner,
+    li.siteHeader__topLevelItem--community,
+    span.headerPersonalNav__flag,
+    ul.responsiveSiteFooter__linkList li:first-child {
+        display: none;
     }
 }
 
