@@ -43,7 +43,7 @@
     }
     @media (min-width: 981px) {
         div.content {
-            width: 960px;
+            width: 98vw;
             box-sizing: border-box;
         }
         div.siteHeader {
