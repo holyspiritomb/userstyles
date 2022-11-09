@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Goodreads personal modifications (phone)
 @namespace      github.com/holyspiritomb
-@version        1.22.11-8.0
+@version        1.22.11-8.1
 @description    Making goodreads look nicer for me on my phone
 @author         holyspiritomb
 @license        MIT
@@ -19,13 +19,14 @@
 
     @media (max-width: 980px) {
 
-        div.pageContent,
-        div.mainContentFloat {
-            background-color: rgba(0, 0, 0, 85%);
-        }
         :is(td.field, th.header):is(.avg_rating, .date_added, .date_pub, .date_pub_edition, .asin, .format, .rating) {
             display: none;
         }
+    }
+
+    div.pageContent,
+    div.mainContentFloat {
+        background-color: rgba(0, 0, 0, 85%);
     }
 
     /* new goodreads book pages */
@@ -48,6 +49,9 @@
         }
         div.siteHeader {
             left: 0px !important;
+        }
+        .mainContent {
+            margin: unset;
         }
     }
     html.mobile,
