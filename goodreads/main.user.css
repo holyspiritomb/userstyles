@@ -103,7 +103,8 @@
         width: 100% !important;
         box-sizing: border-box;
     }
-    div#rightCol {
+    div#rightCol,
+    #leaderCol {
         width: 100% !important;
     }
 
