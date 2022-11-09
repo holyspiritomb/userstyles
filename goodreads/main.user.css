@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Goodreads personal modifications
 @namespace      github.com/holyspiritomb
-@version        1.22.11-6.1
+@version        1.22.11-8.0
 @description    Making goodreads look nicer for me on my phone
 @author         holyspiritomb
 @homepageURL	https://github.com/holyspiritomb/userstyles/blob/main/goodreads/main.user.css
@@ -34,6 +34,7 @@
     div.mainContentFloat {
         background-color: rgba(0, 0, 0, 50%) !important;
         backdrop-filter: blur(2px);
+        box-sizing: border-box;
     }
     html.mobile[style],
     html.mobile div.siteHeader,
@@ -102,6 +103,9 @@
         width: 100% !important;
         box-sizing: border-box;
     }
+    div#rightCol {
+        width: 100% !important;
+    }
 
     /* to make the page stay a certain width on my phone */
     form#perPageForm,
@@ -109,7 +113,10 @@
     div#reviewPagination {
         display: block;
     }
-    div#leftCol {
+    div#leftCol,
+    .myBooksNav ul li:nth-child(3),
+    .myBooksNav ul li:nth-child(4),
+    .myBooksNav ul li:nth-child(5) {
         display: none;
     }
 }
