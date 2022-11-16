@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Goodreads Dark Theme (Fork)
-@version      1.0.2
+@version      1.0.3
 @description  A dark theme for Goodreads
 @namespace    https://github.com/holyspiritomb
 @author       obscuredetour, moosedookie, holyspiritomb
@@ -17,7 +17,7 @@
 /*          / / / / __ \/ __ \/ //_/ / _ \*/
 /*         / /_/ / /_/ / /_/ / ,< / /  __/*/
 /*        /_____/\____/\____/_/|_/_/\___/ */
-@-moz-document domain("goodreads.com") {
+@-moz-document regexp('https://www\\.goodreads\\.com/(?!book/add_to_books_widget/).*') {
 	:root {
 		/* color variables - darkest to lightest */
 		--jet: hsl(0, 0%, 12%);
