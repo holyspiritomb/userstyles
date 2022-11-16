@@ -1,14 +1,14 @@
 /* ==UserStyle==
 @name           Goodreads: Library Extension Styling
 @namespace      github.com/holyspiritomb
-@version        0.0.7
+@version        0.0.8
 @description    Modifications to make LibraryExtension look better, to be used along with my main Goodreads styles.
 @author         holyspiritomb
 @homepageURL	https://github.com/holyspiritomb/userstyles/blob/main/goodreads/libraryextension.user.css
 @updateURL	https://github.com/holyspiritomb/userstyles/raw/main/goodreads/libraryextension.user.css
 ==/UserStyle== */
 
-@-moz-document url-prefix('https://www.goodreads.com/') {
+@-moz-document regexp('https://www\\.goodreads\\.com/(?!book/add_to_books_widget/).*') {
 
     div.libraryExtension {
         border-left: 0 !important;
@@ -76,7 +76,7 @@
     }
 }
 
-@-moz-document url-prefix('https://www.goodreads.com/book/') {
+@-moz-document regexp('https://www\\.goodreads\\.com/book/(?!add_to_books_widget/).*') {
     div.libraryExtension {
         border-bottom: 1px solid #555 !important;
         border-top: 1px solid #555 !important;

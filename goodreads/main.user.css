@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Goodreads personal modifications
 @namespace      github.com/holyspiritomb
-@version        1.22.11-8.2
+@version        1.22.11-15.0
 @description    Making goodreads look nicer for me on my phone
 @author         holyspiritomb
 @homepageURL	https://github.com/holyspiritomb/userstyles/blob/main/goodreads/main.user.css
@@ -122,7 +122,7 @@
     }
 }
 
-@-moz-document url-prefix('https://www.goodreads.com/book/') {
+@-moz-document regexp('https://www\\.goodreads\\.com/book/(?!add_to_books_widget/).*') {
     /* single book page */
     #premiumAdTop,
     span#rating_graph,

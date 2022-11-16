@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Goodreads personal modifications (phone)
 @namespace      github.com/holyspiritomb
-@version        1.22.11-8.1
+@version        1.22.11-15.0
 @description    Making goodreads look nicer for me on my phone
 @author         holyspiritomb
 @license        MIT
@@ -9,7 +9,7 @@
 @updateURL      https://github.com/holyspiritomb/userstyles/raw/main/goodreads/main-phone.user.css
 ==/UserStyle== */
 
-@-moz-document url-prefix('https://www.goodreads.com/') {
+@-moz-document regexp('https://www\\.goodreads\\.com/(?!book/add_to_books_widget/).*') {
 
     :root {
         --mobile-font-size: 12pt;
@@ -48,7 +48,7 @@
             box-sizing: border-box;
         }
         div.siteHeader {
-            left: 0px !important;
+            left: 0 !important;
         }
         .mainContent {
             margin: unset;
@@ -193,7 +193,7 @@
 }
 
 /* single book page */
-@-moz-document url-prefix('https://www.goodreads.com/book/') {
+@-moz-document regexp('https://www\\.goodreads\\.com/book/(?!add_to_books_widget/).*') {
     div.rightContainer,
     div#controls,
     #premiumAdTop,

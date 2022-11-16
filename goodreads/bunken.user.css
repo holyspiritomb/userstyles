@@ -1,13 +1,13 @@
 /* ==UserStyle==
 @name           Goodreads: Bunken Extension/Userscript Styling
 @namespace      github.com/holyspiritomb
-@version        0.0.3
+@version        0.0.4
 @description    Modifications to make Bunken look better, to be used along with my main Goodreads styles.
 @author         holyspiritomb
 @homepageURL	https://github.com/holyspiritomb/userstyles/blob/main/goodreads/bunken.user.css
 @updateURL	https://github.com/holyspiritomb/userstyles/raw/main/goodreads/bunken.user.css
 ==/UserStyle== */
-@-moz-document url-prefix('https://www.goodreads.com/book/') {
+@-moz-document regexp('https://www\\.goodreads\\.com/book/(?!add_to_books_widget/).*') {
     div.bigBox[style] {
         margin-top: 10px;
         margin-bottom: 10px;
