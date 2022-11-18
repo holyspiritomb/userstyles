@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Goodreads personal modifications (phone)
 @namespace      github.com/holyspiritomb
-@version        1.22.11-17.0
+@version        1.22.11-17.1
 @description    Making goodreads look nicer for me on my phone
 @author         holyspiritomb
 @license        MIT
@@ -60,11 +60,18 @@
         font-family: var(--default-font);
         line-height: 1.45em;
     }
-    html.desktop,
-    html.desktop body .mainContentContainer * {
+    html.desktop :not(div#imagecol > div.wtrButtonContainer),
+    html.desktop body .mainContentContainer * :not(div#imagecol > div.wtrButtonContainer) {
         font-size: var(--desktop-font-size);
         font-family: var(--default-font);
         line-height: 1.5em;
+    }
+    html.desktop div#imagecol > div.wtrButtonContainer > div.wtrDown.wtrLeft,
+    html.desktop div#imagecol > div.wtrButtonContainer > div.wtrDown.wtrLeft > span[title],
+    html.desktop div#imagecol > div.wtrButtonContainer > div.wtrDown.wtrRight,
+    html.desktop div#imagecol > div.wtrButtonContainer > div.wtrDown.wtrRight > button.wtrShelfButton {
+        font-size: inherit !important;
+        line-height: inherit !important;
     }
     h2.brownBackground,
     h2.brownBackground a {
@@ -97,7 +104,7 @@
         font-size: 16px;
     }
     html.desktop a[href='/toggle_mobile'] {
-        font-size: 30pt;
+        font-size: 2em;
     }
     html.mobile a[href='/toggle_mobile'] {
         font-size: 1.5em;
