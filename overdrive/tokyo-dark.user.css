@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Overdrive: Tokyo Dark
 @namespace      github.com/holyspiritomb
-@version        0.0.5
+@version        0.0.6
 @description    Tokyo Dark color scheme for Overdrive library sites.
 @author         holyspiritomb
 @license        MIT
@@ -9,24 +9,30 @@
 ==/UserStyle== */
 @-moz-document domain('overdrive.com') {
     :root {
-        --light-blue: rgb(125, 172, 221);
-        --text-lighter: rgb(169, 177, 214);
-        --text-main: rgb(150, 160, 205);
+        --light-blue: rgb(125, 207, 255);
+        --pale-blue: rgb(125, 172, 221);
+        --text-main: rgb(169, 177, 214);
         --text-darker: rgb(123, 135, 192);
-        --text-darkest: rgb(104, 118, 183);
-        --darkest-bg: rgb(28, 29, 41);
-        --dark-gray: rgb(53, 55, 78);
-        --border-lighter: rgb(63, 75, 131);
-        --cobalt-blue: rgb(45, 86, 174);
-        --lightred: rgb(209, 124, 154);
-        --darkshadow: rgba(11, 11, 16, 40%);
+        --text-darkest: rgb(86, 95, 137);
+        --cobalt-gray: rgb(53, 55, 78);
+        --cobalt-darker: rgb(63, 75, 131);
+        --lightred: #f7768a;
+        --border: rgb(59, 61, 86);
+        --box-shadow: rgba(11, 11, 16, 0.4) 0px 0px 10px;
+        --lighter-border: rgba(82, 98, 173, 40%);
+        --transparent: rgba(0, 0, 0, 0%);
+        --lighter-night: rgb(32, 33, 47);
+        --night: rgb(26, 27, 38);
+        --darker-night: rgb(19, 19, 28);
+        --storm: rgb(36, 40, 59);
+        --box-shadow-storm: rgb(36, 40, 59) 0px 1px 6px;
     }
 
     html {
         color-scheme: dark !important;
     }
     body {
-        background-color: var(--darkest-bg) !important;
+        background-color: var(--night) !important;
         background-image: none;
         color: var(--text-main) !important;
     }
@@ -70,11 +76,11 @@
 
     html,
     body {
-        border-color: var(--cobalt-blue) !important;
+        border-color: var(--border) !important;
     }
 
     nav.top-bar {
-        background-color: var(--dark-gray) !important;
+        background-color: var(--storm) !important;
     }
 
     .Nav-topRightLink:not(:first-child) {
@@ -87,9 +93,21 @@
     a,
     .title-container.card .bottomButtons .button,
     .title-container.card .bottomButtons .button .icon,
-    .mobile-lang-globe {
+    .mobile-lang-globe,
+    .WishListButton,
+    .ReadingHistoryButton .ReadingHistoryButton-text,
+    .secondary-hover-underline:hover,
+    .title-container .title-name a:not(.secondary-color):hover {
         background-color: transparent !important;
         color: var(--light-blue) !important;
+    }
+
+    .button:focus, .button:hover, button:focus, button:hover,.secondary-color,.secondary-hover-underline {
+        color: var(--pale-blue) !important;
+    }
+
+    .button.outline{
+        border: 2px solid var(--border)
     }
 
     h1,
@@ -99,23 +117,25 @@
     h5,
     h6,
     p,
+    .TitleDetailsHeading .TitleDetailsHeading-title,
     .TitleDetailsHeading-title,
     .TitleDetailsHeading-formatBadge,
     .TitleDetailsHeading-formatBadge > span.u-allCaps,
     .TitleDetailsHeading-formatBadgeIcon,
+    .TitleDetailsHeading .TitleDetailsHeading-creator,
     p.subtitle {
-        color: var(--text-lighter);
+        color: var(--text-main) !important;
     }
 
     .top-bar-section ul li {
         color: var(--text-main);
-        background-color: rgb(26, 27, 38) !important;
+        background-color: var(--night) !important;
         background-image: none;
     }
 
     .top-bar-section ul:not(.open) li:not(.has-form) a:not(.button):not(.close-advantage-tout) {
         color: var(--text-main);
-        background-color: rgb(26, 27, 38);
+        background-color: var(--night);
     }
 
     .Nav-collectionsDropArrow,
@@ -126,24 +146,24 @@
     }
 
     .top-bar-section .has-dropdown > a::after {
-        border-color: rgba(82, 98, 173, 40%) transparent transparent !important;
+        border-color: var(--lighter-border) transparent transparent !important;
     }
 
     .f-dropdown.content {
         list-style-image: none;
-        background-color: rgb(26, 27, 38);
+        background-color: var(--night);
         background-image: none;
-        border-color: rgb(54, 56, 79);
+        border-color: var(--border);
     }
 
     .Nav-topRightLink:not(:first-child) {
-        border-left-color: rgb(53, 55, 78);
+        border-left-color: var(--border);
     }
 
     .AccountPageMenu .AccountPageMenu-tabList {
         list-style-image: none;
-        border-bottom-color: rgb(54, 57, 80);
-        background-color: rgb(26, 27, 38);
+        border-bottom-color: var(--border);
+        background-color: var(--night);
         background-image: none;
     }
 
@@ -152,33 +172,33 @@
     }
 
     .AccountPageMenu-tab.is-active {
-        color: rgb(125, 172, 221);
+        color: var(--light-blue);
     }
 
     .AccountPageMenu .AccountPageMenu-tab {
-        color: rgb(123, 135, 192);
+        color: var(--text-darker);
     }
 
     .Libby-Loans-CTA .chat-bubble {
-        color: rgb(169, 177, 214);
-        background-color: rgb(32, 33, 47);
+        color: var(--text-main);
+        background-color: var(--lighter-night);
     }
 
     .Libby-Loans-CTA .chat-bubble .link-color {
-        color: rgb(209, 124, 154);
+        color: var(--lightred);
     }
 
     .Libby-Loans-CTA .hide-button {
-        color: rgb(160, 169, 210);
+        color: var(--text-main);
     }
 
     h1.account-title {
-        border-bottom-color: rgb(50, 52, 73);
+        border-bottom-color: var(--cobalt-gray);
     }
 
     .link-button {
-        color: rgb(125, 172, 221);
-        background-color: rgba(0, 0, 0, 0%);
+        color: var(--light-blue);
+        background-color: var(--transparent);
     }
 
     .title-container {
@@ -186,197 +206,194 @@
     }
 
     .title-container .title-contents {
-        background-color: rgb(26, 27, 38);
+        background-color: var(--night);
         background-image: none;
-        box-shadow: rgb(41, 43, 60) 0px 1px 6px;
+        box-shadow: var(--box-shadow-storm);
     }
 
     .title-container.card .title-contents .available-title,
     .title-container.card .title-contents .unavailable-title {
-        border-bottom-color: rgb(50, 52, 73);
+        border-bottom-color: var(--storm);
     }
 
     .title-container .title-name a:not(.secondary-color) {
-        color: rgb(141, 152, 201) !important;
+        color: var(--text-darker) !important;
     }
 
     .title-container span.title-format-badge {
-        color: rgb(123, 135, 192);
+        color: var(--text-darker);
     }
 
     .Loans-divider {
-        background-color: rgb(41, 43, 60);
+        background-color: var(--storm);
         background-image: none;
     }
 
     .Loans-orText {
-        color: rgb(169, 177, 214);
+        color: var(--text-main);
         background-color: transparent;
         background-image: none;
     }
 
-    .kindle-trouble-container {
-        color: rgb(169, 177, 214);
-    }
-
+    .kindle-trouble-container,
     .loan-button-audiobook .accordion .accordion-navigation a {
-        color: rgb(169, 177, 214);
+        color: var(--text-main);
     }
 
     nav.top-bar {
-        background-color: rgb(26, 27, 38);
+        background-color: var(--night);
     }
 
     .MergedSite .Header,
     .nav-container,
     .MobileNav {
-        background-color: rgb(26, 27, 38);
+        background-color: var(--darker-night);
     }
     .kindle-trouble-container .accordion-title {
-        border-bottom-color: rgb(59, 61, 86);
+        border-bottom-color: var(--border);
     }
 
     .MobileNav .MobileNav-searchContainer,
     .footer.mobile ul li a,
     .TitleDetailsAccordion .TitleDetailsAccordion-section .TitleDetailsAccordion-panel {
-        border-bottom: 1px solid rgb(59, 61, 86);
+        border-bottom: 1px solid var(--border);
     }
     .TitleDetailsAccordion {
-        border-top: 1px solid rgb(59, 61, 86);
+        border-top: 1px solid var(--border);
     }
 
     .AccountSortOptions .AccountSortOptions-sort {
-        border: 1px solid rgb(59, 61, 86);
+        border: 1px solid var(--border);
     }
 
     hr {
-        border: solid rgb(59, 61, 86);
+        border: solid var(--border);
         border-width: 1px 0 0;
     }
 
     hr.less,
     hr.more {
-        border-top: 1px solid rgb(59, 61, 86);
+        border-top: 1px solid var(--border);
     }
     .TitleDetailsDescription .TitleDetailsDescription-descriptionArrow {
-        background: rgb(28 29 41);
+        background: var(--night);
     }
     .accordion dd > a,
     .accordion .accordion-navigation > a {
-        background-color: rgb(26, 27, 38) !important;
+        background-color: var(--night) !important;
         background-image: none !important;
     }
 
     .title-container .unavailable-title {
-        background-color: rgb(26, 27, 38);
+        background-color: var(--night);
         background-image: none;
     }
     .f-dropdown li a {
-        color: rgb(123, 135, 192);
+        color: var(--text-darker);
     }
 
     .f-dropdown {
         list-style-image: none;
-        background-color: rgb(26, 27, 38);
+        background-color: var(--night);
         background-image: none;
-        border-color: rgb(54, 56, 79);
+        border-color: var(--border);
     }
 
     .ContextMenu .ContextMenu-drop .ContextMenu-item:hover {
-        background-color: rgb(29, 30, 43);
+        background-color: var(--storm);
         background-image: none;
     }
 
     .nav-container {
-        border-bottom-color: rgb(54, 56, 79);
+        border-bottom-color: var(--border);
     }
     .footer-mobile-element {
-        background-color: rgb(26, 27, 38);
+        background-color: var(--night);
         background-image: none;
     }
 
     .reveal-modal {
-        background-color: rgb(26, 27, 38);
-        border-color: rgb(63, 75, 131);
-        box-shadow: rgba(11, 11, 16, 0.4) 0px 0px 10px;
+        background-color: var(--night);
+        border-color: var(--border);
+        box-shadow: var(--box-shadow);
     }
 
     footer {
-        border-top-color: rgb(48, 49, 69);
+        border-top-color: var(--border)
     }
     .mobile-nav-wrapper .mobile-nav-menu ul li {
-        border-bottom-color: rgb(48, 50, 70);
-        background-color: rgb(26, 27, 38);
+        border-bottom-color: var(--border);
+        background-color: var(--night);
         background-image: none;
     }
 
     .mobile-nav-wrapper .mobile-nav-menu ul li a {
-        color: rgb(150, 160, 205);
+        color: var(--text-main)
     }
 
     .mobile-nav-wrapper .mobile-nav-menu .chevron:not(.secondary-color) {
-        color: rgb(104, 118, 183) !important;
+        color: var(--text-darker) !important;
     }
 
     .MobileNav .bell-icon-container .icon-notification {
-        color: rgb(169, 177, 214);
+        color: var(--text-main);
     }
 
     .MobileNav .bell-icon-container .icon-notification {
-        color: rgb(169, 177, 214);
+        color: var(--text-main);
     }
 
     .button,
     button {
         text-decoration-color: currentcolor;
-        color: rgb(169, 177, 214);
+        color: var(--text-main);
     }
     .MobileNav,
     .MobileNav-hamburgerIcon,
     .MobileNav-bookshelfIcon {
-        color: rgb(150, 160, 205);
+        color: var(--text-main);
     }
 
     .notification-bell-svg {
-        fill: rgb(150, 160, 205);
-        stroke: rgb(150, 160, 205);
+        fill: var(--text-main);
+        stroke: var(--text-main);
     }
 
     .footer,
     footer {
-        background-color: rgb(26, 27, 38);
+        background-color: var(--night);
     }
     .AccountSortOptions::after {
-        background: linear-gradient(to right, rgba(250, 250, 250, 0), rgb(26 27 38));
+        background: linear-gradient(to right, rgba(250, 250, 250, 0), var(--night));
     }
 
     .pageable-history .accountHistoryTitle {
-        background-color: rgb(26, 27, 38);
+        background-color: var(--night);
         background-image: none;
-        box-shadow: rgb(41, 43, 60) 0px 1px 6px;
+        box-shadow: var(--box-shadow-storm);
     }
 
     .pageable-history .accountHistoryTitle .titleInfo .title-name a,
     .star-ratings-container .icon-star:before {
-        color: rgb(141, 152, 201) !important;
+        color: var(--text-main) !important;
     }
     .Paging .primary-paging .page-button {
         background-color: rgba(0, 0, 0, 0) !important;
         background-image: none !important;
     }
     .primary-border {
-        border-color: rgb(59, 61, 86);
+        border-color: var(--border);
     }
     .title-container.card .title-contents img {
-        border: 1px solid rgb(125, 172, 221);
+        border: 1px solid var(--pale-blue);
     }
     .primary-color {
-        color: rgb(125, 172, 221) !important;
+        color: var(--pale-blue) !important;
     }
 
     .AccountSortOptions .AccountSortOptions-sort {
-        color: rgb(160, 169, 210);
-        background-color: rgb(26 27 38);
+        color: var(--text-main);
+        background-color: var(--night);
     }
 
     .title-container.card .title-contents .available-title a,
@@ -386,38 +403,38 @@
     footer a,
     footer li,
     .PoweredBy .PoweredBy-text {
-        color: rgb(150 160 205);
+        color: var(--text-main);
     }
     .MobileNav .MobileNav-libraryLogo {
         filter: hue-rotate(180deg) invert(1);
         opacity: 0.7;
     }
     .footer.mobile ul li.accordion-navigation div.content {
-        border-bottom-color: rgb(50, 52, 73);
+        border-bottom-color: var(--border);
     }
     .accordion .accordion-navigation > .content.active,
     .accordion dd > .content.active {
-        background-color: rgb(26, 27, 38);
+        background-color: var(--night);
         background-image: none;
     }
 
     .Toaster-toast:not(.is-burnt),
     .sample-only-banner {
-        background-color: rgb(32, 33, 47);
-        color: rgb(150 160 205);
+        background-color: var(--storm);
+        color: var(--pale-blue);
     }
 
     .customFooter-body {
-        border-top: 2px solid rgb(50, 52, 73);
+        border-top: 2px solid var(--border);
     }
 
     .Hero .Hero-banner {
         background-image: initial !important;
-        background-color: rgb(19, 19, 28) !important;
+        background-color: var(--darker-night) !important;
     }
 
     .secondary-background {
-        background: rgb(26 27 38)!important;
+        background: var(--night) !important;
     }
 
     .Toaster-message a,
@@ -428,7 +445,7 @@
     .Hero .titleContainer .title-contents {
         box-shadow: none;
         border-radius: 3px;
-        border: 1px solid rgb(26 27 38) !important;
+        border: 1px solid var(--night) !important;
     }
 
     .LibbyTout {
@@ -436,11 +453,43 @@
     }
 
     .TitleDetailsDescription .TitleDetailsDescription-description.is-short::before {
-        background-image: linear-gradient(to bottom, rgba(250, 250, 250, 0), #1c1d29);
+        background-image: linear-gradient(to bottom, rgba(250, 250, 250, 0), var(--night));
     }
 
     .DetailsRelatedTitles {
-        border-top: 2px solid rgb(150 160 205);
-        background: rgb(25 27 38);
+        border-top: 2px solid var(--border);
+        background: var(--darker-night);
+    }
+
+    .button.secondary, button.secondary,
+    .button.sample-button {
+        color: var(--light-blue) !important;
+        background-color: var(--storm) !important;
+    }
+    .button.sample-button {
+        border-color: currentColor;
+    }
+
+    .button.sample-button:hover{
+        color: var(--light-blue) !important;
+        background-color: var(--night) !important;
+        border-color: currentColor;
+    }
+    .settings-panel {
+        background: var(--darker-night)!important;
+    }
+    .panel {
+        border-color: var(--border);
+        color: var(--text-main);
+    }
+    label {
+        color: var(--text-darker);
+    }
+    
+    .panel dl, .panel h1, .panel h2, .panel h3, .panel h4, .panel h5, .panel h6, .panel li, .panel p {
+        color: var(--text-main);
+    }
+    .settings-table li:not(:last-child):not(.audience-buttons):not(.lending-period-options):not(.SettingsPage-lendingPeriodButtonsContainer) {
+        border-bottom: 1px solid var(--border);
     }
 }
