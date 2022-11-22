@@ -25,7 +25,7 @@
         "media-feature-parentheses-space-inside": "never",
         "media-feature-range-operator-space-after": "always",
         "media-feature-range-operator-space-before": "always",
-        "no-descending-specificity": true,
+        "no-descending-specificity": null,
         "no-duplicate-selectors": true,
         "no-invalid-position-at-import-rule": null,
         "number-leading-zero": "always",
