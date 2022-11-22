@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Overdrive: Tokyo Dark
 @namespace      github.com/holyspiritomb
-@version        0.0.6
+@version        0.0.7
 @description    Tokyo Dark color scheme for Overdrive library sites.
 @author         holyspiritomb
 @license        MIT
@@ -18,7 +18,7 @@
         --cobalt-darker: rgb(63, 75, 131);
         --lightred: #f7768a;
         --border: rgb(59, 61, 86);
-        --box-shadow: rgba(11, 11, 16, 0.4) 0px 0px 10px;
+        --box-shadow: rgba(11, 11, 16, 40%) 0px 0px 10px;
         --lighter-border: rgba(82, 98, 173, 40%);
         --transparent: rgba(0, 0, 0, 0%);
         --lighter-night: rgb(32, 33, 47);
@@ -77,10 +77,6 @@
     html,
     body {
         border-color: var(--border) !important;
-    }
-
-    nav.top-bar {
-        background-color: var(--storm) !important;
     }
 
     .Nav-topRightLink:not(:first-child) {
@@ -231,13 +227,17 @@
 
     .Loans-orText {
         color: var(--text-main);
-        background-color: transparent;
+        background-color: var(--night);
         background-image: none;
     }
 
     .kindle-trouble-container,
     .loan-button-audiobook .accordion .accordion-navigation a {
         color: var(--text-main);
+    }
+    .loan-button-audiobook .accordion .accordion-navigation a {
+        color: var(--text-main);
+        background-color: var(--storm);
     }
 
     nav.top-bar {
