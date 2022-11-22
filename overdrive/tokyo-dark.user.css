@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Overdrive: Tokyo Dark
 @namespace      github.com/holyspiritomb
-@version        0.0.9
+@version        0.0.10
 @description    Tokyo Dark color scheme for Overdrive library sites.
 @author         holyspiritomb
 @license        MIT
@@ -15,7 +15,6 @@
         --text-darker: rgb(123, 135, 192);
         --text-darkest: rgb(86, 95, 137);
         --cobalt-gray: rgb(53, 55, 78);
-        --cobalt-darker: rgb(63, 75, 131);
         --lightred: #f7768a;
         --border: rgb(59, 61, 86);
         --box-shadow: rgba(11, 11, 16, 40%) 0px 0px 10px;
@@ -37,6 +36,10 @@
         color: var(--text-main) !important;
     }
 
+    html,
+    body {
+        border-color: var(--border) !important;
+    }
     .TitleDetailsDescription .TitleDetailsDescription-description {
         color: var(--text-main) !important;
     }
@@ -54,16 +57,19 @@
     .Footer-kindle .icon-android::before,
     .Footer-kindle .icon-apple::before,
     .Footer-kindle .icon-windows::before,
-    footer p.copyright,
-    input:not([type]),
-    input[type],
-    textarea {
+    footer p.copyright {
         color: var(--text-main) !important;
     }
 
-    html,
-    body {
-        border-color: var(--border) !important;
+    input:not([type]),
+    input[type],
+    select,
+    .AdvancedSearch-input,
+    .AdvancedSearch-select,
+    textarea {
+        color: var(--text-main) !important;
+        border-color: currentcolor !important;
+        background-color: var(--darker-night) !important;
     }
 
     .DesktopNavLinks .DesktopNavLinks-link {
@@ -92,6 +98,10 @@
     }
     .button.outline {
         border: 2px solid var(--border);
+    }
+    .button.cancel {
+        color: var(--text-darkest);
+        border-color: currentcolor;
     }
 
     .secondary-color,
@@ -221,17 +231,18 @@
     }
 
     .Loans-divider,
+    a.loan-button-nonkindle.button.radius.primary,
     a.loan-button-nonkindle.button.radius.primary.downloadButton {
         background-color: var(--storm) !important;
         background-image: none;
     }
 
+    span.divider-text.u-allCaps,
     .Loans-orText {
         color: var(--text-main);
         background-color: var(--night);
         background-image: none;
     }
-
     .kindle-trouble-container,
     .loan-button-audiobook .accordion .accordion-navigation a {
         color: var(--text-main);
@@ -321,7 +332,7 @@
     }
 
     .mobile-nav-wrapper .mobile-nav-menu ul li a {
-        color: var(--text-main)
+        color: var(--text-main);
     }
 
     .mobile-nav-wrapper .mobile-nav-menu .chevron:not(.secondary-color) {
