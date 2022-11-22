@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Overdrive: Tokyo Dark
 @namespace      github.com/holyspiritomb
-@version        0.0.8
+@version        0.0.9
 @description    Tokyo Dark color scheme for Overdrive library sites.
 @author         holyspiritomb
 @license        MIT
@@ -221,8 +221,8 @@
     }
 
     .Loans-divider,
-    a.loan-button-nonkindle.button.radius.primary.downloadButton[data-format-id] {
-        background-color: var(--storm);
+    a.loan-button-nonkindle.button.radius.primary.downloadButton {
+        background-color: var(--storm) !important;
         background-image: none;
     }
 
