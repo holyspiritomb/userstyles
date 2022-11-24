@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Overdrive: Tokyo Dark
 @namespace      github.com/holyspiritomb
-@version        0.0.14
+@version        0.0.15
 @description    Dark color scheme for Overdrive library sites, inspired by the Tokyo Night color scheme.
 @author         holyspiritomb
 @license        MIT
@@ -290,6 +290,14 @@
     .title-container :is(.unavailable-title, .available-title) {
         background-color: var(--night) !important;
         background-image: none;
+        border-left-color: var(--border);
+        border-top-color: var(--border);
+        border-right-color: var(--border);
+    }
+    div.title.TitleCard > div.CoverImage {
+        border-left-color: var(--border);
+        border-bottom-color: var(--border);
+        border-right-color: var(--border);
     }
     .f-dropdown li a {
         color: var(--text-darker);
@@ -433,6 +441,7 @@
     .secondary-background {
         background: var(--night) !important;
         background-color: var(--night) !important;
+        color: var(--text-main);
     }
 
     .Toaster-message a,
