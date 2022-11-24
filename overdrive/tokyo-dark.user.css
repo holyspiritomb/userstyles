@@ -112,7 +112,7 @@
         text-decoration-color: currentcolor;
         color: var(--text-main) !important;
     }
-    button:not(.bell-icon-container, #hamburger) {
+    button:not(.bell-icon-container, #hamburger, .js-borrow, .WishListButton) {
         background-color: var(--storm) !important;
     }
 
