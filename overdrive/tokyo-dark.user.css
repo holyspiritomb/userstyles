@@ -1,8 +1,8 @@
 /* ==UserStyle==
 @name           Overdrive: Tokyo Dark
 @namespace      github.com/holyspiritomb
-@version        0.0.13
-@description    Tokyo Dark color scheme for Overdrive library sites.
+@version        0.0.14
+@description    Dark color scheme for Overdrive library sites, inspired by the Tokyo Night color scheme.
 @author         holyspiritomb
 @license        MIT
 @updateURL		https://github.com/holyspiritomb/personal-userstyles/raw/main/overdrive/tokyo-dark.user.css
@@ -84,7 +84,7 @@
     .ReadingHistoryButton .ReadingHistoryButton-text,
     .secondary-hover-underline:hover,
     .title-container .title-name a:not(.secondary-color):hover {
-        background-color: rgba(0, 0, 0, 0%) !important;
+        background-color: transparent !important;
         color: var(--light-blue) !important;
     }
 
@@ -110,8 +110,10 @@
     }
     button {
         text-decoration-color: currentcolor;
-        background-color: var(--storm) !important;
         color: var(--text-main) !important;
+    }
+    button:not(.bell-icon-container, #hamburger) {
+        background-color: var(--storm) !important;
     }
 
     button:focus,
@@ -227,10 +229,7 @@
         border-bottom-color: var(--storm);
     }
 
-    .title-container .title-name a:not(.secondary-color) {
-        color: var(--text-darker) !important;
-    }
-
+    .title-container .title-name a:not(.secondary-color),
     .title-container span.title-format-badge {
         color: var(--text-darker) !important;
     }
@@ -287,14 +286,9 @@
     .TitleDetailsDescription .TitleDetailsDescription-descriptionArrow {
         background: var(--night);
     }
-    .accordion dd > a,
-    .accordion .accordion-navigation > a {
-        background-color: var(--night) !important;
-        background-image: none !important;
-    }
 
-    .title-container .unavailable-title {
-        background-color: var(--night);
+    .title-container :is(.unavailable-title, .available-title) {
+        background-color: var(--night) !important;
         background-image: none;
     }
     .f-dropdown li a {
@@ -327,7 +321,8 @@
         box-shadow: var(--box-shadow);
     }
 
-    footer {
+    footer,
+    div.u-hr {
         border-top-color: var(--border);
     }
     .mobile-nav-wrapper .mobile-nav-menu ul li {
@@ -364,7 +359,7 @@
         background-color: var(--night);
     }
     .AccountSortOptions::after {
-        background: linear-gradient(to right, rgba(250, 250, 250, 0%), var(--night));
+        background: linear-gradient(to right, rgba(0, 0, 0, 0%), var(--night));
     }
 
     .pageable-history .accountHistoryTitle {
@@ -378,7 +373,7 @@
         color: var(--text-main) !important;
     }
     .Paging .primary-paging .page-button {
-        background-color: rgba(0, 0, 0, 0%) !important;
+        background-color: transparent !important;
         background-image: none !important;
     }
     .Pagination-itemContainer.is-current .Pagination-item {
@@ -403,10 +398,7 @@
 
     footer a,
     footer li,
-    .title-container.card .title-contents .available-title a,
-    .title-container.card .title-contents .unavailable-title a,
-    .title-container.card .title-contents .available-title span,
-    .title-container.card .title-contents .unavailable-title span,
+    .title-container.card .title-contents :is(.available-title, .unavailable-title) :is(a, span),
     .PoweredBy .PoweredBy-text {
         color: var(--text-main);
     }
@@ -417,9 +409,9 @@
     .footer.mobile ul li.accordion-navigation div.content {
         border-bottom-color: var(--border);
     }
-    .accordion .accordion-navigation > .content.active,
-    .accordion dd > .content.active {
-        background-color: var(--night);
+    .accordion :is(.accordion-navigation, dd) > :is(a, .content.active),
+    div.title-header-bar.secondary-background a {
+        background-color: var(--night) !important;
         background-image: none;
     }
 
@@ -459,7 +451,7 @@
     }
 
     .TitleDetailsDescription .TitleDetailsDescription-description.is-short::before {
-        background-image: linear-gradient(to bottom, rgba(250, 250, 250, 0%), var(--night));
+        background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0%), var(--night));
     }
 
     .DetailsRelatedTitles {
@@ -495,7 +487,7 @@
     .panel :is(dl, h1, h2, h3, h4, h5, h6, li, p) {
         color: var(--text-main);
     }
-    .settings-table li:not(:last-child, .audience-buttons, .lending-period-options, .SettingsPage-lendingPeriodButtonsContainer) {
+    .settings-table li:not(:is(:last-child), .audience-buttons, .lending-period-options, .SettingsPage-lendingPeriodButtonsContainer) {
         border-bottom: 1px solid var(--border);
     }
     div.button-divider {
