@@ -227,7 +227,7 @@
     }
 
     .title-container span.title-format-badge {
-        color: var(--text-darker);
+        color: var(--text-darker) !important;
     }
 
     .Loans-divider,
@@ -239,8 +239,8 @@
 
     span.divider-text.u-allCaps,
     .Loans-orText {
-        color: var(--text-main);
-        background-color: var(--night);
+        color: var(--text-main) !important;
+        background-color: var(--night) !important;
         background-image: none;
     }
     .kindle-trouble-container,
@@ -487,5 +487,8 @@
     }
     .settings-table li:not(:last-child, .audience-buttons, .lending-period-options, .SettingsPage-lendingPeriodButtonsContainer) {
         border-bottom: 1px solid var(--border);
+    }
+    div.button-divider {
+        background: var(--border) !important;
     }
 }
