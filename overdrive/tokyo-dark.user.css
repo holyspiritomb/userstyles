@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Overdrive: Tokyo Dark
 @namespace      github.com/holyspiritomb
-@version        0.0.12
+@version        0.0.13
 @description    Tokyo Dark color scheme for Overdrive library sites.
 @author         holyspiritomb
 @license        MIT
@@ -110,8 +110,8 @@
     }
     button {
         text-decoration-color: currentcolor;
-        background-color: var(--storm);
-        color: var(--text-main);
+        background-color: var(--storm) !important;
+        color: var(--text-main) !important;
     }
 
     button:focus,
