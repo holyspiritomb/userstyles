@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Overdrive: Tokyo Dark
 @namespace      github.com/holyspiritomb
-@version        0.0.10
+@version        0.0.12
 @description    Tokyo Dark color scheme for Overdrive library sites.
 @author         holyspiritomb
 @license        MIT
@@ -84,7 +84,7 @@
     .ReadingHistoryButton .ReadingHistoryButton-text,
     .secondary-hover-underline:hover,
     .title-container .title-name a:not(.secondary-color):hover {
-        background-color: transparent !important;
+        background-color: rgba(0, 0, 0, 0%) !important;
         color: var(--light-blue) !important;
     }
 
@@ -110,6 +110,7 @@
     }
     button {
         text-decoration-color: currentcolor;
+        background-color: var(--storm);
         color: var(--text-main);
     }
 
@@ -130,8 +131,12 @@
     .TitleDetailsHeading-formatBadge > span.u-allCaps,
     .TitleDetailsHeading-formatBadgeIcon,
     .TitleDetailsHeading :is(.TitleDetailsHeading-title, .TitleDetailsHeading-creator),
+    span.search-text,
     p.subtitle {
         color: var(--text-main) !important;
+    }
+    span.search-text > span.search-term {
+        color: var(--pale-blue);
     }
 
     .top-bar-section ul li {
@@ -376,6 +381,10 @@
         background-color: rgba(0, 0, 0, 0%) !important;
         background-image: none !important;
     }
+    .Pagination-itemContainer.is-current .Pagination-item {
+        color: var(--text-main);
+        border-color: currentcolor;
+    }
     .primary-border {
         border-color: var(--border);
     }
@@ -431,6 +440,7 @@
 
     .secondary-background {
         background: var(--night) !important;
+        background-color: var(--night) !important;
     }
 
     .Toaster-message a,
