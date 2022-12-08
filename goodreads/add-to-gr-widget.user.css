@@ -1,0 +1,28 @@
+/* ==UserStyle==
+@name           Add to Goodreads widget styling
+@namespace      github.com/holyspiritomb
+@version        1.0.0
+@description    Colors to match the DarkReader Tokyo Night scheme I use on Amazon.
+@author         holyspiritomb
+@homepageURL	https://github.com/holyspiritomb/userstyles/blob/main/goodreads/add-to-gr-widget.user.css
+@updateURL		https://raw.githubusercontent.com/holyspiritomb/userstyles/main/goodreads/add-to-gr-widget.user.css
+==/UserStyle== */
+
+@-moz-document regexp('https://www\\.goodreads\\.com/book/add_to_books_widget/.*') {
+
+    @font-face {
+        font-family: 'Amazon Ember';
+        src: url('https://m.media-amazon.com/images/S/sash/pDxWAF1pBB0dzGB.woff2') format('woff2'), url('https://m.media-amazon.com/images/S/sash/kfKKBuoqcD$AUKL.woff') format('woff');
+    }
+
+    body {
+        background-color: #1a1b26;
+        color: #a9b1d6;
+        font-family: 'Amazon Ember', Lato, sans-serif;
+    }
+
+    a {
+        color: rgb(75, 228, 255);
+        font-family: 'Amazon Ember', Lato, sans-serif;
+    }
+}
