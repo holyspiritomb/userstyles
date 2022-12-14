@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Goodreads personal modifications
 @namespace      github.com/holyspiritomb
-@version        1.22.12-5.0
+@version        1.22.12-14.0
 @description    Making goodreads look nicer for me on my phone
 @author         holyspiritomb
 @homepageURL	https://github.com/holyspiritomb/userstyles/blob/main/goodreads/main.user.css
@@ -67,24 +67,22 @@
     .gr-h4--serif,
     .gr-h5--serif,
     span.ContributorLink__name[data-testid='name'],
+    .editionsPage :is(.pageTitle,.publishedDate),
+    .editionBox__desc__bookTitle,
     .readable,
-    .readable p,
-    .readable ol,
-    .readable ul,
-    .readable td,
-    .readable th,
+    .readable :is(p, ol, ul, td, th),
     .Text__h1,
-	.Text__h2, 
-	.Text__h3, 
-	.Text__h4, 
-	.Text__h5, 
-	.Text__h6, 
-	.Text__title1, 
-	.Text__title2, 
-	.Text__title2-static, 
-	.Text__title3, 
-	.Text__title4,
-	.RatingStatistics__rating {
+    .Text__h2,
+    .Text__h3,
+    .Text__h4,
+    .Text__h5,
+    .Text__h6,
+    .Text__title1,
+    .Text__title2,
+    .Text__title2-static,
+    .Text__title3,
+    .Text__title4,
+    .RatingStatistics__rating {
         font-family: var(--default-font) !important;
     }
     h2.brownBackground,
@@ -98,14 +96,12 @@
         font-family: var(--default-font) !important;
     }
     #bookTitle {
-        font-size: calc(1.5*var(--desktop-font-size));
-        font-family: var(--default-font) !important;
+        font-size: 3em;
     }
     h1.bookTitle,
     h1.bookTitle cite,
     cite.bookTitle {
-        font-size: calc(1.5*var(--mobile-font-size));
-        font-family: var(--default-font) !important;
+        font-size: 1.75em;
     }
 }
 

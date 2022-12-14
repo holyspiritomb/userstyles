@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Goodreads personal modifications (phone)
 @namespace      github.com/holyspiritomb
-@version        1.22.12-5.0
+@version        1.22.12-14.0
 @description    Making goodreads look nicer for me on my phone
 @author         holyspiritomb
 @license        MIT
@@ -89,34 +89,38 @@
     h1,
     h1[data-testid='bookTitle'],
     span.ContributorLink__name[data-testid='name'],
+    .editionsPage :is(.pageTitle,.publishedDate),
+    .editionBox__desc__bookTitle,
+    .readable,
+    .readable :is(p, ol, ul, td, th),
     .Text__h1,
-	.Text__h2, 
-	.Text__h3, 
-	.Text__h4, 
-	.Text__h5, 
-	.Text__h6, 
-	.Text__title1, 
-	.Text__title2, 
-	.Text__title2-static, 
-	.Text__title3, 
-	.Text__title4,
-	.RatingStatistics__rating {
+    .Text__h2,
+    .Text__h3,
+    .Text__h4,
+    .Text__h5,
+    .Text__h6,
+    .Text__title1,
+    .Text__title2,
+    .Text__title2-static,
+    .Text__title3,
+    .Text__title4,
+    .RatingStatistics__rating {
         font-family: var(--default-font) !important;
     }
     #bookTitle {
-        font-size: calc(2*var(--desktop-font-size));
-        font-family: var(--default-font);
+        font-size: 3em;
     }
-    h1.bookTitle {
-        font-size: calc(2*var(--mobile-font-size));
-        font-family: var(--default-font);
+    h1.bookTitle,
+    h1.bookTitle cite,
+    cite.bookTitle {
+        font-size: 1.75em;
     }
     a.siteHeader__topLevelLink,
     a.primaryNavMenu__trigger--siteHeaderBrowseMenu span {
         font-size: 16px;
     }
     html.desktop a[href='/toggle_mobile'] {
-        font-size: 2em;
+        font-size: 3em;
     }
     html.mobile a[href='/toggle_mobile'] {
         font-size: 1.5em;
