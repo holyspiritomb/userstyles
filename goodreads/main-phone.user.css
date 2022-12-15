@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Goodreads personal modifications (phone)
 @namespace      github.com/holyspiritomb
-@version        1.22.12-14.0
+@version        1.22.12-15.0
 @description    Making goodreads look nicer for me on my phone
 @author         holyspiritomb
 @license        MIT
@@ -113,7 +113,6 @@
     h1.bookTitle,
     h1.bookTitle cite,
     cite.bookTitle {
-        font-size: 1.75em;
     }
     a.siteHeader__topLevelLink,
     a.primaryNavMenu__trigger--siteHeaderBrowseMenu span {
