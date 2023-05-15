@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Goodreads: Library Extension Styling
 @namespace      github.com/holyspiritomb
-@version        0.0.9
+@version        0.0.10
 @description    Modifications to make LibraryExtension look better, to be used along with my main Goodreads styles.
 @author         holyspiritomb
 @homepageURL	https://github.com/holyspiritomb/userstyles/blob/main/goodreads/libraryextension.user.css
@@ -60,7 +60,9 @@
         font-weight: bold;
     }
 
-    div.libraryExtension a.libSearch {
+    div.libraryExtension a.libSearch,
+    div.libraryExtension div.libMoreResults,
+    div.libraryExtension a.libHold {
         background: -webkit-linear-gradient(top, #111111 0%, #333333 100%) !important;
         background: linear-gradient(top, #111111 0%, #333333 100%) !important;
         border: 0 !important;
