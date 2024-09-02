@@ -1,0 +1,75 @@
+/* ==UserStyle==
+@name           Skeetdeck mobile customized
+@namespace      github.com/holyspiritomb/userstyles
+@version        1.0.0
+@description    Modifies Skeetdeck for my specific mobile device and preferences
+@author         holyspiritomb
+@uodateURL      https://github.com/holyspiritomb/userstyles/raw/main/skeetdeck/mobile.user.css
+@homepageURL    https://github.com/holyspiritomb/userstyles/blob/main/skeetdeck/mobile.user.css
+==/UserStyle== */
+@-moz-document domain("skeetdeck.pages.dev") {
+
+    /* Insert code here... */
+    .h-screen {
+        height: 93vh;
+    }
+    .w-60 {
+        width: 9rem;
+    }
+    input.grow {
+        width: 100px;
+    }
+    .overflow-hidden:has(button.text-left) {
+        overflow-y: scroll;
+        scrollbar-width: none;
+    }
+    dialog {
+        font-size: 0.8rem;
+        line-height: calc(1.5 * 0.8rem);
+    }
+    dialog .overflow-hidden:has(.bg-secondary\/10) {
+        border-width: 1px;
+        border-style: solid;
+        border-radius: 5px;
+        border-color: rgb(var(--divider));
+    }
+    button span.overflow-hidden.text-ellipsis.whitespace-nowrap {
+        text-overflow: unset;
+        text-wrap: unset;
+        overflow-wrap: unset;
+    }
+    .object-cover + div.text-sm:has(p.break-words.line-clamp-2) {
+        height: fit-content;
+    }
+    .object-cover + div.text-sm > p.break-words.line-clamp-2 {
+        overflow-wrap: unset;
+        text-overflow: unset;
+        overflow: unset;
+        font-size: 0.7rem;
+        -webkit-line-clamp: unset;
+    }
+    .text-ellipsis.overflow-hidden:has(span.text-primary.font-bold) {
+        text-overflow: unset;
+        overflow: unset;
+        display: block;
+    }
+    .text-ellipsis.overflow-hidden:has(span.text-primary.font-bold) ~ span {
+        display: block;
+    }
+    div.max-w-full > .object-cover,
+    .object-cover.w-full {
+        filter: blur(7px);
+    }
+    div.max-w-full > .object-cover:focus,
+    .object-cover.w-full:focus,
+    div.max-w-full > .object-cover:hover,
+    .object-cover.w-full:hover {
+        filter: none;
+    }
+    img.object-cover.w-full[src*="avatar"],
+    img.object-cover.w-full[alt*=" painting of a bird"],
+    img.object-cover.w-full[alt*=" woodcut of a "],
+    img.object-cover.w-full[alt*="California license"] {
+        filter: blur(0px);
+    }
+}
