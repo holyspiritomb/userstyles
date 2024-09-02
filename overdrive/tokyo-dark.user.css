@@ -1,11 +1,11 @@
 /* ==UserStyle==
 @name           Overdrive: Tokyo Dark
 @namespace      github.com/holyspiritomb
-@version        0.0.15
+@version        0.0.16
 @description    Dark color scheme for Overdrive library sites, inspired by the Tokyo Night color scheme.
 @author         holyspiritomb
 @license        MIT
-@updateURL		https://github.com/holyspiritomb/personal-userstyles/raw/main/overdrive/tokyo-dark.user.css
+@updateURL		https://github.com/holyspiritomb/userstyles/raw/main/overdrive/tokyo-dark.user.css
 ==/UserStyle== */
 @-moz-document domain('overdrive.com') {
     :root {
