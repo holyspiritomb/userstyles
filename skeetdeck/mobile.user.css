@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Skeetdeck mobile customized
 @namespace      github.com/holyspiritomb/userstyles
-@version        2.0.0
+@version        2.0.1
 @description    Modifies Skeetdeck for my specific mobile device and preferences
 @author         holyspiritomb
 @updateURL      https://github.com/holyspiritomb/userstyles/raw/main/skeetdeck/mobile.user.css
@@ -10,10 +10,11 @@
 @var            select accent-color "Accent Color" {
     "Rose Pine Foam": "156 207 216",
     "Rose Pine Gold": "246 193 119",
-    "Rose Pine Iris": "196 167 231",
-    "Rose Pine Love*": "235 111 146",
+    "Rose Pine Iris*": "196 167 231",
+    "Rose Pine Love": "235 111 146",
     "Rose Pine Pine": "49 116 143",
-    "Rose Pine Rose": "235 188 186"
+    "Rose Pine Rose": "235 188 186",
+    "Rose Pine Subtle": "144 140 170"
 }
 @var           select borders-color "Borders" {
     "Rose Pine Foam": "156 207 216",
@@ -23,8 +24,8 @@
     "Rose Pine Pine": "49 116 143",
     "Rose Pine Rose": "235 188 186",
     "Rose Pine Highlight Low": "33 32 46",
-    "Rose Pine Highlight Med*": "64 61 82",
-    "Rose Pine Highlight High": "82 79 103"
+    "Rose Pine Highlight Med": "64 61 82",
+    "Rose Pine Highlight High*": "82 79 103"
 }
 @var           select dividers-color "Dividers" {
     "Rose Pine Foam": "156 207 216",
@@ -121,6 +122,10 @@
     }
     .border-divider {
         border-color: rgb(var(--dividers-color));
+        border-left-color: rgb(var(--dividers-color));
+        border-right-color: rgb(var(--dividers-color));
+        border-top-color: rgb(var(--dividers-color));
+        border-bottom-color: rgb(var(--dividers-color));
     }
     .h-screen {
         height: 93vh;
@@ -143,7 +148,11 @@
         border-width: 1px;
         border-style: solid;
         border-radius: 5px;
-        border-color: rgb(var(--borders-color));
+        border-color: rgb(var(--dividers-color));
+        border-left-color: rgb(var(--dividers-color));
+        border-right-color: rgb(var(--dividers-color));
+        border-top-color: rgb(var(--dividers-color));
+        border-bottom-color: rgb(var(--dividers-color));
         /* border-color: var(--rp-highlight-med) */
     }
     dialog .text-sm {
