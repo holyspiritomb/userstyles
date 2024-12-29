@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Skeetdeck mobile customized
 @namespace      github.com/holyspiritomb/userstyles
-@version        2.0.1
+@version        2.0.2
 @description    Modifies Skeetdeck for my specific mobile device and preferences
 @author         holyspiritomb
 @updateURL      https://github.com/holyspiritomb/userstyles/raw/main/skeetdeck/mobile.user.css
@@ -207,7 +207,8 @@
     img.object-cover.w-full[src*="avatar"],
     img.object-cover.w-full[alt*=" painting of a bird"],
     img.object-cover.w-full[alt*=" woodcut of a "],
-    img.object-cover.w-full[alt*="California license"] {
+    img.object-cover.w-full[alt*="California license"],
+    img.object-cover.w-full[src^="data:image/svg+xml"] {
         filter: blur(0px);
     }
     .h-8 {
