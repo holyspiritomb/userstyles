@@ -1,13 +1,16 @@
 /* ==UserStyle==
 @name           Skeetdeck mobile customized
 @namespace      github.com/holyspiritomb/userstyles
-@version        2.0.2
+@version        2.0.3
 @description    Modifies Skeetdeck for my specific mobile device and preferences
 @author         holyspiritomb
 @updateURL      https://github.com/holyspiritomb/userstyles/raw/main/skeetdeck/mobile.user.css
 @homepageURL    https://github.com/holyspiritomb/userstyles/blob/main/skeetdeck/mobile.user.css
-@preprocessor   default
-@var            select accent-color "Accent Color" {
+@preprocessor   stylus
+@var            color bgMain "Background" rgba(25,23,36,1)
+@var            color bgPrim "Primary Background" rgba(31,29,46,1)
+@var            color bgSec "Secondary Background" rgba(38,35,58, 0.7)
+@var            select accentColor "Accent Color" {
     "Rose Pine Foam": "156 207 216",
     "Rose Pine Gold": "246 193 119",
     "Rose Pine Iris*": "196 167 231",
@@ -16,18 +19,7 @@
     "Rose Pine Rose": "235 188 186",
     "Rose Pine Subtle": "144 140 170"
 }
-@var           select borders-color "Borders" {
-    "Rose Pine Foam": "156 207 216",
-    "Rose Pine Gold": "246 193 119",
-    "Rose Pine Iris": "196 167 231",
-    "Rose Pine Love": "235 111 146",
-    "Rose Pine Pine": "49 116 143",
-    "Rose Pine Rose": "235 188 186",
-    "Rose Pine Highlight Low": "33 32 46",
-    "Rose Pine Highlight Med": "64 61 82",
-    "Rose Pine Highlight High*": "82 79 103"
-}
-@var           select dividers-color "Dividers" {
+@var           select bordersColor "Borders" {
     "Rose Pine Foam": "156 207 216",
     "Rose Pine Gold": "246 193 119",
     "Rose Pine Iris": "196 167 231",
@@ -38,6 +30,20 @@
     "Rose Pine Highlight Med*": "64 61 82",
     "Rose Pine Highlight High": "82 79 103"
 }
+@var           select dividersColor "Dividers" {
+    "Rose Pine Foam": "156 207 216",
+    "Rose Pine Gold": "246 193 119",
+    "Rose Pine Iris": "196 167 231",
+    "Rose Pine Love": "235 111 146",
+    "Rose Pine Pine": "49 116 143",
+    "Rose Pine Rose": "235 188 186",
+    "Rose Pine Highlight Low": "33 32 46",
+    "Rose Pine Highlight Med*": "64 61 82",
+    "Rose Pine Highlight High": "82 79 103"
+}
+@var          checkbox changeEmojiFont "Change emoji font" 0
+@var          checkbox fontEnabled "Change base font" 0
+@var          text baseFontName "Base text font(s)" "'Inter', InterVar, 'InterVariable'"
 ==/UserStyle== */
 @-moz-document domain("skeetdeck.pages.dev") {
 
@@ -96,95 +102,162 @@
         --rp-pine-tw: 49 116 143;
         --rp-foam-tw: 156 207 216;
         --rp-moon-love-tw: 235 111 146;
-
-        --secondary: 64 61 82;
+        --ctp-mocha-green: #a6e3a1;
+        --rp-green-600: rgb(161, 233, 155);
+        --rp-red-600: var(--rp-moon-love);
+    }
+    :root,.is-dark{
         --background: 25 23 36;
         --background-dark: 33 32 46;
-        /* --divider: var(--accent-color); */
-        --divider: var(--dividers-color);
-        --primary: 224 222 244;
-        --accent: var(--accent-color);
-        --rp-green-600: var(--rp-foam-tw);
-        --rp-red-600: 235 111 146;
+        --accent: accentColor;
+        /* --accent-dark: accentColor; */
         --hinted: 64 61 82;
+        --primary: 224 222 244;
+        /* --primary: accentColor; */
+        /* --primary-fg: */
+        --secondary: 64 61 82;
+        /* --secondary-fg: 64 61 82; */
         --muted: 33 32 46;
         --muted-fg: 110 106 134;
-    }
-
-    .w-96 {
-        width: 22rem;
+        /* --input: */
+        --divider: dividersColor;
     }
     *,
     :before,
     :after,
     .border {
-        border-color: rgb(var(--borders-color));
+        border-color: rgb(bordersColor);
     }
     .border-divider {
-        border-color: rgb(var(--dividers-color));
-        border-left-color: rgb(var(--dividers-color));
-        border-right-color: rgb(var(--dividers-color));
-        border-top-color: rgb(var(--dividers-color));
-        border-bottom-color: rgb(var(--dividers-color));
+        border-color: rgb(dividersColor);
+        border-left-color: rgb(dividersColor);
+        border-right-color: rgb(dividersColor);
+        border-top-color: rgb(dividersColor);
+        border-bottom-color: rgb(dividersColor);
     }
+    .bg-background {
+        background-color: bgMain;
+    }
+    .bg-primary {
+        background-color: bgPrim;
+    }
+    .text-red-500 {
+        color: var(--rp-red-600);
+        /* stylelint-disable-next-line */
+        caret-color: @color;
+    }
+    .text-red-600,
+    article .text-red-600 {
+        color: var(--rp-red-600);
+        caret-color: @color;
+    }
+    .text-green-600 {
+        color: var(--rp-green-600);
+        caret-color: @color;
+    }
+    /* sizes {{{ */
     .h-screen {
         height: 93vh;
     }
     .w-60 {
         width: 7.5rem;
     }
+    .w-96 {
+        width: 22rem;
+    }
     input.grow {
         width: 100px;
+    }
+    .h-8 {
+        height: 1.5rem;
+        & > svg[height="1em"] {
+            height: 1rem !important;
+        }
+        &.w-8:has(svg[height = "1em"][width = "1em"]) + span.text-de {
+            line-height: 0.7rem;
+        }
+    }
+    .w-8 {
+        width: 1.5rem;
+        & > svg[width="1em"] {
+            width: 1rem !important;
+        }
+    }
+    .vc-panel {
+        min-height: 50%;
+        max-height: 50vh;
+    }
+    span.max-w-full.group.overflow-hidden:has(bdi) {
+        max-width: 215px !important;
+        width: @max-width;
+    }
+    /* .h-8.w-8:has(svg[height = "1em"][width = "1em"]) + span.text-de { */
+    /*     line-height: 0.75rem; */
+    /* } */
+    input.grow {
+        width: 100px;
+    }
+    /* }}} */
+    /* dialog {{{ */
+    dialog {
+        font-size: 0.8rem;
+        /* line-height: calc(1.5 * 0.8rem); */
+        line-height: @font-size * 1.5;
+        .text-sm {
+            font-size: .65rem;
+            /* line-height: calc(0.65rem * 1.5); */
+            line-height: @font-size * 1.5;
+        }
+        .text-de {
+            font-size: .7rem;
+            /* line-height: calc(0.7rem * 1.5); */
+            line-height: @font-size * 1.5;
+        }
+        & > .shadow-menu {
+            border-width: 1px;
+            border-style: solid;
+            border-color: rgb(bordersColor);
+            background: bgMain;
+
+        }
+        .overflow-hidden:has(.bg-secondary\/10) {
+            border-width: 1px;
+            border-style: solid;
+            border-radius: 5px;
+            border-color: rgb(dividersColor);
+            border-left-color: rgb(dividersColor);
+            border-right-color: rgb(dividersColor);
+            border-top-color: rgb(dividersColor);
+            border-bottom-color: rgb(dividersColor);
+        }
+    }
+    /* }}} */
+    .object-cover {
+        object-fit: contain;
+        & + div.text-sm {
+            &:has(p.break-words.line-clamp-2) {
+                height: fit-content;
+            }
+            & > p.break-words.line-clamp-2 {
+                overflow-wrap: unset;
+                text-overflow: unset;
+                overflow: unset;
+                font-size: 0.7rem;
+                -webkit-line-clamp: unset;
+                line-clamp: unset;
+                /* line-height: calc(1.5 * 0.7rem); */
+                line-height: @font-size * 1.5;
+            }
+        }
     }
     .overflow-hidden:has(button.text-left) {
         overflow-y: scroll;
         scrollbar-width: none;
     }
-    dialog {
-        font-size: 0.8rem;
-        line-height: calc(1.5 * 0.8rem);
-    }
-    dialog .overflow-hidden:has(.bg-secondary\/10) {
-        border-width: 1px;
-        border-style: solid;
-        border-radius: 5px;
-        border-color: rgb(var(--dividers-color));
-        border-left-color: rgb(var(--dividers-color));
-        border-right-color: rgb(var(--dividers-color));
-        border-top-color: rgb(var(--dividers-color));
-        border-bottom-color: rgb(var(--dividers-color));
-        /* border-color: var(--rp-highlight-med) */
-    }
-    dialog .text-sm {
-        font-size: .65rem;
-        line-height: calc(0.65rem * 1.5);
-    }
-    dialog .text-de {
-        font-size: .7rem;
-        line-height: calc(0.7rem * 1.5);
-    }
-    dialog > .shadow-menu {
-        border-width: 1px;
-        border-style: solid;
-        /* border-color: var(--rp-highlight-high); */
-        border-color: rgb(var(--borders-color));
-        background: var(--rp-surface);
-    }
     button span.overflow-hidden.text-ellipsis.whitespace-nowrap {
         text-overflow: unset;
         text-wrap: unset;
         overflow-wrap: unset;
-    }
-    .object-cover + div.text-sm:has(p.break-words.line-clamp-2) {
-        height: fit-content;
-    }
-    .object-cover + div.text-sm > p.break-words.line-clamp-2 {
-        overflow-wrap: unset;
-        text-overflow: unset;
-        overflow: unset;
-        font-size: 0.7rem;
-        -webkit-line-clamp: unset;
-        line-height: calc(1.5 * 0.7rem);
     }
     .text-ellipsis.overflow-hidden:has(span.text-primary.font-bold) {
         text-overflow: unset;
@@ -194,65 +267,32 @@
     .text-ellipsis.overflow-hidden:has(span.text-primary.font-bold) ~ span {
         display: block;
     }
-    div.max-w-full > .object-cover,
-    .object-cover.w-full {
-        filter: blur(7px);
+    article [class*="bg-secondary"]:not(.w-8,.justify-center),
+    button[title="Remove embed"] + div.rounded-md.border.border-divider,
+    article button.outline-primary,
+    article span[role="button"].outline-primary {
+        background: bgSec !important;
     }
-    div.max-w-full > .object-cover:focus,
-    .object-cover.w-full:focus,
-    div.max-w-full > .object-cover:hover,
-    .object-cover.w-full:hover {
-        filter: none;
+    button[title="Remove embed"] {
+        background: transparent;
     }
-    img.object-cover.w-full[src*="avatar"],
-    img.object-cover.w-full[alt*=" painting of a bird"],
-    img.object-cover.w-full[alt*=" woodcut of a "],
-    img.object-cover.w-full[alt*="California license"],
-    img.object-cover.w-full[src^="data:image/svg+xml"] {
-        filter: blur(0px);
+    article [class*="bg-secondary"]:not(.w-8,.justify-center):is(.outline-primary,.border),
+    button[title="Remove embed"] + div.rounded-md.border.border-divider,
+    article button.outline-primary,
+    article span[role="button"] > .border,
+    article span[role="button"].outline-primary {
+        outline-color: rgb(bordersColor);
+        border-color: @outline-color;
     }
-    .h-8 {
-        height: 1.5rem
-    }
-    .w-8 {
-        width: 1.5rem
-    }
-    .h-8 > svg[height = "1em"] {
-        height: 1rem !important;
-    }
-    .w-8 > svg[width = "1em"] {
-        width: 1rem !important;
-    }
-    .h-8.w-8:has(svg[height = "1em"][width = "1em"]) + span.text-de {
-        line-height: 0.75rem;
-    }
-    input.grow {
-        width: 100px;
-    }
-    .object-cover {
-        object-fit: contain;
-    }
-    article span[role = "button"] > .border {
-        background-color: var(--rp-surface);
-        border-color: rgb(var(--borders-color));
-        /* border-color: var(--rp-highlight-med); */
-    }
-    article .hover\:bg-secondary\/30 {
-        background-color: var(--rp-surface);
-    }
-    a[target = "_blank"].outline-2 {
-        background-color: var(--rp-surface);
-    }
-    a[target = "_blank"].outline-2 img.object-cover {
+    a[target="_blank"].outline-2 img.object-cover {
         object-fit: cover;
     }
     article .border-divider,
     article button.border,
     .border-divider {
-        /* border-color: var(--rp-highlight-high); */
-        border-color: rgb(var(--dividers-color));
+        border-color: rgb(dividersColor)
     }
-    .overflow-hidden:has(.line-clamp-6),
+    /* .overflow-hidden:has(.line-clamp-6), */
     .overflow-hidden .line-clamp-6 {
         overflow: unset;
         overflow-x: unset;
@@ -260,15 +300,50 @@
         overflow-wrap: unset;
         text-overflow: unset;
         -webkit-line-clamp: unset;
+        line-clamp: unset;
     }
-    article .text-red-600 {
-        color: rgb(var(--rp-red-600) / var(--tw-text-opacity));
+    div.mt-1{
+        margin-bottom: 0.5rem
     }
-    .text-green-600 {
-        color: rgb(var(--rp-green-600) / var(--tw-text-opacity));
+    div.overflow-hidden:has(>img[src*="feed_thumbnail"][title].h-full.w-full.object-contain) {
+        aspect-ratio: unset !important;
+        overflow-y:unset !important;
     }
-    .vc-panel {
-        min-height: 50%;
-        max-height: 50vh;
+    button:has(+button.bg-primary.text-sm.text-primary-fg) {
+        color: rgb(accentColor);
+        border-color: rgb(accentColor) !important;
+        outline-color: @border-color;
+    }
+    div.min-w-0.text-sm + div:has(+button.text-sm:not(.bg-primary)) {
+        /* background-color: alpha(bgSec, 0.8) !important; */
+        border-color: rgb(accentColor) !important;
+        outline-color: @border-color;
+    }
+    div.min-w-0.text-sm + div:has(+button.bg-primary.text-sm.text-primary-fg),
+    button.bg-primary.text-sm.text-primary-fg {
+        background-color: rgb(accentColor) !important;
+    }
+
+    if fontEnabled {
+        if changeEmojiFont {
+            html, body, textarea, :host, :root {
+                font-family: "Noto Color Emoji", baseFontName, system-ui, sans-serif !important;
+                font-feature-settings: 'ss01' on, 'cv05' on;
+            }
+        }
+        else {
+            html, body, texrarea,:host, :root {
+                font-family: baseFontName, system-ui, sans-serif !important;
+                font-feature-settings: 'ss01' on, 'cv05' on;
+            }
+        }
+    }
+    else {
+        if changeEmojiFont {
+            html, body, :host,textarea, :root {
+                font-family: "Noto Color Emoji", sans-serif !important;
+            }
+        }
+
     }
 }
