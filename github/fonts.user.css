@@ -11,18 +11,23 @@
 @-moz-document url-prefix('https://github.com/') {
     /* @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
     @import url('https://rsms.me/inter/inter.css'); */
+    .CheckStep-line,
+    .blob-code-inner,
+    .commit-ref,
     code,
-    code .link-gray,
     pre,
     tt,
-    .blob-code-inner,
-    .CheckStep-line,
-    .commit-ref,
     .text-mono,
-    .markdown-body pre,
-    .markdown-body tt,
+    kbd,
+    .markdown-body :is(code, tt, pre),
     .highlight pre,
-    kbd {
+    code .link-gray,
+    [class ^= 'pl-'],
+    .react-blob-print-hide,
+    textarea#read-only-cursor-text-area,
+    textarea[style],
+    .pl-c,
+    .pl-c span {
         font-family: 'Victor Mono', sans-serif;
     }
 }
