@@ -20,6 +20,6 @@
     }
 
     html, body, :host, :root {
-        font-family: "Noto Color Emoji", "Inter", InterVar, system-ui, sans-serif !important;
+        font-family: "Noto Color Emoji", "Inter", "InterVariable", InterVar, system-ui, sans-serif !important;
     }
 }
