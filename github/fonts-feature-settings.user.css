@@ -1,0 +1,40 @@
+/* ==UserStyle==
+@name           github.com font feature settings
+@namespace      github.com/holyspiritomb
+@version        1.0.0
+@description    For setting the font-feature-settings property of the monospace font and of the body font. The monospace font inherits from the body font. Default values are for Inter () and Victor Mono ().
+@author         holyspiritomb
+@updateURL		https://github.com/holyspiritomb/userstyles/raw/main/github/fonts-feature-settings.user.css
+@preprocessor   stylus
+@var            text monoFont "Monospace font" "'Victor Mono'"
+@var            text monoFontSettings "Monospace font feature settings" "'ss06' on, 'ss01' off, 'ss07' on"
+@var            text bodyFontSettings "Body font feature settings" "'cv01' on, 'cv02' on, 'cv03' on, 'cv04' on, 'cv05' on, 'cv07' on, 'cv08' on, 'cv09' on, 'cv10' on"
+==/UserStyle== */
+@-moz-document domain("github.com") {
+    :root {
+        --fontStack-monospace: monoFont, ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace;
+    }
+    html,:root,body,
+    .markdown-body {
+        font-feature-settings: bodyFontSettings;
+    }
+    .CheckStep-line,
+    .blob-code-inner,
+    .commit-ref,
+    code,
+    pre,
+    tt,
+    .text-mono,
+    kbd,
+    .markdown-body :is(code, tt, pre),
+    .highlight pre,
+    code .link-gray,
+    [class ^= 'pl-'],
+    .react-blob-print-hide,
+    textarea#read-only-cursor-text-area,
+    textarea[style],
+    .pl-c,
+    .pl-c span {
+        font-feature-settings: monoFontSettings !important;
+    }
+}
