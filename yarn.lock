@@ -225,6 +225,11 @@ cssesc@^3.0.0:
   resolved "https://registry.yarnpkg.com/cssesc/-/cssesc-3.0.0.tgz#37741919903b868565e1c09ea747445cd18983ee"
   integrity sha512-/Tb/JcjK111nNScGob5MNtsntNM1aCNUDipB/TkwZFhyDrrE47SOx/18wF2bbjgc3ZzCSKW1T5nt5EbFoAz/Vg==
 
+csstype@^3.1.3:
+  version "3.1.3"
+  resolved "https://registry.yarnpkg.com/csstype/-/csstype-3.1.3.tgz#d80ff294d114fb0e6ac500fbf85b60137d7eff81"
+  integrity sha512-M1uQkMl8rQK/szD0LNhtqxIPLpimGm8sOBwU7lLnCpSbTyY3yeU1Vc7l4KT5zT4s/yOxHH5O7tIuuLOCnLADRw==
+
 debug@^4.3.7:
   version "4.4.0"
   resolved "https://registry.yarnpkg.com/debug/-/debug-4.4.0.tgz#2b3f2aea2ffeb776477460267377dc8710faba8a"
@@ -761,6 +766,13 @@ stylelint-declaration-block-no-ignored-properties@^2.8.0:
   version "2.8.0"
   resolved "https://registry.yarnpkg.com/stylelint-declaration-block-no-ignored-properties/-/stylelint-declaration-block-no-ignored-properties-2.8.0.tgz#a7bc95a46f4bc971aec0e33274bfbdecfe575435"
   integrity sha512-Ws8Cav7Y+SPN0JsV407LrnNXWOrqGjxShf+37GBtnU/C58Syve9c0+I/xpLcFOosST3ternykn3Lp77f3ITnFw==
+
+stylelint-define-config@^1.8.1:
+  version "1.8.1"
+  resolved "https://registry.yarnpkg.com/stylelint-define-config/-/stylelint-define-config-1.8.1.tgz#d1f2eadd3fc24aeb2ee2f2bc1f1d69c6d066c7fd"
+  integrity sha512-oVqGMJ2UFm6a32zq7A61vZylXeJkTOQPJ91rSaJID0AEGKj52fA7vb/z/8UhHV+Ga+gxFJKiklDEhChBAyqHqw==
+  dependencies:
+    csstype "^3.1.3"
 
 stylelint-less@^3.0.1:
   version "3.0.1"

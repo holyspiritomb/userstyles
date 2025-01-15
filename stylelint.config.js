@@ -1,13 +1,15 @@
 /** @type {import('stylelint').Config} */
-
-export default {
-  extends: ["stylelint-config-standard"],
+import defineConfig from 'stylelint-define-config';
+export default defineConfig ({
+  extends: ["stylelint-config-standard",],
   plugins: [
     "stylelint-less",
     "stylelint-use-nesting",
-    "stylelint-declaration-block-no-ignored-properties"
+    "stylelint-declaration-block-no-ignored-properties",
+    'stylelint-order'
   ],
   rules: {
+    // "at-rule-disallowed-list": ["import"],
     "at-rule-no-unknown": null,
     "color-no-invalid-hex":true,
     "less/color-no-invalid-hex":true,
@@ -32,4 +34,4 @@ export default {
     "value-no-vendor-prefix":null,
     "plugin/declaration-block-no-ignored-properties": true,
   }
-};
+});

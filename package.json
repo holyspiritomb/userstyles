@@ -10,6 +10,7 @@
     "stylelint": "^16.13.2",
     "stylelint-config-standard": "^37.0.0",
     "stylelint-declaration-block-no-ignored-properties": "^2.8.0",
+    "stylelint-define-config": "^1.8.1",
     "stylelint-less": "^3.0.1",
     "stylelint-use-nesting": "^6.0.0",
     "usercss-meta": "^0.12.0",
