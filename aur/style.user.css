@@ -1,0 +1,13 @@
+/* ==UserStyle==
+@name           aur.archlinux.org textarea width
+@namespace      github.com/holyspiritomb
+@version        1.0.0
+@author         holyspiritomb
+==/UserStyle== */
+
+@-moz-document url-prefix("https://aur.archlinux.org/packages/") {
+    /* Insert code here... */
+    textarea {
+        max-width: 90vw;
+    }
+}
