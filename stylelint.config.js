@@ -2,7 +2,11 @@
 
 export default {
   extends: ["stylelint-config-standard"],
-  plugins: ["stylelint-less", "stylelint-use-nesting"],
+  plugins: [
+    "stylelint-less",
+    "stylelint-use-nesting",
+    "stylelint-declaration-block-no-ignored-properties"
+  ],
   rules: {
     "at-rule-no-unknown": null,
     "color-no-invalid-hex":true,
@@ -25,6 +29,7 @@ export default {
     "selector-class-pattern":null,
     "selector-id-pattern":null,
     "selector-no-qualifying-type": false,
-    "value-no-vendor-prefix":null
+    "value-no-vendor-prefix":null,
+    "plugin/declaration-block-no-ignored-properties": true,
   }
 };
