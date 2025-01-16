@@ -1,12 +1,13 @@
 /* ==UserStyle==
-@name           aur.archlinux.org textarea width
+@name           Mobile AUR horizontal overflow prevention
 @namespace      github.com/holyspiritomb
 @version        1.0.0
 @author         holyspiritomb
+@description    Prevents the textarea comment box on package pages from horizontally overflowing the viewport.
+@license        CC0 1.0
 ==/UserStyle== */
 
 @-moz-document url-prefix("https://aur.archlinux.org/packages/") {
-    /* Insert code here... */
     textarea {
         max-width: 90vw;
     }
