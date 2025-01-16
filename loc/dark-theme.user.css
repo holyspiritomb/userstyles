@@ -2,16 +2,17 @@
 @name           dark id.loc.gov
 @namespace      github.com/holyspiritomb/userstyles
 @version        1.0.0
-@description    Dark search interface.
+@description    Dark interface, default values based on Rosé Pine. Customizable colors.
 @author         holyspiritomb
 @updateURL      https://github.com/holyspiritomb/userstyles/raw/main/loc/dark-theme.user.css
 @homepageURL    https://github.com/holyspiritomb/userstyles/blob/main/loc/dark-theme.user.css
 @preprocessor   stylus
-@var            color accentColor1 "Accent" "#c4a7e7"
-@var            color accentColor2 "Secondary accent" "#9ccfd8"
+@var            color accentColor1 "Accent" "#9ccfd8"
+@var            color accentColor2 "Secondary accent" "#908caa"
 @var            color borderColor "Borders" "#403d52"
-@var            color linkColor1 "Link Color 1" "#eb6f92"
-@var            color linkColor2 "Link Color 2" "#f6c177"
+@var            color linkMain "Link (main)" "#eb6f92"
+@var            color linkActive "Link (active, focus, hover)" "#f6c177"
+@var            color linkVisited "Link (visited)" "#c4a7e7"
 @var            color baseBg "Page Background" "#191724"
 @var            color surfaceBg "Secondary Background" "#1f1d2e"
 @var            color overlayBg "Overlay Background" "#26233a"
@@ -65,34 +66,75 @@
         --rp-dawn-highlight-med: #dfdad9;
         --rp-dawn-highlight-high: #cecacd;
     }
-    /* Insert code here... */
-    a:link,
-    a:visited,
-    .bf-render :is(a, a:link, a:visited) {
-        color: linkColor1;
-        text-decoration: underline;
+    :is(a, .bf-render a, .facet-link, .facet-link .facet-item) {
+        color: linkMain;
+        &:not(.facet-link):not(.facet-item){
+            text-decoration: underline;
+        }
+        &:link {
+            color: linkMain;
+        }
+        &:visited {
+            color: linkVisited;
+        }
+        &:hover {
+            color: linkActive;
+        }
+        &:active {
+            color: linkActive;
+        }
+        &:focus {
+            color: linkActive;
+        }
     }
-    a:hover,
-    a:active,
-    a:focus,
-    .bf-render :is(a:focus,a:hover,a:active) {
-        color: linkColor2;
-        text-decoration: underline;
+    .facet-box li a:hover{
+        background-color: overlayBg;
+        border-color: borderColor;
+    }
+    h2.facet-header {
+        color: accentColor1 !important;
+    }
+    .facet-category {
+        color: accentColor2 !important;
+        &:before{
+            color: accentColor2 !important;
+        }
     }
     body,
-    div#container {
+    div#container, div.nav-pag-top, div.nav-pag-bot {
         color: textColor;
         background-color: surfaceBg;
         border-color: borderColor;
     }
-    .footer {
-        background-color: baseBg;
-        border-top-color: borderColor;
-        color: textColor
+    table.id-std {
+        th {
+            background-color: transparent;
+        }
+        tbody.tbody-group {
+            background-color: baseBg !important;
+            &:nth-of-type(2n) {
+                background-color: surfaceBg !important;
+            }
+            a {
+                text-decoration: underline;
+                &[title][href^="/resources/works"] {
+                    &::after {
+                        /* book icon */
+                        content: ' \1F4DA';
+                    }
+                }
+            }
+        }
+        tr.alt {
+            background-color: transparent;
+            td {
+                background-color: transparent;
+            }
+        }
     }
-    .footer-social-links-wrapper {
-        border-bottom-color: borderColor;
-    }
+    /* .footer-social-links-wrapper { */
+        /* border-bottom-color: borderColor; */
+    /* } */
     .bf-render-link-box {
         background-color: overlayBg;
         color: textColor;
@@ -102,53 +144,136 @@
         margin-left: auto;
         margin-right: auto;
     }
-    div.header-container,
-    #header {
+    div.msg-info {
         background-color: baseBg;
         color: textColor;
+        border-top-color: borderColor;
     }
-    #header .nav ul li a,
-    a.btn-loc:link,
-    a.btn-loc:visited {
-        color: linkColor1;
-        border: 1px solid borderColor;
-        background-color: overlayBg;
+
+    #header{
+        background-color: baseBg;
+        color: textColor;
+        .nav {
+            ul {
+                li {
+                    a {
+                        background-color: overlayBg;
+                        background: -webkit-gradient( linear, left bottom, left top, color-stop(0.24, baseBg color-stop(0.39, overlayBg)));
+                        &:hover, &:focus {
+                            border-color: borderColor;
+     color: linkActive;
+                            -webkit-box-shadow: 0px 0px 4px borderColor;
+                            -moz-box-shadow: 0px 0px 4px borderColor;
+                            box-shadow: 0px 0px 4px borderColor;
+
+                        }
+                    }
+                }
+            }
+        }
+        .search {
+            input:focus {
+                border-color: accentColor1 borderColor borderColor borderColor;
+            }
+        }
     }
-    #header .nav ul li a:hover,
-    #header .nav ul li a:focus,
-    a.btn-loc:hover,
-    a.btn-loc:focus {
-        border-color: borderColor;
-        color: linkColor2;
-        -webkit-box-shadow: 0px 0px 4px borderColor;
-        -moz-box-shadow: 0px 0px 4px borderColor;
-        box-shadow: 0px 0px 4px borderColor;
-    }
-    #header .nav ul li a,
     a.btn-loc {
         background: -webkit-gradient( linear, left bottom, left top, color-stop(0.24, baseBg color-stop(0.39, overlayBg)));
-        /*background: -moz-linear-gradient(center bottom, rgb(243, 247, 247) 24%, rgb(255, 255, 255) 39%);*/
+        &:link, &:visited {
+            color: linkMain;
+            border: 1px solid borderColor;
+        }
+        &:hover, &:focus {
+            border-color: borderColor;
+            color: linkActive;
+            -webkit-box-shadow: 0px 0px 4px borderColor;
+            -moz-box-shadow: 0px 0px 4px borderColor;
+            box-shadow: 0px 0px 4px borderColor;
+        }
     }
-    .header-search > form {
-        border-color: borderColor;
-    }
-    .header-menu .header-menu-container > ul.header-menu-tertiary > li:first-child,
-    .header-menu .header-menu-container > ul.header-menu-external > li:first-child {
-        border-top: 1px solid borderColor;
-    }
-    #header .search input:focus {
-        border-color: accentColor1 borderColor borderColor borderColor;
-    }
-    .header-menu.header-menu-active .header-menu-button,
-    .header-menu .header-menu-container {
-        background-color: overlayBg;
-    }
-    .header-menu .header-menu-container > ul a {
-        color: linkColor1;
-    }
-    .header-menu .header-menu-button,
-    .header-menu .header-menu-button .icon-times {
-        color: accentColor1;
+    .header {
+        .header-container {
+            background-color: baseBg;
+            .header-row {
+                .header-search {
+                    &> form {
+                        border-color: borderColor;
+                    }
+                    .header-search-toggle {
+                        background-color: overlayBg;
+                        border-width: 1px;
+                        border-style: solid;
+                        border-color: borderColor;
+                        .icon.icon-search {
+                            color: accentColor1;
+                        }
+                    }
+                    &.header-search-close {
+                        background-color: overlayBg;
+                        color: textColor;
+                        form#header-search-form {
+                            select#header-search-select {
+                                background-color: baseBg;
+                                color: textColor;
+                                option {
+                                    color: textColor;
+                                    background-color: baseBg;
+                                }
+                            }
+                            input#header-search-input{
+                                background-color: baseBg;
+                                color: textColor;
+                            }
+                            .header-search-button[type="submit"] {
+                                background-color: baseBg;
+                                .icon.icon-search {
+                                    color: accentColor1;
+                                }
+                            }
+                        }
+                    }
+
+                }
+                .header-menu {
+                    .header-menu-button {
+                        color: accentColor1;
+                        .icon-times {
+                            color: accentColor1;
+                        }
+                        .icon-bars {
+                            color: accentColor1;
+                        }
+
+                    }
+                    &.header-menu-active .header-menu-button {
+                        background-color: overlayBg;
+                    }
+                    .header-menu-container {
+                        background-color: overlayBg;
+                        border: 1px solid borderColor;
+                        border-top-left-radius: 5px;
+                        border-bottom-left-radius: @border-top-left-radius;
+                        border-bottom-right-radius: @border-top-left-radius;
+                        & > ul {
+                            & > a {
+                                color: linkMain;
+                            }
+                            &.header-menu-tertiary {
+                                & > li:first-child {
+                                    border-top: 1px solid borderColor;
+                                }
+                            }
+                            &.header-menu-external {
+                                & > li:first-child {
+                                    border-top: 1px solid borderColor;
+                                }
+                            }
+                        }
+
+                    }
+                }
+            }
+        }
     }
     h1 {
         color: accentColor1;
@@ -167,14 +292,37 @@
     tt {
         border-bottom: 1px solid borderColor;
     }
-    table th,
-    table td {
-        border-color: borderColor;
+    table {
+        th {
+            border-color: borderColor;
+            &[scope="col"] {
+                background-color: baseBg;
+            }
+        }
+        td {
+            border-color: borderColor;
+        }
     }
     #branding h2 {
         color: textColor;
     }
     #branding h3 {
-        color: var(--rp-subtle);
+        color: accentColor2;
+    }
+    .facet-count {
+        color: textColor;
+    }
+    .blue-lozenge {
+        border-color: overlayBg;
+        background-color: linkMain;
+        color: @border-color !important;
+    }
+    .footer {
+        background-color: baseBg;
+        border-top-color: borderColor;
+        color: textColor;
+        &-social-links-wrapper {
+            border-bottom-color: borderColor;
+        }
     }
 }
