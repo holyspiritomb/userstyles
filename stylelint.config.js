@@ -11,6 +11,7 @@ export default defineConfig ({
   ],
   plugins: [
     // "stylelint-less",
+    "@csstools/stylelint-at-risk",
     "stylelint-use-nesting",
     "stylelint-declaration-block-no-ignored-properties",
     'stylelint-order',
@@ -18,6 +19,7 @@ export default defineConfig ({
   ],
   rules: {
     // "at-rule-disallowed-list": ["import"],
+    "@csstools/stylelint-at-risk": true,
     "at-rule-empty-line-before":null,
     "at-rule-no-unknown": null,
     "color-function-notation":null,

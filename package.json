@@ -7,6 +7,7 @@
   "private": true,
   "type": "module",
   "devDependencies": {
+    "@csstools/stylelint-at-risk": "^2.0.1",
     "@stylelint-types/stylelint-order": "^6.0.4",
     "@stylelint-types/stylelint-stylus": "^1.0.0",
     "stylelint": "^16.13.2",
