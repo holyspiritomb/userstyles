@@ -18,6 +18,7 @@
 @var            color overlayBg "Overlay Background" "#26233a"
 @var            color textColor "Text Color" "#e0def4"
 ==/UserStyle== */
+/* stylelint-disable-next-line */
 @-moz-document domain("id.loc.gov") {
     :root {
         --rp-base: #191724;
@@ -68,7 +69,7 @@
     }
     :is(a, .bf-render a, .facet-link, .facet-link .facet-item) {
         color: linkMain;
-        &:not(.facet-link):not(.facet-item){
+        &:not(.facet-link, .facet-item) {
             text-decoration: underline;
         }
         &:link {
@@ -87,7 +88,7 @@
             color: linkActive;
         }
     }
-    .facet-box li a:hover{
+    .facet-box li a:hover {
         background-color: overlayBg;
         border-color: borderColor;
     }
@@ -96,12 +97,14 @@
     }
     .facet-category {
         color: accentColor2 !important;
-        &:before{
+        &::before {
             color: accentColor2 !important;
         }
     }
     body,
-    div#container, div.nav-pag-top, div.nav-pag-bot {
+    div#container,
+    div.nav-pag-top,
+    div.nav-pag-bot {
         color: textColor;
         background-color: surfaceBg;
         border-color: borderColor;
@@ -132,9 +135,6 @@
             }
         }
     }
-    /* .footer-social-links-wrapper { */
-        /* border-bottom-color: borderColor; */
-    /* } */
     .bf-render-link-box {
         background-color: overlayBg;
         color: textColor;
@@ -150,22 +150,23 @@
         border-top-color: borderColor;
     }
 
-    #header{
+    #header {
         background-color: baseBg;
         color: textColor;
         .nav {
             ul {
                 li {
                     a {
-                        background-color: overlayBg;
+                        /* background-color: overlayBg; */
+                        /* stylelint-disable-next-line */
                         background: -webkit-gradient( linear, left bottom, left top, color-stop(0.24, baseBg color-stop(0.39, overlayBg)));
-                        &:hover, &:focus {
+                        &:hover,
+                        &:focus {
                             border-color: borderColor;
-     color: linkActive;
+                            color: linkActive;
                             -webkit-box-shadow: 0px 0px 4px borderColor;
                             -moz-box-shadow: 0px 0px 4px borderColor;
                             box-shadow: 0px 0px 4px borderColor;
-
                         }
                     }
                 }
@@ -173,17 +174,20 @@
         }
         .search {
             input:focus {
-                border-color: accentColor1 borderColor borderColor borderColor;
+                border-color: accentColor1 borderColor borderColor;
             }
         }
     }
     a.btn-loc {
+        /* stylelint-disable-next-line */
         background: -webkit-gradient( linear, left bottom, left top, color-stop(0.24, baseBg color-stop(0.39, overlayBg)));
-        &:link, &:visited {
+        &:link,
+        &:visited {
             color: linkMain;
             border: 1px solid borderColor;
         }
-        &:hover, &:focus {
+        &:hover,
+        &:focus {
             border-color: borderColor;
             color: linkActive;
             -webkit-box-shadow: 0px 0px 4px borderColor;
@@ -220,7 +224,7 @@
                                     background-color: baseBg;
                                 }
                             }
-                            input#header-search-input{
+                            input#header-search-input {
                                 background-color: baseBg;
                                 color: textColor;
                             }
@@ -232,7 +236,6 @@
                             }
                         }
                     }
-
                 }
                 .header-menu {
                     .header-menu-button {
@@ -243,10 +246,11 @@
                         .icon-bars {
                             color: accentColor1;
                         }
-
                     }
-                    &.header-menu-active .header-menu-button {
-                        background-color: overlayBg;
+                    &.header-menu-active {
+                        .header-menu-button {
+                            background-color: overlayBg;
+                        }
                     }
                     .header-menu-container {
                         background-color: overlayBg;
@@ -269,7 +273,6 @@
                                 }
                             }
                         }
-
                     }
                 }
             }
