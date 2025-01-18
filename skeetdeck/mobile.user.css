@@ -1,51 +1,115 @@
 /* ==UserStyle==
 @name           Skeetdeck mobile customized
 @namespace      github.com/holyspiritomb/userstyles
-@version        2.0.3
+@version        3.0.0
 @description    Modifies Skeetdeck for my specific mobile device and preferences
 @author         holyspiritomb
 @updateURL      https://github.com/holyspiritomb/userstyles/raw/main/skeetdeck/mobile.user.css
 @homepageURL    https://github.com/holyspiritomb/userstyles/blob/main/skeetdeck/mobile.user.css
 @preprocessor   stylus
 @var            color bgMain "Background" rgba(25,23,36,1)
-@var            color bgPrim "Primary Background" rgba(31,29,46,1)
-@var            color bgSec "Secondary Background" rgba(38,35,58, 0.7)
-@var            select accentColor "Accent Color" {
-    "Rose Pine Foam": "156 207 216",
-    "Rose Pine Gold": "246 193 119",
-    "Rose Pine Iris*": "196 167 231",
-    "Rose Pine Love": "235 111 146",
-    "Rose Pine Pine": "49 116 143",
-    "Rose Pine Rose": "235 188 186",
-    "Rose Pine Subtle": "144 140 170"
-}
-@var           select bordersColor "Borders" {
-    "Rose Pine Foam": "156 207 216",
-    "Rose Pine Gold": "246 193 119",
-    "Rose Pine Iris": "196 167 231",
-    "Rose Pine Love": "235 111 146",
-    "Rose Pine Pine": "49 116 143",
-    "Rose Pine Rose": "235 188 186",
-    "Rose Pine Highlight Low": "33 32 46",
-    "Rose Pine Highlight Med*": "64 61 82",
-    "Rose Pine Highlight High": "82 79 103"
-}
+@var            color bgPrim "Primary Background" rgba(31,29,46,0.95)
+@var            color bgSec "Secondary Background" rgba(38,35,58, 0.8)
+@var            select accentColorChoice "Accent Color" [
+    "Foam",
+    "Gold",
+    "Iris*",
+    "Love",
+    "Pine",
+    "Rose",
+    "Custom"
+]
+@var            color customAccent "Custom accent" #a6e3a1
+@var            select bordersColorChoice "Borders" [
+    "Foam",
+    "Gold",
+    "Iris",
+    "Love",
+    "Pine",
+    "Rose",
+    "Highlight Low",
+    "Highlight Med*",
+    "Highlight High",
+    "Custom"
+]
+@var            color customBorder "Custom borders" #a6e3a1
 @var           select dividersColor "Dividers" {
-    "Rose Pine Foam": "156 207 216",
-    "Rose Pine Gold": "246 193 119",
-    "Rose Pine Iris": "196 167 231",
-    "Rose Pine Love": "235 111 146",
-    "Rose Pine Pine": "49 116 143",
-    "Rose Pine Rose": "235 188 186",
-    "Rose Pine Highlight Low": "33 32 46",
-    "Rose Pine Highlight Med*": "64 61 82",
-    "Rose Pine Highlight High": "82 79 103"
+    "Foam": "156 207 216",
+    "Gold": "246 193 119",
+    "Iris": "196 167 231",
+    "Love": "235 111 146",
+    "Pine": "49 116 143",
+    "Rose": "235 188 186",
+    "Highlight Low": "33 32 46",
+    "Highlight Med*": "64 61 82",
+    "Highlight High": "82 79 103"
 }
 @var          checkbox changeEmojiFont "Change emoji font" 0
 @var          checkbox fontEnabled "Change base font" 0
 @var          text baseFontName "Base text font(s)" "'Inter', InterVar, 'InterVariable'"
 ==/UserStyle== */
 @-moz-document domain("skeetdeck.pages.dev") {
+    irTW = 196 167 231
+    loveTW = 235 111 146
+    goldTW = 246 193 119
+    roseTW = 235 188 186
+    pineTW = 49 116 143
+    foamTW = 156 207 216
+    highlightLowTW = 33 32 46
+    highlightMedTW = 64 61 82
+    highlightHiTW = 82 79 103
+
+    if accentColorChoice == "Foam" {
+        accentColor = foamTW
+    }
+    else if accentColorChoice == "Gold" {
+        accentColor = goldTW
+    }
+    else if accentColorChoice == "Iris" {
+        accentColor = irTW
+    }
+    else if accentColorChoice == "Love" {
+        accentColor = loveTW
+    }
+    else if accentColorChoice == "Pine" {
+        accentColor = pineTW
+    }
+    else if accentColorChoice == "Rose" {
+        accentColor = roseTW
+    }
+    else if accentColorChoice == "Custom" {
+        accentColor = red(customAccent) green(customAccent) blue(customAccent)
+    }
+    if bordersColorChoice == "Foam" {
+        bordersColor = rgb(foamTW)
+    }
+    else if bordersColorChoice == "Gold" {
+        bordersColor = rgb(goldTW)
+    }
+    else if bordersColorChoice == "Iris" {
+        bordersColor = rgb(irTW)
+    }
+    else if bordersColorChoice == "Love" {
+        bordersColor = rgb(loveTW)
+    }
+    else if bordersColorChoice == "Pine" {
+        bordersColor = rgb(pineTW)
+    }
+    else if bordersColorChoice == "Rose" {
+        bordersColor = rgb(roseTW)
+    }
+    else if bordersColorChoice == "Highlight Low" {
+        bordersColor = rgb(highlightLowTW)
+    }
+    else if bordersColorChoice == "Highlight Med" {
+        bordersColor = rgb(highlightMedTW)
+    }
+    else if bordersColorChoice == "Highlight High" {
+        bordersColor = rgb(highlightHiTW)
+    }
+    else if bordersColorChoice == "Custom" {
+        bordersColor = customBorder
+    }
 
     :root {
         --rp-base: rgb(25, 23, 36);
@@ -121,12 +185,17 @@
         --muted-fg: 110 106 134;
         /* --input: */
         --divider: dividersColor;
+        /* --custom-accent: join(" ", red(customAccent) green(customAccent) blue(customAccent)) */
     }
     *,
     :before,
     :after,
     .border {
-        border-color: rgb(bordersColor);
+        border-color: bordersColor;
+    }
+    .outline-primary{
+        border-color:bordersColor;
+        outline-color: @border-color;
     }
     .border-divider {
         border-color: rgb(dividersColor);
@@ -216,7 +285,7 @@
         & > .shadow-menu {
             border-width: 1px;
             border-style: solid;
-            border-color: rgb(bordersColor);
+            border-color: bordersColor;
             background: bgMain;
 
         }
@@ -263,32 +332,63 @@
         text-overflow: unset;
         overflow: unset;
         display: block;
+        & ~ span {
+            display: block;
+        }
     }
-    .text-ellipsis.overflow-hidden:has(span.text-primary.font-bold) ~ span {
-        display: block;
-    }
-    article [class*="bg-secondary"]:not(.w-8,.justify-center),
-    button[title="Remove embed"] + div.rounded-md.border.border-divider,
-    article button.outline-primary,
-    article span[role="button"].outline-primary {
-        background: bgSec !important;
+    article {
+        [class*="bg-secondary"] {
+            &:not(.w-8):not(.justify-center) {
+                background: bgSec !important;
+                &:is(.outline-primary){
+                    outline-color: bordersColor;
+                    border-color: @outline-color;
+                }
+                &:is(.border){
+                    outline-color: bordersColor;
+                    border-color: @outline-color;
+                }
+            }
+        }
+        span[role="button"] {
+            &.outline-primary {
+                background: bgSec !important;
+                outline-color: bordersColor;
+                border-color: @outline-color;
+            }
+            & > .border {
+                outline-color: bordersColor;
+                border-color: @outline-color;
+            }
+        }
+        button {
+            &.outline-primary {
+                background: bgSec;
+                outline-color: bordersColor;
+                border-color: @outline-color;
+                &[class*="bg-secondary"]:has(img[src^="https://cdn.bsky.app/img/avatar"]) {
+                    background-color: bgMain !important;
+                }
+            }
+            &.border {
+                border-color: rgb(dividersColor);
+            }
+        }
+        .border-divider {
+            border-color: rgb(dividersColor);
+        }
     }
     button[title="Remove embed"] {
         background: transparent;
-    }
-    article [class*="bg-secondary"]:not(.w-8,.justify-center):is(.outline-primary,.border),
-    button[title="Remove embed"] + div.rounded-md.border.border-divider,
-    article button.outline-primary,
-    article span[role="button"] > .border,
-    article span[role="button"].outline-primary {
-        outline-color: rgb(bordersColor);
-        border-color: @outline-color;
+        & + div.rounded-md.border.border-divider {
+            background: bgSec !important;
+            outline-color: bordersColor;
+            border-color: @outline-color;
+        }
     }
     a[target="_blank"].outline-2 img.object-cover {
         object-fit: cover;
     }
-    article .border-divider,
-    article button.border,
     .border-divider {
         border-color: rgb(dividersColor)
     }
@@ -309,19 +409,25 @@
         aspect-ratio: unset !important;
         overflow-y:unset !important;
     }
-    button:has(+button.bg-primary.text-sm.text-primary-fg) {
+    button:has(~button.bg-primary.text-sm.text-primary-fg) {
         color: rgb(accentColor);
         border-color: rgb(accentColor) !important;
         outline-color: @border-color;
     }
-    div.min-w-0.text-sm + div:has(+button.text-sm:not(.bg-primary)) {
+    .aspect-banner + div > div > button[title="Actions"],
+    .aspect-banner + div > div > span.bg-primary.text-primary-fg.outline-primary,
+    .aspect-banner + div > div > span.border.outline-primary.border-input[title="Message"] {
+    /* div.min-w-0.text-sm + div:has(+button.text-sm:not(.bg-primary)) { */
         /* background-color: alpha(bgSec, 0.8) !important; */
         border-color: rgb(accentColor) !important;
-        outline-color: @border-color;
+        border-width: thin;
+        color: rgb(accentColor) !important;
+        outline-color: rgb(accentColor) !important;
     }
     div.min-w-0.text-sm + div:has(+button.bg-primary.text-sm.text-primary-fg),
     button.bg-primary.text-sm.text-primary-fg {
         background-color: rgb(accentColor) !important;
+        color: bgMain;
     }
 
     if fontEnabled {
