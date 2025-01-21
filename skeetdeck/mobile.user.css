@@ -10,6 +10,9 @@
 @var            color bgMain "Background" rgba(25,23,36,1)
 @var            color bgPrim "Primary Background" rgba(31,29,46,0.95)
 @var            color bgSec "Secondary Background" rgba(38,35,58, 0.8)
+@var            color textColor "Text Color" rgb(224, 222, 244)
+@var            color textPri "\"Primary\" Text Color" rgb(224, 222, 244)
+@var            color textSec "\"Secondary\" Text Color" rgb(144, 140, 170)
 @var            select accentColorChoice "Accent Color" [
     "Foam",
     "Gold",
@@ -34,12 +37,6 @@
 ]
 @var            color customBorder "Custom borders" #a6e3a1
 @var           select dividersColor "Dividers" {
-    "Foam": "156 207 216",
-    "Gold": "246 193 119",
-    "Iris": "196 167 231",
-    "Love": "235 111 146",
-    "Pine": "49 116 143",
-    "Rose": "235 188 186",
     "Highlight Low": "33 32 46",
     "Highlight Med*": "64 61 82",
     "Highlight High": "82 79 103"
@@ -49,6 +46,11 @@
 @var          text baseFontName "Base text font(s)" "'Inter', InterVar, 'InterVariable'"
 ==/UserStyle== */
 @-moz-document domain("skeetdeck.pages.dev") {
+    rgbToTW(a) {
+        colorTW = red(a) green(a) blue(a)
+        return colorTW
+    }
+
     irTW = 196 167 231
     loveTW = 235 111 146
     goldTW = 246 193 119
@@ -58,6 +60,9 @@
     highlightLowTW = 33 32 46
     highlightMedTW = 64 61 82
     highlightHiTW = 82 79 103
+    textTW = rgbToTW(textColor)
+    textPriTW = rgbToTW(textPri)
+    textSecTW = rgbToTW(textSec)
 
     if accentColorChoice == "Foam" {
         accentColor = foamTW
@@ -170,22 +175,42 @@
         --rp-green-600: rgb(161, 233, 155);
         --rp-red-600: var(--rp-moon-love);
     }
-    :root,.is-dark{
-        --background: 25 23 36;
-        --background-dark: 33 32 46;
+    :root {
+        --background: rgbToTW(bgPrim);
+        /* --background-dark: 33 32 46; */
         --accent: accentColor;
-        /* --accent-dark: accentColor; */
+        /* --accent-dark: rgba(accentColor / 0.7); */
         --hinted: 64 61 82;
-        --primary: 224 222 244;
-        /* --primary: accentColor; */
+        /* --primary: 224 222 244; */
+        --primary: rgbToTW(textPri);
         /* --primary-fg: */
-        --secondary: 64 61 82;
+        --secondary: rgbToTW(textSec);
         /* --secondary-fg: 64 61 82; */
-        --muted: 33 32 46;
-        --muted-fg: 110 106 134;
+        /* --muted: 33 32 46; */
+        /* --muted-fg: 110 106 134; */
+        /* --input: */
+        /* --divider: dividersColor; */
+    }
+    .is-dark {
+        /* --background: 25 23 36; */
+        --background-dark: rgbToTW(bgMain);
+        --accent-dark: accentColor;
+        /* --hinted: 64 61 82; */
+        /* --primary: 224 222 244; */
+        --primary: rgbToTW(textPri);
+        --primary-fg: rgbToTW(bgPrim);
+        --secondary: rgbToTW(textSec);
+        --secondary-fg: rgbToTW(bgSec);
+        /* --muted: 33 32 46; */
+        /* --muted-fg: 110 106 134; */
         /* --input: */
         --divider: dividersColor;
-        /* --custom-accent: join(" ", red(customAccent) green(customAccent) blue(customAccent)) */
+    }
+    .text-white {
+        color: textColor;
+    }
+    .bg-black {
+        background-color: bgMain;
     }
     *,
     :before,
@@ -212,7 +237,6 @@
     }
     .text-red-500 {
         color: var(--rp-red-600);
-        /* stylelint-disable-next-line */
         caret-color: @color;
     }
     .text-red-600,
@@ -270,23 +294,20 @@
     /* dialog {{{ */
     dialog {
         font-size: 0.8rem;
-        /* line-height: calc(1.5 * 0.8rem); */
         line-height: @font-size * 1.5;
         .text-sm {
             font-size: .65rem;
-            /* line-height: calc(0.65rem * 1.5); */
             line-height: @font-size * 1.5;
         }
         .text-de {
             font-size: .7rem;
-            /* line-height: calc(0.7rem * 1.5); */
             line-height: @font-size * 1.5;
         }
         & > .shadow-menu {
             border-width: 1px;
             border-style: solid;
             border-color: bordersColor;
-            background: bgMain;
+            /* background: bgMain; */
 
         }
         .overflow-hidden:has(.bg-secondary\/10) {
@@ -414,8 +435,9 @@
         border-color: rgb(accentColor) !important;
         outline-color: @border-color;
     }
-    .aspect-banner + div > div > button[title="Actions"],
-    .aspect-banner + div > div > span.bg-primary.text-primary-fg.outline-primary,
+    article .aspect-banner + div > div > button[title="Actions"],
+    article .aspect-banner + div > div > button.border,
+    article .aspect-banner + div > div > span.bg-primary.text-primary-fg.outline-primary,
     .aspect-banner + div > div > span.border.outline-primary.border-input[title="Message"] {
     /* div.min-w-0.text-sm + div:has(+button.text-sm:not(.bg-primary)) { */
         /* background-color: alpha(bgSec, 0.8) !important; */
@@ -428,6 +450,16 @@
     button.bg-primary.text-sm.text-primary-fg {
         background-color: rgb(accentColor) !important;
         color: bgMain;
+    }
+
+    body > dialog > div > div.pointer-events-none > div > p {
+        color: textColor !important;
+    }
+    body > dialog > div > div.pointer-events-none.h-13.items-center.gap-2.px- > button.outline-2.outline-primary.pointer-events-auto.grid.h-8.w-8.text-white {
+        color: textColor !important;
+        & > svg {
+            fill: textColor !important;
+        }
     }
 
     if fontEnabled {
@@ -453,3 +485,4 @@
 
     }
 }
+
