@@ -10,6 +10,8 @@
     "@csstools/stylelint-at-risk": "^2.0.1",
     "@stylelint-types/stylelint-order": "^6.0.4",
     "@stylelint-types/stylelint-stylus": "^1.0.0",
+    "@types/postcss-less": "^4.0.6",
+    "postcss-less": "^6.0.0",
     "stylelint": "^16.13.2",
     "stylelint-config-standard": "^37.0.0",
     "stylelint-config-standard-less": "^3.0.1",

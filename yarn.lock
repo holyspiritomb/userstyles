@@ -84,6 +84,13 @@
   resolved "https://registry.yarnpkg.com/@stylelint-types/stylelint-stylus/-/stylelint-stylus-1.0.0.tgz#33cc2481450eb167d797417ef38175864051619a"
   integrity sha512-ZRHbm1s5j/EQzuMc4BQDovJGFdAu4dSf9cSKekjHEeF5hKjKf4b9k4TgGbZTF2G+ci9xE4aMoyoNjamLl6Whfg==
 
+"@types/postcss-less@^4.0.6":
+  version "4.0.6"
+  resolved "https://registry.yarnpkg.com/@types/postcss-less/-/postcss-less-4.0.6.tgz#fed4b4c22f45a2312aeb9b4fe8d61612a438bcaa"
+  integrity sha512-xBd7riBa5XEyty+SMMJS0kKdVw+ykN5hjbIuoPLAXDv9JoPS8pRZUriypZiQXKDL7085aegxLbtyo9krBpQzng==
+  dependencies:
+    postcss "^8.1.2"
+
 "@vscode/l10n@^0.0.10":
   version "0.0.10"
   resolved "https://registry.yarnpkg.com/@vscode/l10n/-/l10n-0.0.10.tgz#9c513107c690c0dd16e3ec61e453743de15ebdb0"
@@ -834,7 +841,7 @@ postcss-value-parser@4.2.0, postcss-value-parser@^4.2.0:
   resolved "https://registry.yarnpkg.com/postcss-value-parser/-/postcss-value-parser-4.2.0.tgz#723c09920836ba6d3e5af019f92bc0971c02e514"
   integrity sha512-1NNCs6uurfkVbeXG4S8JFT9t19m45ICnif8zWLd5oPSZ50QnwMfK+H3jv408d4jw/7Bttv5axS5IiHoLaVNHeQ==
 
-"postcss@^7.0.27 || ^8.0.0", postcss@^8.4.32, postcss@^8.4.49, postcss@^8.5.0:
+"postcss@^7.0.27 || ^8.0.0", postcss@^8.1.2, postcss@^8.4.32, postcss@^8.4.49, postcss@^8.5.0:
   version "8.5.1"
   resolved "https://registry.yarnpkg.com/postcss/-/postcss-8.5.1.tgz#e2272a1f8a807fafa413218245630b5db10a3214"
   integrity sha512-6oz2beyjc5VMn/KV1pPw8fliQkhBXrVn1Z3TVyqZxU8kZpzEKhBdmCFqI6ZbmGtamQvQGuU1sgPTk8ZrXDD7jQ==
