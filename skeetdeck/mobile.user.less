@@ -1,0 +1,380 @@
+/* ==UserStyle==
+@name           Skeetdeck mobile customized
+@namespace      github.com/holyspiritomb/userstyles
+@version        3.0.0
+@description    Modifies Skeetdeck for my specific mobile device and preferences
+@author         holyspiritomb
+@updateURL      https://github.com/holyspiritomb/userstyles/raw/main/skeetdeck/mobile.user.less
+@homepageURL    https://github.com/holyspiritomb/userstyles/blob/main/skeetdeck/mobile.user.less
+@preprocessor   less
+@var            color bgMain "Background" rgba(25,23,36,1)
+@var            color bgPrim "Primary Background" rgba(31,29,46,0.95)
+@var            color bgSec "Secondary Background" rgba(38,35,58, 0.8)
+@var            color textColor "Text Color" rgb(224, 222, 244)
+@var            color textPri "\"Primary\" Text Color" rgb(224, 222, 244)
+@var            color textSec "\"Secondary\" Text Color" rgb(144, 140, 170)
+@var            select accentColorChoice "Accent Color" {
+    "Foam": "156 207 216",
+    "Gold": "246 193 119",
+    "Iris": "196 167 231",
+    "Love*": "235 111 146",
+    "Pine": "49 116 143",
+    "Rose": "235 188 186"
+}
+@var          checkbox useCustomAccent "Use custom accent" 0
+@var            color customAccent "Custom accent" #a6e3a1
+@var          checkbox changeEmojiFont "Change emoji font to Noto Color Emoji" 0
+@var          checkbox fontEnabled "Change base font" 0
+@var          text baseFontName "Base text font(s)" "'Inter', InterVar, 'InterVariable'"
+@var          checkbox baseFontFeaturesEnabled "Use custom font-feature-settings" 0
+@var          text baseFontFeatureList "Custom font-feature-settings value" "'ss01' on, 'cv05' on"
+@var          checkbox debugEnabled "Debug mode (for development use only)" 0
+==/UserStyle== */
+// stylelint-disable-next-line
+@-moz-document domain("skeetdeck.pages.dev") {
+
+    @bordersColor: rgb(64, 61, 82);
+    @bordersColorTW: 64 61 62;
+    @dividersColor: 64 61 82;
+    @customAccentTW: red(rgb(@customAccent)) green(rgb(@customAccent)) blue(rgb(@customAccent));
+    @accentColor: if((@useCustomAccent = 0), @accentColorChoice, @customAccentTW);
+    @accentColorRGB: if((@useCustomAccent = 0), rgb(@accentColorChoice), @customAccent);
+
+    :root {
+        --rp-base: rgb(25, 23, 36);
+        --rp-surface: rgb(31, 29, 46);
+        --rp-overlay: rgb(38, 35, 58);
+        --rp-muted: rgb(110, 106, 134);
+        --rp-subtle: rgb(144, 140, 170);
+        --rp-text: rgb(224, 222, 244);
+        --rp-love: rgb(235, 111, 146);
+        --rp-gold: rgb(246, 193, 119);
+        --rp-rose: rgb(235, 188, 186);
+        --rp-pine: rgb(49, 116, 143);
+        --rp-foam: rgb(156, 207, 216);
+        --rp-iris: rgb(196, 167, 231);
+        --rp-highlight-low: rgb(33, 32, 46);
+        --rp-highlight-med: rgb(64, 61, 82);
+        --rp-highlight-high: rgb(82, 79, 103);
+        --rp-moon-base: rgb(35, 33, 54);
+        --rp-moon-surface: rgb(42, 39, 63);
+        --rp-moon-overlay: rgb(57, 53, 82);
+        --rp-moon-muted: rgb(110, 106, 134);
+        --rp-moon-subtle: rgb(144, 140, 170);
+        --rp-moon-text: rgb(224, 222, 244);
+        --rp-moon-love: rgb(235, 111, 146);
+        --rp-moon-gold: rgb(246, 193, 119);
+        --rp-moon-rose: rgb(234, 154, 151);
+        --rp-moon-pine: rgb(62, 143, 176);
+        --rp-moon-foam: rgb(156, 207, 216);
+        --rp-moon-iris: rgb(196, 167, 231);
+        --rp-moon-highlight-low: rgb(42, 40, 62);
+        --rp-moon-highlight-med: rgb(68, 65, 90);
+        --rp-moon-highlight-high: rgb(86, 82, 110);
+        --rp-dawn-base: rgb(250, 244, 237);
+        --rp-dawn-surface: rgb(255, 250, 243);
+        --rp-dawn-overlay: rgb(242, 233, 222);
+        --rp-dawn-muted: rgb(152, 147, 165);
+        --rp-dawn-subtle: rgb(121, 117, 147);
+        --rp-dawn-text: rgb(87, 82, 121);
+        --rp-dawn-love: rgb(180, 99, 122);
+        --rp-dawn-gold: rgb(234, 157, 52);
+        --rp-dawn-rose: rgb(215, 130, 126);
+        --rp-dawn-pine: rgb(40, 105, 131);
+        --rp-dawn-foam: rgb(86, 148, 159);
+        --rp-dawn-iris: rgb(144, 122, 169);
+        --rp-dawn-highlight-low: rgb(244, 237, 232);
+        --rp-dawn-highlight-med: rgb(223, 218, 217);
+        --rp-dawn-highlight-high: rgb(206, 202, 205);
+        --rp-iris-tw: 196 167 231;
+        --rp-love-tw: 235 111 146;
+        --rp-gold-tw: 246 193 119;
+        --rp-rose-tw: 235 188 186;
+        --rp-pine-tw: 49 116 143;
+        --rp-foam-tw: 156 207 216;
+        --rp-moon-love-tw: 235 111 146;
+        --ctp-mocha-green: #a6e3a1;
+        --rp-green-600: rgb(161, 233, 155);
+        --rp-red-600: var(--rp-moon-love);
+        --background: 31 29 46;
+        --hinted: 64 61 82;
+        --primary: 224 222 244;
+        --secondary: 144 140 170;
+        --muted: 33 32 46;
+        --muted-fg: 110 106 134;
+        --accent: @accentColor;
+    }
+    .is-dark {
+        --accent-dark: @accentColor;
+        --background-dark: 25 23 36;
+        --primary: 224 222 224;
+        --primary-fg: 31 29 46;
+        --secondary: 144 140 170;
+        --secondary-fg: 38 35 58;
+        --divider: @dividersColor;
+    }
+    html, body, textarea, :host, :root {
+        & when (@fontEnabled = 1) {
+            font-family: @baseFontName, system-ui, sans-serif !important;
+        }
+        & when (@changeEmojiFont = 1) {
+            font-family: "Noto Color Emoji", sans-serif !important;
+            & when (@fontEnabled = 1) {
+                font-family: "Noto Color Emoji", @baseFontName, system-ui, sans-serif !important;
+            }
+        }
+        & when (@baseFontFeaturesEnabled = 1) {
+            font-feature-settings: @baseFontFeatureList;
+        }
+    }
+    .text-white {
+        color: @textColor;
+    }
+    .bg-black {
+        background-color: @bgMain;
+    }
+    *,
+    ::before,
+    ::after,
+    .border {
+        border-color: @bordersColor;
+    }
+    .outline-primary{
+        border-color: @bordersColor;
+        outline-color: $border-color;
+    }
+    .border-divider {
+        border-color: @bordersColor;
+    }
+    .bg-background {
+        background-color: @bgMain;
+    }
+    .bg-primary {
+        background-color: @bgPrim;
+    }
+    .text-red-500 {
+        color: var(--rp-red-600);
+        caret-color: $color;
+    }
+    .text-red-600,
+    article .text-red-600 {
+        color: var(--rp-red-600);
+        caret-color: $color;
+    }
+    .text-green-600 {
+        color: var(--rp-green-600);
+        caret-color: $color;
+    }
+    /* sizes {{{ */
+    .h-screen {
+        height: 93vh;
+    }
+    .w-60 {
+        width: 7.5rem;
+    }
+    .w-96 {
+        width: 22rem;
+    }
+    input.grow {
+        width: 100px;
+    }
+    .h-8 {
+        height: 1.5rem;
+        & > svg[height="1em"] {
+            height: 1rem !important;
+        }
+        &.w-8:has(svg[height = "1em"][width = "1em"]) + span.text-de {
+            line-height: 0.7rem;
+        }
+    }
+    .w-8 {
+        width: 1.5rem;
+        & > svg[width="1em"] {
+            width: 1rem !important;
+        }
+    }
+    .vc-panel {
+        min-height: 50%;
+        max-height: 50vh;
+    }
+    span.max-w-full.group.overflow-hidden:has(bdi) {
+        max-width: 215px !important;
+        width: $max-width;
+    }
+    /* }}} */
+    /* dialog {{{ */
+    dialog {
+        font-size: 0.8rem;
+        line-height: $font-size * 1.5;
+        .text-sm {
+            font-size: .65rem;
+            line-height: $font-size * 1.5;
+        }
+        .text-de {
+            font-size: .7rem;
+            line-height: $font-size * 1.5;
+        }
+        & > .shadow-menu {
+            border-width: 1px;
+            border-style: solid;
+            border-color: @bordersColor;
+            background: @bgMain;
+
+        }
+        .overflow-hidden:has(.bg-secondary\/10) {
+            border-width: 1px;
+            border-style: solid;
+            border-radius: 5px;
+            border-color: @bordersColor;
+        }
+    }
+    /* }}} */
+    .object-cover {
+        object-fit: contain;
+        & + div.text-sm {
+            &:has(p.break-words.line-clamp-2) {
+                height: fit-content;
+            }
+            & > p.break-words.line-clamp-2 {
+                overflow-wrap: unset;
+                text-overflow: unset;
+                overflow: unset;
+                font-size: 0.7rem;
+                -webkit-line-clamp: unset;
+                line-clamp: unset;
+                line-height: $font-size * 1.5;
+            }
+        }
+    }
+    .overflow-hidden:has(button.text-left) {
+        & when (@debugEnabled) {
+            overflow-y: scroll;
+            scrollbar-width: none;
+        }
+    }
+    button span.overflow-hidden.text-ellipsis.whitespace-nowrap {
+        & when (@debugEnabled) {
+            text-overflow: unset;
+            text-wrap: unset;
+            overflow-wrap: unset;
+        }
+    }
+    .text-ellipsis.overflow-hidden:has(span.text-primary.font-bold) {
+        & when (@debugEnabled) {
+            text-overflow: unset;
+            overflow: unset;
+            display: block;
+            & ~ span {
+                display: block;
+            }
+        }
+    }
+    article {
+        [class*="bg-secondary"] {
+            &:not(.w-8, .justify-center) {
+                background: @bgSec !important;
+                &:is(.outline-primary){
+                    outline-color: @bordersColor;
+                    border-color: $outline-color;
+                }
+                &:is(.border){
+                    outline-color: @bordersColor;
+                    border-color: $outline-color;
+                }
+            }
+        }
+        span[role="button"] {
+            &.outline-primary {
+                background: @bgSec !important;
+                outline-color: @bordersColor;
+                border-color: $outline-color;
+            }
+            & > .border {
+                outline-color: @bordersColor;
+                border-color: $outline-color;
+            }
+        }
+        button {
+            &.outline-primary {
+                background: @bgSec;
+                outline-color: @bordersColor;
+                border-color: $outline-color;
+                &[class*="bg-secondary"]:has(img[src^="https://cdn.bsky.app/img/avatar"]) {
+                    background-color: @bgMain !important;
+                    border-color: transparent;
+                }
+            }
+            &.border {
+                border-color: @bordersColor;
+            }
+        }
+        .border-divider {
+            border-color: @bordersColor;
+        }
+    }
+    button[title="Remove embed"] {
+        background: transparent;
+        & + div.rounded-md.border.border-divider {
+            background: @bgSec !important;
+            outline-color: @bordersColor;
+            border-color: @bordersColor;
+        }
+    }
+    a[target="_blank"].outline-2 img.object-cover {
+        & when (@debugEnabled) {
+            object-fit: cover;
+        }
+    }
+    .overflow-hidden .line-clamp-6 {
+        & when (@debugEnabled) {
+            overflow: unset;
+            overflow-x: unset;
+            overflow-y: unset;
+            overflow-wrap: unset;
+            text-overflow: unset;
+            -webkit-line-clamp: unset;
+            line-clamp: unset;
+        }
+    }
+    div.mt-1 {
+        margin-bottom: 0.5rem
+    }
+    div.overflow-hidden:has(>img[src*="feed_thumbnail"][title].h-full.w-full.object-contain) {
+        & when (@debugEnabled) {
+            aspect-ratio: unset !important;
+            overflow-y:unset !important;
+        }
+    }
+    button:has(~button.bg-primary.text-sm.text-primary-fg) {
+        color: rgb(@accentColor);
+        border-color: rgb(@accentColor) !important;
+        outline-color: $border-color;
+    }
+    article .aspect-banner + div > div > button[title="Actions"],
+    article .aspect-banner + div > div > button.border,
+    article .aspect-banner + div > div > span.bg-primary.text-primary-fg.outline-primary,
+    .aspect-banner + div > div > span.border.outline-primary.border-input[title="Message"] {
+        border-color: rgb(@accentColor) !important;
+        border-width: thin;
+        color: rgb(@accentColor) !important;
+        outline-color: rgb(@accentColor) !important;
+    }
+    div.min-w-0.text-sm + div:has(+button.bg-primary.text-sm.text-primary-fg),
+    button.bg-primary.text-sm.text-primary-fg {
+        background-color: rgb(@accentColor) !important;
+        color: @bgMain;
+    }
+
+    body > dialog > div > div.pointer-events-none {
+        & > div > p {
+            color: @textColor !important;
+        }
+        &.h-13.items-center.gap-2.px- > button.outline-2.outline-primary.pointer-events-auto.grid.h-8.w-8.text-white {
+            color: @textColor;
+            caret-color: $color;
+            & > svg {
+                fill: @textColor !important;
+            }
+        }
+    }
+}
