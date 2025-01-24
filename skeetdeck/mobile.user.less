@@ -1,18 +1,14 @@
 /* ==UserStyle==
 @name           Skeetdeck mobile customized
 @namespace      github.com/holyspiritomb/userstyles
-@version        3.0.0
-@description    Modifies Skeetdeck for my specific mobile device and preferences
+@version        3.1.0
+@description    Modifies Skeetdeck for my specific mobile device and preferences (WIP in less)
 @author         holyspiritomb
 @updateURL      https://github.com/holyspiritomb/userstyles/raw/main/skeetdeck/mobile.user.less
 @homepageURL    https://github.com/holyspiritomb/userstyles/blob/main/skeetdeck/mobile.user.less
 @preprocessor   less
 @var            color bgMain "Background" rgba(25,23,36,1)
-@var            color bgPrim "Primary Background" rgba(31,29,46,0.95)
-@var            color bgSec "Secondary Background" rgba(38,35,58, 0.8)
 @var            color textColor "Text Color" rgb(224, 222, 244)
-@var            color textPri "\"Primary\" Text Color" rgb(224, 222, 244)
-@var            color textSec "\"Secondary\" Text Color" rgb(144, 140, 170)
 @var            select accentColorChoice "Accent Color" {
     "Foam": "156 207 216",
     "Gold": "246 193 119",
@@ -22,7 +18,7 @@
     "Rose": "235 188 186"
 }
 @var          checkbox useCustomAccent "Use custom accent" 0
-@var            color customAccent "Custom accent" #a6e3a1
+@var          color customAccent "Custom accent" #a6e3a1
 @var          checkbox changeEmojiFont "Change emoji font to Noto Color Emoji" 0
 @var          checkbox fontEnabled "Change base font" 0
 @var          text baseFontName "Base text font(s)" "'Inter', InterVar, 'InterVariable'"
@@ -33,12 +29,69 @@
 // stylelint-disable-next-line
 @-moz-document domain("skeetdeck.pages.dev") {
 
-    @bordersColor: rgb(64, 61, 82);
-    @bordersColorTW: 64 61 62;
-    @dividersColor: 64 61 82;
     @customAccentTW: red(rgb(@customAccent)) green(rgb(@customAccent)) blue(rgb(@customAccent));
     @accentColor: if((@useCustomAccent = 0), @accentColorChoice, @customAccentTW);
     @accentColorRGB: if((@useCustomAccent = 0), rgb(@accentColorChoice), @customAccent);
+
+    @bordersColor: mix(rgb(64, 61, 82), fade(@accentColorRGB, 30%));
+    @bordersColorTW: red(@bordersColor) green(@bordersColor) blue(@bordersColor);
+    @bordersColorDark:rgb(64, 61, 82);
+    @bordersColorDarkTW: red(@bordersColorDark) green(@bordersColorDark) blue(@bordersColorDark);
+    @bordersColorLite: lighten(@bordersColor, 15%);
+    @bordersColorLiteTW: red(@bordersColorLite) green(@bordersColorLite) blue(@bordersColorLite);
+    @dividersColor: 64 61 82;
+
+    @bgPrim: rgba(35, 33, 54, 1);
+    @bgSec: rgba(57,53,82, 0.8);
+    @bgPrimLite: mix(rgba(35, 33, 54, 1), fade(@accentColorRGB, 15%));
+    @bgSecLite: mix(rgba(57,53,82, 0.8), fade(@accentColorRGB, 15%));
+
+    @bgMainTW: red(rgb(@bgMain)) green(rgb(@bgMain)) blue(rgb(@bgMain));
+    @bgPrimTW: red(rgb(@bgPrim)) green(rgb(@bgPrim)) blue(rgb(@bgPrim));
+    @bgSecTW: red(rgb(@bgSec)) green(rgb(@bgSec)) blue(rgb(@bgSec));
+    @bgPrimLiteTW: red(rgb(@bgPrimLite)) green(rgb(@bgPrimLite)) blue(rgb(@bgPrimLite));
+    @bgSecLiteTW: red(rgb(@bgSecLite)) green(rgb(@bgSecLite)) blue(rgb(@bgSecLite));
+
+    @textTW: red(rgb(@textColor)) green(rgb(@textColor)) blue(rgb(@textColor));
+    @textAccented: mix(@textColor, fade(@accentColorRGB, 30%));
+    @textAccentedHarder: mix(@textColor, fade(@accentColorRGB, 50%));
+    @textAccentedTW: red(@textAccented) green(@textAccented) blue(@textAccented);
+    @textAccentedHarderTW: red(@textAccentedHarder) green(@textAccentedHarder) blue(@textAccentedHarder);
+    @textdimmer: darken(@textColor, 5%);
+    @textdimmerTW: red(@textdimmer) green(@textdimmer) blue(@textdimmer);
+    @textdimmest: darken(@textColor, 15%);
+    @textdimmestTW: red(@textdimmest) green(@textdimmest) blue(@textdimmest);
+    @textlighter: lighten(@textColor, 10%);
+    @textlighterTW: red(@textlighter) green(@textlighter) blue(@textlighter);
+
+    .line-clamp(@lines: unset) {
+        -webkit-line-clamp: @lines;
+        line-clamp: @lines;
+    }
+
+    .main-borders() {
+        outline-color: rgb(var(--divider));
+        border-color: $outline-color;
+    }
+
+    .accented-button() {
+        color: rgb(var(--accent));
+        border-color: $color;
+        outline-color: $color;
+        border-width: thin;
+    }
+
+    .accented-button-filled() {
+        background-color: rgb(@accentColor) !important;
+        color: rgb(var(--background));
+    }
+    .overflows-unset() {
+        overflow: unset;
+        overflow-x: unset;
+        overflow-y: unset;
+        overflow-wrap: unset;
+        text-overflow: unset;
+    }
 
     :root {
         --rp-base: rgb(25, 23, 36);
@@ -96,22 +149,34 @@
         --ctp-mocha-green: #a6e3a1;
         --rp-green-600: rgb(161, 233, 155);
         --rp-red-600: var(--rp-moon-love);
-        --background: 31 29 46;
-        --hinted: 64 61 82;
-        --primary: 224 222 244;
-        --secondary: 144 140 170;
-        --muted: 33 32 46;
-        --muted-fg: 110 106 134;
+        --background: 250 250 250;
+        --background-dark: @textAccentedTW;
+        --accent-dark: red(darken(@accentColorRGB, 10%)) green(darken(@accentColorRGB, 10%)) blue(darken(@accentColorRGB, 10%));
+        --hinted: @textAccentedTW;
+        --primary: @bgPrimLiteTW;
+        --primary-fg: @textAccentedTW;
+        --secondary: @textAccentedHarderTW;
+        --secondary-fg: @bgSecLiteTW;
+        --muted: @textAccentedHarderTW;
+        --muted-fg: @bgSecLiteTW;
+        --input: @textAccentedTW;
         --accent: @accentColor;
+        --divider: @bordersColorLiteTW;
     }
     .is-dark {
-        --accent-dark: @accentColor;
-        --background-dark: 25 23 36;
-        --primary: 224 222 224;
-        --primary-fg: 31 29 46;
-        --secondary: 144 140 170;
-        --secondary-fg: 38 35 58;
-        --divider: @dividersColor;
+        --accent: @accentColor;
+        --accent-dark: red(lighten(@accentColorRGB, 10%)) green(lighten(@accentColorRGB, 10%)) blue(lighten(@accentColorRGB, 10%));
+        --background: @bgMainTW;
+        --background-dark: @bgPrimTW;
+        --hinted: 55 65 81;
+        --primary: @textdimmerTW;
+        --primary-fg: @bgPrimTW;
+        --secondary: @bgSecTW;
+        --secondary-fg: @textAccentedTW;
+        --muted: 57 53 82;
+        --muted-fg: @textdimmestTW;
+        --input: 82 79 103;
+        --divider: @bordersColorDarkTW;
     }
     html, body, textarea, :host, :root {
         & when (@fontEnabled = 1) {
@@ -127,41 +192,56 @@
             font-feature-settings: @baseFontFeatureList;
         }
     }
+    // a {
+    //     color: @accentColorRGB;
+    // }
     .text-white {
-        color: @textColor;
+        color: rgb(var(--primary));
     }
     .bg-black {
-        background-color: @bgMain;
+        // background-color: rgba(@bgMainTW / 0.8);
+        background: rgb(var(--background));
     }
+    
     *,
     ::before,
     ::after,
     .border {
-        border-color: @bordersColor;
+        .main-borders();
     }
     .outline-primary{
-        border-color: @bordersColor;
-        outline-color: $border-color;
+        .main-borders();
     }
     .border-divider {
-        border-color: @bordersColor;
+        .main-borders();
     }
-    .bg-background {
+    .is-dark .bg-background {
         background-color: @bgMain;
     }
-    .bg-primary {
+    .is-dark .bg-primary {
         background-color: @bgPrim;
     }
-    .text-red-500 {
+    input::-moz-placeholder,
+    textarea::-moz-placeholder,
+    input::placeholder,
+    textarea::placeholder {
+        color: @textdimmer;
+    }
+    ::-moz-selection,
+    ::selection {
+        color: rgb(var(--primary) / var(--tw-text-opacity));
+        background-color: rgb(var(--accent));
+    }
+    .is-dark .text-red-500 {
         color: var(--rp-red-600);
         caret-color: $color;
     }
-    .text-red-600,
-    article .text-red-600 {
+    .is-dark .text-red-600,
+    .is-dark article .text-red-600 {
         color: var(--rp-red-600);
         caret-color: $color;
     }
-    .text-green-600 {
+    .is-dark .text-green-600 {
         color: var(--rp-green-600);
         caret-color: $color;
     }
@@ -217,15 +297,21 @@
         & > .shadow-menu {
             border-width: 1px;
             border-style: solid;
-            border-color: @bordersColor;
-            background: @bgMain;
-
+            .main-borders();
+            background: rgb(var(--background));
         }
         .overflow-hidden:has(.bg-secondary\/10) {
             border-width: 1px;
             border-style: solid;
             border-radius: 5px;
-            border-color: @bordersColor;
+            .main-borders();
+        }
+        div.contents {
+            & > div.overflow-y-auto.flex-col {
+                & > .overflow-hidden {
+                    overflow-y: scroll !important;
+                }
+            }
         }
     }
     /* }}} */
@@ -236,29 +322,28 @@
                 height: fit-content;
             }
             & > p.break-words.line-clamp-2 {
-                overflow-wrap: unset;
-                text-overflow: unset;
-                overflow: unset;
+                // overflow-wrap: unset;
+                // text-overflow: unset;
+                // overflow: unset;
                 font-size: 0.7rem;
-                -webkit-line-clamp: unset;
-                line-clamp: unset;
                 line-height: $font-size * 1.5;
+                .line-clamp();
             }
         }
     }
-    .overflow-hidden:has(button.text-left) {
-        & when (@debugEnabled) {
-            overflow-y: scroll;
-            scrollbar-width: none;
-        }
-    }
-    button span.overflow-hidden.text-ellipsis.whitespace-nowrap {
-        & when (@debugEnabled) {
-            text-overflow: unset;
-            text-wrap: unset;
-            overflow-wrap: unset;
-        }
-    }
+    // .overflow-hidden:has(button.text-left) {
+    //     & when (@debugEnabled) {
+    //         overflow-y: scroll;
+    //         scrollbar-width: none;
+    //     }
+    // }
+    // button span.overflow-hidden.text-ellipsis.whitespace-nowrap {
+    //     & when (@debugEnabled) {
+    //         text-overflow: unset;
+    //         text-wrap: unset;
+    //         overflow-wrap: unset;
+    //     }
+    // }
     .text-ellipsis.overflow-hidden:has(span.text-primary.font-bold) {
         & when (@debugEnabled) {
             text-overflow: unset;
@@ -272,109 +357,101 @@
     article {
         [class*="bg-secondary"] {
             &:not(.w-8, .justify-center) {
-                background: @bgSec !important;
-                &:is(.outline-primary){
-                    outline-color: @bordersColor;
-                    border-color: $outline-color;
+                // background: darken(@bgSec, 5%) !important;
+                background: rgb(var(--secondary) / 0.6) !important;
+                &:is(.outline-primary) {
+                    .main-borders();
                 }
-                &:is(.border){
-                    outline-color: @bordersColor;
-                    border-color: $outline-color;
+                &:is(.border) {
+                    .main-borders();
                 }
             }
         }
         span[role="button"] {
             &.outline-primary {
-                background: @bgSec !important;
-                outline-color: @bordersColor;
-                border-color: $outline-color;
+                // background: darken(@bgSec, 5%) !important;
+                background: rgb(var(--secondary) / 0.5) !important;
+                .main-borders();
             }
             & > .border {
-                outline-color: @bordersColor;
-                border-color: $outline-color;
+                .main-borders();
             }
         }
         button {
             &.outline-primary {
-                background: @bgSec;
-                outline-color: @bordersColor;
-                border-color: $outline-color;
+                // background: darken(@bgSec, 5%);
+                background: rgb(var(--secondary) / 0.5);
+                .main-borders();
                 &[class*="bg-secondary"]:has(img[src^="https://cdn.bsky.app/img/avatar"]) {
-                    background-color: @bgMain !important;
+                    background-color: rgb(var(--background)) !important;
                     border-color: transparent;
+                    img[src^="https://cdn.bsky.app/img/avatar"] {
+                        border-color: transparent !important;
+                    }
                 }
             }
             &.border {
-                border-color: @bordersColor;
+                .main-borders();
             }
         }
         .border-divider {
-            border-color: @bordersColor;
+            .main-borders();
         }
     }
     button[title="Remove embed"] {
         background: transparent;
         & + div.rounded-md.border.border-divider {
-            background: @bgSec !important;
-            outline-color: @bordersColor;
-            border-color: @bordersColor;
+            // background: darken(@bgSec, 5%) !important;
+            background: rgb(var(--secondary) / 0.7) !important;
+            .main-borders();
         }
     }
     a[target="_blank"].outline-2 img.object-cover {
-        & when (@debugEnabled) {
-            object-fit: cover;
-        }
+        object-fit: cover;
     }
+    .overflow-hidden .line-clamp-12,
+    .overflow-hidden .line-clamp-\[12\],
     .overflow-hidden .line-clamp-6 {
+        .line-clamp();
         & when (@debugEnabled) {
-            overflow: unset;
-            overflow-x: unset;
-            overflow-y: unset;
-            overflow-wrap: unset;
-            text-overflow: unset;
-            -webkit-line-clamp: unset;
-            line-clamp: unset;
+            .overflows-unset();
         }
     }
     div.mt-1 {
         margin-bottom: 0.5rem
     }
     div.overflow-hidden:has(>img[src*="feed_thumbnail"][title].h-full.w-full.object-contain) {
+        aspect-ratio: unset !important;
         & when (@debugEnabled) {
-            aspect-ratio: unset !important;
             overflow-y:unset !important;
         }
     }
-    button:has(~button.bg-primary.text-sm.text-primary-fg) {
-        color: rgb(@accentColor);
-        border-color: rgb(@accentColor) !important;
-        outline-color: $border-color;
-    }
-    article .aspect-banner + div > div > button[title="Actions"],
-    article .aspect-banner + div > div > button.border,
-    article .aspect-banner + div > div > span.bg-primary.text-primary-fg.outline-primary,
-    .aspect-banner + div > div > span.border.outline-primary.border-input[title="Message"] {
-        border-color: rgb(@accentColor) !important;
-        border-width: thin;
-        color: rgb(@accentColor) !important;
-        outline-color: rgb(@accentColor) !important;
-    }
-    div.min-w-0.text-sm + div:has(+button.bg-primary.text-sm.text-primary-fg),
-    button.bg-primary.text-sm.text-primary-fg {
-        background-color: rgb(@accentColor) !important;
-        color: @bgMain;
+    .is-dark {
+        button:has(~button.bg-primary.text-sm.text-primary-fg) {
+            .accented-button() !important;
+        }
+        article .aspect-banner + div > div > button[title="Actions"],
+        article .aspect-banner + div > div > button.border,
+        article .aspect-banner + div > div > span.bg-primary.text-primary-fg.outline-primary,
+        .aspect-banner + div > div > span.border.outline-primary.border-input[title="Message"] {
+            .accented-button() !important;
+        }
+        div.min-w-0.text-sm + div:has(+button.bg-primary.text-sm.text-primary-fg),
+        button.bg-primary.text-sm.text-primary-fg {
+            .accented-button-filled() !important;
+        }
     }
 
-    body > dialog > div > div.pointer-events-none {
-        & > div > p {
-            color: @textColor !important;
-        }
-        &.h-13.items-center.gap-2.px- > button.outline-2.outline-primary.pointer-events-auto.grid.h-8.w-8.text-white {
-            color: @textColor;
-            caret-color: $color;
-            & > svg {
-                fill: @textColor !important;
-            }
-        }
-    }
+    // .is-dark body > dialog > div > div.pointer-events-none {
+    //     & > div > p {
+    //         color: @textColor !important;
+    //     }
+    //     &.h-13.items-center > button.outline-2.outline-primary.pointer-events-auto.grid.h-8.w-8.text-white {
+    //         color: @textColor;
+    //         caret-color: $color;
+    //         & > svg {
+    //             fill: @textColor !important;
+    //         }
+    //     }
+    // }
 }
