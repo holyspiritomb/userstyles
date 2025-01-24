@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Skeetdeck mobile customized
 @namespace      github.com/holyspiritomb/userstyles
-@version        3.1.0
+@version        3.1.1
 @description    Modifies Skeetdeck for my specific mobile device and preferences (WIP in less)
 @author         holyspiritomb
 @updateURL      https://github.com/holyspiritomb/userstyles/raw/main/skeetdeck/mobile.user.less
@@ -29,16 +29,23 @@
 // stylelint-disable-next-line
 @-moz-document domain("skeetdeck.pages.dev") {
 
-    @customAccentTW: red(rgb(@customAccent)) green(rgb(@customAccent)) blue(rgb(@customAccent));
+    .untw(@arguments){
+        @result: rgb(@arguments);
+    }
+    .tw(@a) {
+        @result: red(rgb(@a)) green(rgb(@a)) blue(rgb(@a));
+    }
+
+    @customAccentTW: .tw(@customAccent)[@result];
     @accentColor: if((@useCustomAccent = 0), @accentColorChoice, @customAccentTW);
     @accentColorRGB: if((@useCustomAccent = 0), rgb(@accentColorChoice), @customAccent);
 
     @bordersColor: mix(rgb(64, 61, 82), fade(@accentColorRGB, 30%));
-    @bordersColorTW: red(@bordersColor) green(@bordersColor) blue(@bordersColor);
+    @bordersColorTW: .tw(@bordersColor)[@result];
     @bordersColorDark:rgb(64, 61, 82);
-    @bordersColorDarkTW: red(@bordersColorDark) green(@bordersColorDark) blue(@bordersColorDark);
+    @bordersColorDarkTW: .tw(@bordersColorDark)[@result];
     @bordersColorLite: lighten(@bordersColor, 15%);
-    @bordersColorLiteTW: red(@bordersColorLite) green(@bordersColorLite) blue(@bordersColorLite);
+    @bordersColorLiteTW: .tw(@bordersColorLite)[@result];
     @dividersColor: 64 61 82;
 
     @bgPrim: rgba(35, 33, 54, 1);
@@ -46,23 +53,23 @@
     @bgPrimLite: mix(rgba(35, 33, 54, 1), fade(@accentColorRGB, 15%));
     @bgSecLite: mix(rgba(57,53,82, 0.8), fade(@accentColorRGB, 15%));
 
-    @bgMainTW: red(rgb(@bgMain)) green(rgb(@bgMain)) blue(rgb(@bgMain));
-    @bgPrimTW: red(rgb(@bgPrim)) green(rgb(@bgPrim)) blue(rgb(@bgPrim));
-    @bgSecTW: red(rgb(@bgSec)) green(rgb(@bgSec)) blue(rgb(@bgSec));
-    @bgPrimLiteTW: red(rgb(@bgPrimLite)) green(rgb(@bgPrimLite)) blue(rgb(@bgPrimLite));
-    @bgSecLiteTW: red(rgb(@bgSecLite)) green(rgb(@bgSecLite)) blue(rgb(@bgSecLite));
+    @bgMainTW: .tw(@bgMain)[@result];
+    @bgPrimTW: .tw(@bgPrim)[@result];
+    @bgSecTW: .tw(@bgSec)[@result];
+    @bgPrimLiteTW: .tw(@bgPrimLite)[@result];
+    @bgSecLiteTW: .tw(@bgSecLite)[@result];
 
-    @textTW: red(rgb(@textColor)) green(rgb(@textColor)) blue(rgb(@textColor));
+    @textTW: .tw(@textColor)[@result];
     @textAccented: mix(@textColor, fade(@accentColorRGB, 30%));
     @textAccentedHarder: mix(@textColor, fade(@accentColorRGB, 50%));
-    @textAccentedTW: red(@textAccented) green(@textAccented) blue(@textAccented);
-    @textAccentedHarderTW: red(@textAccentedHarder) green(@textAccentedHarder) blue(@textAccentedHarder);
+    @textAccentedTW: .tw(@textAccented)[@result];
+    @textAccentedHarderTW: .tw(@textAccentedHarder)[@result];
     @textdimmer: darken(@textColor, 5%);
-    @textdimmerTW: red(@textdimmer) green(@textdimmer) blue(@textdimmer);
+    @textdimmerTW: .tw(@textdimmer)[@result];
     @textdimmest: darken(@textColor, 15%);
-    @textdimmestTW: red(@textdimmest) green(@textdimmest) blue(@textdimmest);
+    @textdimmestTW: .tw(@textdimmest)[@result];
     @textlighter: lighten(@textColor, 10%);
-    @textlighterTW: red(@textlighter) green(@textlighter) blue(@textlighter);
+    @textlighterTW: .tw(@textlighter)[@result];
 
     .line-clamp(@lines: unset) {
         -webkit-line-clamp: @lines;
@@ -151,7 +158,7 @@
         --rp-red-600: var(--rp-moon-love);
         --background: 250 250 250;
         --background-dark: @textAccentedTW;
-        --accent-dark: red(darken(@accentColorRGB, 10%)) green(darken(@accentColorRGB, 10%)) blue(darken(@accentColorRGB, 10%));
+        --accent-dark: .tw(darken(@accentColorRGB, 10%))[@result];
         --hinted: @textAccentedTW;
         --primary: @bgPrimLiteTW;
         --primary-fg: @textAccentedTW;
@@ -165,7 +172,7 @@
     }
     .is-dark {
         --accent: @accentColor;
-        --accent-dark: red(lighten(@accentColorRGB, 10%)) green(lighten(@accentColorRGB, 10%)) blue(lighten(@accentColorRGB, 10%));
+        --accent-dark: .tw(lighten(@accentColorRGB, 10%))[@result];
         --background: @bgMainTW;
         --background-dark: @bgPrimTW;
         --hinted: 55 65 81;
