@@ -7,7 +7,9 @@
   "private": true,
   "type": "module",
   "devDependencies": {
+    "@catppuccin/palette": "^1.7.1",
     "@csstools/stylelint-at-risk": "^2.0.1",
+    "@rose-pine/palette": "^4.0.1",
     "@stylelint-types/stylelint-order": "^6.0.4",
     "@stylelint-types/stylelint-stylus": "^1.0.0",
     "@types/postcss-less": "^4.0.6",

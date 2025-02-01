@@ -16,6 +16,11 @@
   resolved "https://registry.yarnpkg.com/@babel/helper-validator-identifier/-/helper-validator-identifier-7.25.9.tgz#24b64e2c3ec7cd3b3c547729b8d16871f22cbdc7"
   integrity sha512-Ed61U6XJc3CVRfkERJWDz4dJwKe7iLmmJsbOGu9wSloNSFttHV0I8g6UAgb7qnK5ly5bGLPd4oXZlxCdANBOWQ==
 
+"@catppuccin/palette@^1.7.1":
+  version "1.7.1"
+  resolved "https://registry.yarnpkg.com/@catppuccin/palette/-/palette-1.7.1.tgz#c7cd165dcc1fc025a05ac138a4749b2279cf115e"
+  integrity sha512-aRc1tbzrevOTV7nFTT9SRdF26w/MIwT4Jwt4fDMc9itRZUDXCuEDBLyz4TQMlqO9ZP8mf5Hu4Jr6D03NLFc6Gw==
+
 "@csstools/css-parser-algorithms@^3.0.4":
   version "3.0.4"
   resolved "https://registry.yarnpkg.com/@csstools/css-parser-algorithms/-/css-parser-algorithms-3.0.4.tgz#74426e93bd1c4dcab3e441f5cc7ba4fb35d94356"
@@ -73,6 +78,11 @@
   dependencies:
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
+
+"@rose-pine/palette@^4.0.1":
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/@rose-pine/palette/-/palette-4.0.1.tgz#cfa635e69a4ba02028c888425be4aa9ed9a8dfe0"
+  integrity sha512-4scxhgntd3Vov1vy3+oZTNAsovtLyd4Khukfwdj4BvRkkbHnFQcDRo6fUJ7zu07SUNI+avr+76QwLNpx/lvcLA==
 
 "@stylelint-types/stylelint-order@^6.0.4":
   version "6.0.4"
