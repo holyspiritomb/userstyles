@@ -1,8 +1,5 @@
 /** @type {import('stylelint').Config} */
 import defineConfig from 'stylelint-define-config';
-/// <reference types="@stylelint-types/stylelint-stylus">
-/// <reference types="@stylelint-types/stylelint-order">
-/// <reference types="@types/postcss-less">
 
 export default defineConfig ({
   extends: [
@@ -12,9 +9,9 @@ export default defineConfig ({
     "stylelint-use-nesting",
     "stylelint-declaration-block-no-ignored-properties",
     'stylelint-order',
-    // 'stylelint-stylus'
   ],
   rules: {
+    "alpha-value-notation": null,
     "at-rule-empty-line-before":null,
     "at-rule-no-vendor-prefix": null,
     "color-function-notation":null,
@@ -22,6 +19,7 @@ export default defineConfig ({
     "color-no-invalid-hex":true,
     "comment-empty-line-before": null,
     "csstools/use-nesting": "always",
+    "custom-property-empty-line-before": null,
     "custom-property-no-missing-var-function": true,
     "declaration-no-important":null,
     "function-calc-no-unspaced-operator":true,
@@ -38,13 +36,13 @@ export default defineConfig ({
     "selector-class-pattern":null,
     "selector-id-pattern":null,
     "selector-no-qualifying-type": null,
+    "selector-no-vendor-prefix": null,
     "value-keyword-case": null,
     "value-no-vendor-prefix":null,
-    // "stylus/indentation": 4,
   },
   overrides: [
     {
-      files: "skeetdeck/mobile.user.less",
+      files: "**/*.less",
       customSyntax: "postcss-less",
       ignoreDisables: true,
       extends: [ "stylelint-config-standard-less"],
@@ -53,6 +51,15 @@ export default defineConfig ({
         "at-rule-no-unknown": null,
         "less/color-no-invalid-hex": true,
         "less/no-duplicate-variables": null,
+        "no-duplicate-selectors": null,
+        // "at-rule-allowed-list": ["var"],
+      }
+    },
+    {
+      files: "**/*.styl",
+      plugins: ["stylelint-stylus"],
+      rules: {
+        "stylus/indentation": 4,
       }
     }
   ]
