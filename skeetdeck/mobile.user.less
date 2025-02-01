@@ -42,7 +42,7 @@
 
     @bordersColor: mix(rgb(64, 61, 82), fade(@accentColorRGB, 30%));
     @bordersColorTW: .tw(@bordersColor)[@result];
-    @bordersColorDark:rgb(64, 61, 82);
+    @bordersColorDark: rgb(64, 61, 82);
     @bordersColorDarkTW: .tw(@bordersColorDark)[@result];
     @bordersColorLite: lighten(@bordersColor, 15%);
     @bordersColorLiteTW: .tw(@bordersColorLite)[@result];
@@ -155,7 +155,7 @@
         --rp-moon-love-tw: 235 111 146;
         --ctp-mocha-green: #a6e3a1;
         --rp-green-600: rgb(161, 233, 155);
-        --rp-red-600: var(--rp-moon-love);
+        --rp-red-600: #ef4444;
         --background: 250 250 250;
         --background-dark: @textAccentedTW;
         --accent-dark: .tw(darken(@accentColorRGB, 10%))[@result];
@@ -171,6 +171,7 @@
         --divider: @bordersColorLiteTW;
     }
     .is-dark {
+        color-scheme: dark;
         --accent: @accentColor;
         --accent-dark: .tw(lighten(@accentColorRGB, 10%))[@result];
         --background: @bgMainTW;
@@ -184,6 +185,7 @@
         --muted-fg: @textdimmestTW;
         --input: 82 79 103;
         --divider: @bordersColorDarkTW;
+        --rp-red-600: lighten(#ef4444, 10%);
     }
     html, body, textarea, :host, :root {
         & when (@fontEnabled = 1) {
@@ -304,8 +306,8 @@
         & > .shadow-menu {
             border-width: 1px;
             border-style: solid;
-            .main-borders();
             background: rgb(var(--background));
+            .main-borders();
         }
         .overflow-hidden:has(.bg-secondary\/10) {
             border-width: 1px;
@@ -408,7 +410,6 @@
     button[title="Remove embed"] {
         background: transparent;
         & + div.rounded-md.border.border-divider {
-            // background: darken(@bgSec, 5%) !important;
             background: rgb(var(--secondary) / 0.7) !important;
             .main-borders();
         }
@@ -430,7 +431,7 @@
     div.overflow-hidden:has(>img[src*="feed_thumbnail"][title].h-full.w-full.object-contain) {
         aspect-ratio: unset !important;
         & when (@debugEnabled) {
-            overflow-y:unset !important;
+            overflow-y: unset !important;
         }
     }
     .is-dark {
@@ -446,6 +447,11 @@
         div.min-w-0.text-sm + div:has(+button.bg-primary.text-sm.text-primary-fg),
         button.bg-primary.text-sm.text-primary-fg {
             .accented-button-filled() !important;
+        }
+    }
+    body:has(dialog[data-modal][open]) {
+        & when (@debugEnabled) {
+            overflow: unset;
         }
     }
 
