@@ -19,6 +19,119 @@
 /*         / /_/ / /_/ / /_/ / ,< / /  __/*/
 /*        /_____/\____/\____/_/|_/_/\___/ */
 @-moz-document regexp('https://www\\.goodreads\\.com/(?!book/add_to_books_widget/).*') {
+    /* force dark mode on my mobile firefox */
+    :root {
+        --color-background-alert-caution: #dea68f;
+        --color-background-alert-informational: #4f4f4d;
+        --color-background-alert-success: #b5baa1;
+        --color-background-alt: #32362d;
+        --color-background-avatar-hover: #1e1915;
+        --color-background-avatar-placeholder-accent: #ebebeb;
+        --color-background-avatar-placeholder-base: #707070;
+        --color-background-body-base: #1e1915;
+        --color-background-body-transparent: rgba(30, 25, 21, 0.75);
+        /* --color-background-body-transparent: rgb(0 0 0 / 0.4); */
+        --color-background-book-cover-placeholder-accent: #fff;
+        --color-background-book-cover-placeholder-base: #ebe2d7;
+        --color-background-book-cover-variant-1: #dce8d1;
+        --color-background-book-cover-variant-2: #dee0ed;
+        --color-background-book-cover-variant-3: #edd9de;
+        --color-background-book-cover-variant-4: #ebe2d7;
+        --color-background-button-primary-default: #ebe2d7;
+        --color-background-button-primary-disabled: #8e8e97;
+        --color-background-button-primary-hover: #ead0ad;
+        --color-background-button-primary-pressed: #cfccc9;
+        --color-background-button-secondary-disabled: #4f4f4d;
+        --color-background-chip-select-selected: #707070;
+        --color-background-default: #1e1915;
+        --color-background-disabled: #cfccc9;
+        --color-background-divider: #707070;
+        --color-background-elevation: #707070;
+        --color-background-input-base: #32362d;
+        --color-background-input-hover: #707070;
+        --color-background-knh-highlight-base: #3B4538;
+        --color-background-notif-badge-base: #d54a23;
+        --color-background-notif-scrollbar-thumb: #707070;
+        --color-background-primary-base: #ebe2d7;
+        --color-background-promo-sidebar: #4f4f4d;
+        --color-background-rating-bar-base: #e87400;
+        --color-background-rating-bar-empty: #ababb0;
+        --color-background-rating-star-base: #e87400;
+        --color-background-rating-star-empty: #707070;
+        --color-background-rating-star-border: #8e8e97;
+        --color-background-spoiler-tooltip-base: #4f4f4d;
+        --color-background-spoiler-visible: #f2f2f2;
+        --color-background-tag-accent: #409970;
+        --color-background-tag-selector-base: rgba(235, 235, 235, 0.2);
+        --color-background-tag-selector-hover: rgba(235, 235, 235, 0.5);
+        --color-background-transparent-active: rgba(50, 54, 45, 0.22);
+        --color-background-transparent-hover: rgba(0, 0, 0, 0.05);
+        --color-background-wtr-base: #3f8363;
+        --color-background-wtr-hover: #409970;
+        --color-background-carousel-pagination: #707070;
+        --color-background-icon-default: #f2f2f2;
+        --color-border-avatar: #cfccc9;
+        --color-border-button-secondary-base: #cfccc9;
+        --color-border-button-secondary-disabled: #ababb0;
+        --color-border-button-secondary-pressed: #8e8e97;
+        --color-border-blockquote: #c2c7cc;
+        --color-border-primary: #1e1915;
+        --color-border-input-base: #1e1915;
+        --color-border-input-radio-base: #ababb0;
+        --color-border-wtr-base: #377458;
+        --color-border-elevation-medium: #4f4f4d;
+        --color-brand-amazon-accent: #000000;
+        --color-brand-amazon-base: #f5d47a;
+        --color-brand-amazon-hover: #f7dc92;
+        --color-brand-amazon-shadow: rgba(245, 212, 122, 0.5);
+        --color-brand-apple-accent: #ffffff;
+        --color-brand-apple-base: #000000;
+        --color-brand-apple-hover: #4f4f4d;
+        --color-brand-apple-shadow: rgba(0, 0, 0, 0.5);
+        --color-brand-facebook-accent: #ffffff;
+        --color-brand-facebook-base: #1877f2;
+        --color-brand-facebook-hover: #3085f3;
+        --color-brand-facebook-shadow: rgba(24, 119, 242, 0.5);
+        --color-divider-default: #4f4f4d;
+        --color-interaction-focus: #fff;
+        --color-interaction-hoverarea: #4f4f4d;
+        --color-interaction-hoverlink: #8e8e97;
+        --color-internal-icons-background: #f2f2f2;
+        --color-internal-icons-with-edge: #cfccc9;
+        --color-notification-failure: #f57957;
+        --color-notification-info: #c69259;
+        --color-notification-success: #409970;
+        --color-shadow-button-active: #7584e9;
+        --color-shadow-button-focus: #1e1915;
+        --color-shadow-input-warning: #d54a23;
+        --color-shadow-transparent-focus: rgba(36, 49, 138, 0.15);
+        --color-text-action-primary-base: #ebebeb;
+        --color-text-action-primary-hover: #f2f2f2;
+        --color-text-action-secondary-base: #377458;
+        --color-text-action-secondary-hover: #409970;
+        --color-text-author-base: #c69259;
+        --color-text-body-3: #cfccc9;
+        --color-text-body-light: #c2c7cc;
+        --color-text-body-standard: #cfccc9;
+        --color-text-button-disabled: #fff;
+        --color-text-button-primary-base: #1e1915;
+        --color-text-button-primary-disabled: #cfccc9;
+        --color-text-button-primary-pressed: #4f4f4d;
+        --color-text-button-pressed: #c2c7cc;
+        --color-text-button-secondary-disabled: #32362d;
+        --color-text-button-transparent-base: #fff;
+        --color-text-button-tag-base: #f2f2f2;
+        --color-text-button-wtr-base: #fff;
+        --color-text-default: #f2f2f2;
+        --color-text-disabled: #8e8e97;
+        --color-text-heading-base: #ebebeb;
+        --color-text-notif-badge-base: #fff;
+        --color-text-notif-history: #4f4f4d;
+        --color-text-rating-bar-base: #707070;
+        --color-text-spoiler-hidden: #cfccc9;
+        --color-text-subdued: #c2c7cc;
+        --color-text-warning: #d54a23;
+    }
 	:root {
 		/* color variables - darkest to lightest */
 		--jet: hsl(0, 0%, 12%);
@@ -63,6 +176,13 @@
 		--border: var(--mine);
 		--border-bright: var(--mystic);
 	}
+
+    /* Search icon svg */
+
+    button.Header__toggleSearchContainer > i.Icon.SearchIcon > svg > path {
+        fill: var(--neptune);
+    }
+
 	/* Main Pages & Sections */
 	body,
 	.gr-homePageBody,
@@ -82,12 +202,17 @@
 	}
 	body,
 	.mainContent {
-		background: url("https://raw.githubusercontent.com/holyspiritomb/userstyles/master/goodreads/dark-theme/img/background.jpg") no-repeat center center fixed;
+		background: url("https://raw.githubusercontent.com/holyspiritomb/userstyles/master/goodreads/dark-theme/img/background.jpg");
+		background-attachment: fixed;
+        background-position: top left;
 		-webkit-background-size: cover;
 		-moz-background-size: cover;
 		-o-background-size: cover;
 		background-size: cover;
 	}
+    .Header {
+        background-color: var(--jet);
+    }
 	.mainContentContainer#topLanding {
 		/* padding: 25px 0 */
 	}
@@ -107,6 +232,10 @@
 		}
 	}
 	/* Site logo */
+
+    .Header__logo > svg.GoodreadsWordmark > path {
+        fill: var(--neptune);
+    }
 	.siteHeader__logo,
 	.logo a img,
 	#signedOutHome .discoveryBoxDiscovery .discoveryBoxArrow img {
@@ -383,10 +512,14 @@
 		background: transparent
 	}
 	/* Navigation & Footer */
+    .Header,
+    .Header__contents,
+    .Header__primaryNavContainer,
+    .Header__searchContainer--open,
 	.siteHeader__topLine,
 	.siteHeader__primaryNavSeparateLine,
 	.footerContainer {
-		background: var(--bkg-nav)
+		background: var(--jet)
 	}
 	.primaryNavMenu--siteHeaderBrowseMenu .primaryNavMenu__menu,
 	.primaryNavMenu__menu,
@@ -1433,12 +1566,9 @@
 		box-shadow: none;
 		-webkit-box-shadow: none;
 	}
-	main {
-		/* padding-top: 1rem */
-	}
-	.distractionless #header {
+	/* .distractionless #header { */
 		/* margin-bottom: 0 */
-	}
+	/* } */
 	div.bannerYear[style] {
 		background-color: var(--elm) !important
 	}
@@ -1487,4 +1617,14 @@
 	html.withSiteHeaderTopFullImage .dropdown__menu--siteHeader {
 		top: initial
 	}
+
+    div.TruncatedContent__text:has(+div.TruncatedContent__gradientOverlay) {
+        background-image: -webkit-linear-gradient(rgb(255 255 255 / 1), rgb(255 255 255 / 0) 144px);
+        color: transparent;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+    div.TruncatedContent__gradientOverlay {
+        background-image: none;
+    }
 }
