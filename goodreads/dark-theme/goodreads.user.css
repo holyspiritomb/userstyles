@@ -1617,7 +1617,9 @@
 	html.withSiteHeaderTopFullImage .dropdown__menu--siteHeader {
 		top: initial
 	}
-
+    div.TruncatedContent__text {
+        color: #ffffff
+    }
     div.TruncatedContent__text:has(+div.TruncatedContent__gradientOverlay) {
         background-image: -webkit-linear-gradient(rgb(255 255 255 / 1), rgb(255 255 255 / 0) 144px);
         color: transparent;
