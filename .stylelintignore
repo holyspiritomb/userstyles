@@ -1,0 +1,6 @@
+node_modules/*
+node_modules
+.git
+goodreads/dark-theme/*
+skeetdeck/original.css
+skeetdeck/default.css
