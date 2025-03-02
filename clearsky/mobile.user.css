@@ -1,0 +1,77 @@
+/* ==UserStyle==
+@name           clearsky.app mobile tweaks
+@namespace      github.com/holyspiritomb/userstyles
+@version        1.0.0
+@description    Modified for my personal phone
+@author         holyspiritomb
+@updateURL      https://github.com/holyspiritomb/userstyles/raw/main/clearsky/mobile.user.css
+@homepageURL    https://github.com/holyspiritomb/userstyles/blob/main/clearsky/mobile.user.css
+==/UserStyle== */
+@-moz-document domain("clearsky.app") {
+    div.account-header,
+    div.account-extra-info,
+    div.account-tabs-content,
+    div.account-tab,
+    div.account-tab-selected{
+        max-width: 100vw;
+    }
+    div.history-header,
+    div.post-with-content,
+    div.account-extra-info{
+        max-width: 89vw;
+    }
+    pre[style] {
+        padding:5px;
+        overflow-wrap: break-word;
+        text-wrap: wrap;
+        font-size: 8px;
+    }
+    .tab-selector-root {
+        padding-right:0px;
+    }
+    .bluethernal-llc-watermark{
+        /*display: none*/
+        right:2.6em;
+    }
+    .account-banner{
+        background-position-x: left;
+        background-position-y: top;
+        background-size: contain;
+    }
+    /*.post-with-content .post-header .post-replying-to-marker .post-replying-mini-avatar{
+        background-size: cover !important;
+        background-position-x: 50%;
+        background-position-y: 50%;
+        background-image: unset;
+    }*/
+    .lists-as-list-view .lists-entry .list-description {
+        overflow-y: unset;
+        text-overflow: unset;
+        grid-column-start: 1;
+        grid-row-start: 3;
+        font-size: 14px;
+        padding-left: 1.7em;
+    }
+    .lists-as-list-view .lists-entry .list-name {
+        font-size: 14px;
+        padding-top: 0.25em;
+    }
+    .lists-as-list-view .lists-entry .row {
+        text-wrap-mode: unset;
+        height: auto
+    }
+    .account-short-entry-display-name,
+    .account-short-entry-handle {
+        font-size: 14px;
+    }
+    .account-short-entry-display-name:before {
+        content: "("
+    }
+    .account-short-entry-display-name:after {
+        content: ")"
+    }
+    .lists-as-list-view .lists-entry {
+        height: auto;
+        padding-bottom: 0.4em;
+    }
+}
