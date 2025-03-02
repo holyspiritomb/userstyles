@@ -17,12 +17,11 @@
         --default-font: 'Lato', sans-serif;
     }
 
-    @media (max-width: 980px) {
-
-        :is(td.field, th.header):is(.avg_rating, .date_added, .date_pub, .date_pub_edition, .asin, .format, .rating) {
-            display: none;
-        }
-    }
+    /* @media (max-width: 980px) { */
+    /*     :is(td.field, th.header):is(.avg_rating, .date_added, .date_pub, .date_pub_edition, .asin, .format, .rating) { */
+    /*         display: none; */
+    /*     } */
+    /* } */
 
     div.pageContent,
     div.mainContentFloat {
@@ -93,17 +92,8 @@
     .editionBox__desc__bookTitle,
     .readable,
     .readable :is(p, ol, ul, td, th),
-    .Text__h1,
-    .Text__h2,
-    .Text__h3,
-    .Text__h4,
-    .Text__h5,
-    .Text__h6,
-    .Text__title1,
-    .Text__title2,
-    .Text__title2-static,
-    .Text__title3,
-    .Text__title4,
+    [class^="Text__h"],
+    [class^="Text__title"],
     .RatingStatistics__rating {
         font-family: var(--default-font) !important;
     }
@@ -113,6 +103,7 @@
     h1.bookTitle,
     h1.bookTitle cite,
     cite.bookTitle {
+    font-size: 24px !important;
     }
     a.siteHeader__topLevelLink,
     a.primaryNavMenu__trigger--siteHeaderBrowseMenu span {
@@ -137,6 +128,17 @@
     ul.responsiveSiteFooter__linkList li:first-child {
         display: none;
     }
+
+    div.BookRatingStars {
+        display: none;
+    }
+
+    div.ReviewsList{
+        max-height:40vh;
+        overflow-y: auto;
+        background-color:rgba(0,0,0,0.3);
+    }
+
 }
 
 @-moz-document url-prefix('https://www.goodreads.com/list/show/') {
@@ -145,9 +147,84 @@
         display: none;
     }
 
+    html.desktop .siteHeader {
+        width: 100vw;
+        margin-left: auto;
+        margin-right: auto;
+        right: unset !important;
+        left: unset !important;
+        overflow-x: hidden;
+    }
+
+    html.desktop #all_votes {
+        width: 100%;
+    }
+
     html.desktop .mainContentContainer .mainContent .mainContentFloat {
-        width: 92%;
+        width: calc(100vw - 16px);
+        margin-left: 8px;
+        margin-right: 8px;
         box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        .leftContainer {
+            width: calc(100vw - 32px);
+            margin-left: auto;
+            margin-right: auto;
+            box-sizing: border-box;
+            -moz-box-sizing: border-box;
+        }
+    }
+
+    html.desktop div#bodycontainer.content {
+        width: 100vw;
+        overflow-x: hidden;
+        .mainContentContainer {
+            width: 100vw;
+            .mainContent {
+                width: 100vw;
+            }
+        }
+    }
+    html.desktop :is(#comment_list, #comment_form) {
+        width: calc(100vw - 30px);
+        margin-left: auto;
+        margin-right: auto;
+    }
+    html.desktop .comment {
+        width: calc(100vw - 32px);
+        .u-anchorTarget {
+            width: 90%;
+        }
+        .brownBox {
+            width: 90%;
+        }
+        div > div.right {
+            position: relative;
+            right: 15px;
+        }
+
+    }
+    html.desktop .wtrRight.wtrUp {
+        width: 44px;
+    }
+    html.desktop :is(button.wtrToRead, .wtrLeft.wtrUp, .wtrRight.wtrUp, .wtrShelfButton) {
+        height: 44px !important;
+    }
+
+    html.desktop .wtrButtonContainer {
+        width: 212px !important;
+        .wtrLeft.wtrUp {
+            width: calc(212px - 44px) !important;
+        }
+    }
+
+    html.desktop #all_votes > table.tableList > tbody > tr{
+        > td[width="100%"] {
+            width: 60% !important;
+        }
+        > td:first-child {
+            width: 5% !important;
+        }
     }
 }
 
@@ -168,10 +245,6 @@
         width: 95vw !important;
     }
 
-    html.desktop .mainContentContainer .mainContent .mainContentFloat {
-        width: 98vw !important;
-        box-sizing: border-box;
-    }
     html.desktop #leadercol {
         width: 94vw !important;
     }
@@ -185,10 +258,6 @@
     }
     ul.personalNav > li:not(:last-child) {
         display: none;
-    }
-    html.desktop table#books {
-        width: 100% !important;
-        box-sizing: border-box;
     }
     div.right.uitext {
         float: left !important;
@@ -211,6 +280,29 @@
     }
     form#sortForm {
         display: none;
+    }
+    @media (max-width: 1199px) {
+        html.desktop {
+            width:100vw;
+            .mainContent {
+                width:100vw;
+            }
+            .mainContentFloat {
+                width: calc(100vw - 16px);
+                margin-left:8px;
+                margin-right:8px;
+                box-sizing: border-box;
+            }
+            #bodycontainer {
+                width: 100vw;
+            }
+            .siteHeader {
+                width: 100vw;
+            }
+            #rightCol:has(table#books) {
+                overflow-x: auto;
+            }
+        }
     }
 }
 
