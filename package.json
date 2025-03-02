@@ -6,24 +6,32 @@
   "license": "MIT",
   "private": true,
   "type": "module",
+  "scripts": {
+    "lint": "stylelint \"**/*.user.{css,less,styl}\"",
+    "lint:fix": "stylelint --fix \"**/*.user.{css,less,styl}\""
+  },
   "devDependencies": {
     "@catppuccin/palette": "^1.7.1",
     "@csstools/stylelint-at-risk": "^2.0.1",
     "@rose-pine/palette": "^4.0.1",
     "@stylelint-types/stylelint-order": "^6.0.4",
+    "@stylelint-types/stylelint-stylistic": "^3.1.1",
     "@stylelint-types/stylelint-stylus": "^1.0.0",
+    "@stylistic/stylelint-config": "^2.0.0",
+    "@stylistic/stylelint-plugin": "^3.1.2",
     "@types/postcss-less": "^4.0.6",
     "postcss-less": "^6.0.0",
-    "stylelint": "^16.13.2",
+    "stylelint": "^16.14.1",
     "stylelint-config-standard": "^37.0.0",
     "stylelint-config-standard-less": "^3.0.1",
     "stylelint-declaration-block-no-ignored-properties": "^2.8.0",
-    "stylelint-define-config": "^1.8.1",
+    "stylelint-define-config": "^16.14.1",
     "stylelint-less": "^3.0.1",
     "stylelint-order": "^6.0.4",
     "stylelint-stylus": "^1.0.0",
     "stylelint-use-nesting": "^6.0.0",
     "usercss-meta": "^0.12.0",
     "vscode-langservers-extracted": "^4.10.0"
-  }
+  },
+  "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e"
 }
