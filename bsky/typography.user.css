@@ -1,0 +1,30 @@
+/* ==UserStyle==
+@name           Bluesky typography and emoji swap
+@namespace      github.com/holyspiritomb/userstyles
+@version        1.0.0
+@description    Primarily for uss on my phone
+@author         holyspiritomb
+@homepageURL    https://github.com/holyspiritomb/userstyles/blob/main/bsky/typography.user.css
+@updateURL      https://raw.githubusercontent.com/holyspiritomb/userstyles/main/bsky/typography.user.css
+==/UserStyle== */
+
+@-moz-document url-prefix("https://bsky.app") {
+    @font-face {
+        font-family: "Noto Color Emoji";
+        font-weight: 300 400 500 600 700 800 900;
+        font-display: swap;
+        src: local("Noto Color Emoji");
+        unicode-range: U+1F499-1F49C, U+1F4A9, U+1F5A4, U+1F6AB, U+1F6AB, U+1F6DD, U+1F6DF, U+1F90C-1F90E, U+1F979, U+1F9EC, U+1FA75-1FA77, U+1FAA9, U+1FABF, U+1FAC3-1FAC4, U+1FAE0-1FAE7, U+2694, U+26A1;
+    }
+    :root,
+    html,
+    body,
+    :host,
+    *[style*='font-family'],
+    span[style*='font-family'] {
+        font-family: "Noto Color Emoji", InterVar, InterVariable, system-ui, sans-serif !important;
+    }
+    * {
+        font-feature-settings: 'ss01' on, 'cv05' on !important;
+    }
+}
