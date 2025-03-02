@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Skeetdeck mobile customized
 @namespace      github.com/holyspiritomb/userstyles
-@version        3.1.2
+@version        3.1.3
 @description    Modifies Skeetdeck for my specific mobile device and preferences (WIP in less)
 @author         holyspiritomb
 @updateURL      https://github.com/holyspiritomb/userstyles/raw/main/skeetdeck/mobile.user.less
@@ -201,9 +201,6 @@
             font-feature-settings: @baseFontFeatureList;
         }
     }
-    // a {
-    //     color: @accentColorRGB;
-    // }
     .text-white {
         color: rgb(var(--primary));
     }
@@ -452,6 +449,14 @@
     body:has(dialog[data-modal][open]) {
         & when (@debugEnabled) {
             overflow: unset;
+        }
+    }
+
+    // link previews in posts where there's no image preview
+    a[target="_blank"][rel] p.line-clamp-2.break-words {
+        & when (@debugEnabled) {
+            .line-clamp() !important;
+            .overflows-unset();
         }
     }
 
