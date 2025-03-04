@@ -9,6 +9,98 @@
 @updateURL      https://raw.githubusercontent.com/holyspiritomb/userstyles/main/goodreads/main-phone.user.css
 ==/UserStyle== */
 
+@-moz-document url-prefix('https://www.goodreads.com') {
+    :root {
+        --wtr-button-width: 250px;
+        --wtr-button-left-width: 200px;
+        --wtr-button-height: 44px;
+        --mobile-font-size: 12pt;
+        --desktop-font-size: 22pt;
+        --default-font: 'Lato', sans-serif;
+    }
+    html.desktop {
+        main:has(.homeSecondaryColumn) {
+            margin-left: auto !important;
+            margin-right: auto !important;
+            width: 100vw !important;
+            .homeSecondaryColumn {
+                width: calc(50vw - 18px) !important;
+                margin-right: 6px !important;
+                margin-left: 12px !important;
+            }
+            .homeTertiaryColumn {
+                width: calc(50vw - 18px) !important;
+                margin-right: 6px !important;
+                margin-left: 12px !important;
+            }
+            .homePrimaryColumn {
+                /* width: 45vw !important; */
+                width: calc(50vw - 18px) !important;
+                margin-left: 6px !important;
+                margin-right: 12px !important;
+                .siteAnnouncement {
+                    margin-left: unset !important;
+                }
+                h3.gr-newsfeed__title {
+                    margin-left: unset !important;
+                }
+                .gr-newsfeedItem {
+                    margin-left: unset !important;
+                    .gr-newsfeedItem__body {
+                        padding-right: 8px !important;
+                        .gr-newsfeedItem__header {
+                            margin-right: 48px !important;
+                        }
+                    }
+                }
+            }
+        }
+        .wantToReadButton {
+            height: var(--wtr-button-height) !important;
+            width: var(--wtr-button-width) !important;
+            max-width: var(--wtr-button-width) !important;
+            max-inline-size: var(--wtr-button-width) !important;
+            .wantToReadButton__left{
+                height: var(--wtr-button-height) !important;
+                width: var(--wtr-button-left-width) !important;
+            }
+            .wantToReadButton__leftUnshelved{
+                height: var(--wtr-button-height) !important;
+                width: var(--wtr-button-left-width) !important;
+                button.wantToReadButton__leftUnshelvedButton {
+                    width: var(--wtr-button-width) !important;
+                }
+            }
+            .wantToReadButton__leftShelved{
+                height: var(--wtr-button-height) !important;
+                width: var(--wtr-button-left-width) !important;
+                button.wantToReadButton__leftShelvedButton {
+                    width: var(--wtr-button-width) !important;
+                    height: var(--wtr-button-height) !important;
+                    .wantToReadButton__shelvedButtonText {
+                        padding-top: 0px !important;
+                        width: calc(var(--wtr-button-left-width) - 13px) !important;
+                        min-inline-size: calc(var(--wtr-button-left-width) - 13px) !important;
+                    }
+                }
+            }
+            .dropdown.dropdown--wantToReadMenu {
+                padding-top: 13px !important;
+                padding-bottom: 13px !important;
+            }
+        }
+        input[type="radio"].gr-radioButtonGroup__button,
+        input[type="checkbox"].wantToReadMenu__shelfCheckbox {
+            height: 28px !important;
+            width: 28px !important;
+        }
+        div.headroom-wrapper[style^="height: 50px"],
+        div.headroom-wrapper[style^="height: 50px"] > .headroom--unfixed > nav {
+            height: 48px !important;
+        }
+    }
+}
+
 @-moz-document regexp('https://www\\.goodreads\\.com/(?!book/add_to_books_widget/).*') {
 
     :root {
@@ -23,15 +115,15 @@
     /*     } */
     /* } */
 
-    div.pageContent,
-    div.mainContentFloat {
-        background-color: rgba(0, 0, 0, 85%);
-    }
+    /* div.pageContent, */
+    /* div.mainContentFloat { */
+    /*     background-color: rgba(0, 0, 0, 85%); */
+    /* } */
 
     /* new goodreads book pages */
 
     main.PageFrame__main.BookPage {
-        background-color: rgba(0, 0, 0, 40%);
+        /* background-color: rgba(0, 0, 0, 40%); */
         border-radius: 5px;
         padding: 10px;
         box-sizing: border-box;
@@ -65,9 +157,8 @@
         font-family: var(--default-font);
         line-height: 1.5em;
     }
-    html.desktop div#imagecol > div.wtrButtonContainer > div.wtrDown.wtrLeft,
+    html.desktop div#imagecol > div.wtrButtonContainer > :is(div.wtrDown.wtrLeft, div.wtrDown.wtrRight),
     html.desktop div#imagecol > div.wtrButtonContainer > div.wtrDown.wtrLeft > span[title],
-    html.desktop div#imagecol > div.wtrButtonContainer > div.wtrDown.wtrRight,
     html.desktop div#imagecol > div.wtrButtonContainer > div.wtrDown.wtrRight > button.wtrShelfButton {
         font-size: inherit !important;
         line-height: inherit !important;
@@ -121,9 +212,7 @@
     .gr-col-lg-4,
     div.responsiveSiteFooter__appLinksColumnBadges,
     footer > div > div.gr-row > div:first-child,
-    header div.siteHeader__topFullImageContainer,
     html.mobile div#smartbanner,
-    li.siteHeader__topLevelItem--community,
     span.headerPersonalNav__flag,
     ul.responsiveSiteFooter__linkList li:first-child {
         display: none;
@@ -136,7 +225,6 @@
     div.ReviewsList{
         max-height:40vh;
         overflow-y: auto;
-        background-color:rgba(0,0,0,0.3);
     }
 
 }
@@ -204,8 +292,9 @@
         }
 
     }
-    html.desktop .wtrRight.wtrUp {
-        width: 44px;
+    html.desktop .wtrRight.wtrUp,
+    html.desktop .wtrRight.wtrDown {
+        width: 44px !important;
     }
     html.desktop :is(button.wtrToRead, .wtrLeft.wtrUp, .wtrRight.wtrUp, .wtrShelfButton) {
         height: 44px !important;
@@ -213,18 +302,39 @@
 
     html.desktop .wtrButtonContainer {
         width: 212px !important;
+        height: 44px !important;
+        .wtrStatusToRead {
+            height: 44px;
+            box-sizing: border-box;
+        }
         .wtrLeft.wtrUp {
             width: calc(212px - 44px) !important;
         }
+        .wtrLeft.wtrDown {
+            width: calc(212px - 44px) !important;
+        }
+        button.wtrToRead span.progressTrigger {
+            font-size: 20px;
+        }
+        span[title="Want to Read"] {
+            font-size: 20px !important;
+        }
     }
 
-    html.desktop #all_votes > table.tableList > tbody > tr{
+    html.desktop #all_votes > table.tableList > tbody > tr {
         > td[width="100%"] {
             width: 60% !important;
         }
         > td:first-child {
             width: 5% !important;
         }
+    }
+	html.desktop a.siteHeader__logo {
+        display: block !important;
+	}
+
+    html.desktop div.siteHeader__topLine > div.siteHeader__contents > div.searchBox--navbar {
+        width: 45vw !important
     }
 }
 
@@ -304,6 +414,9 @@
             }
         }
     }
+    html.desktop div.siteHeader__topLine > div.siteHeader__contents > div.searchBox--navbar {
+        width: 45vw !important
+    }
 }
 
 /* single book page */
@@ -350,6 +463,23 @@
         html.desktop #imagecol {
             float: right;
             box-sizing: border-box;
+        }
+    }
+}
+@-moz-document url-prefix('https://www.goodreads.com/series/') {
+    :root {
+        --desktop-font-size: 16px;  
+        --wtr-button-width: 180px;
+        --wtr-button-left-width: 110px;
+        --wtr-button-height: 40px;
+    }
+    html.desktop {
+        div.wtrModalContainer.wtrMenuToggleModal {
+            padding-top: 11px !important;
+            padding-bottom: 11px !important;
+        }
+        li.siteHeader__topLevelItem {
+            padding-top: 12px;
         }
     }
 }

@@ -236,7 +236,7 @@
     .Header__logo > svg.GoodreadsWordmark > path {
         fill: var(--neptune);
     }
-	.siteHeader__logo,
+	/* .siteHeader__logo, */
 	.logo a img,
 	#signedOutHome .discoveryBoxDiscovery .discoveryBoxArrow img {
 		filter: brightness(4) sepia(55%) hue-rotate(115deg) saturate(34%)
@@ -247,10 +247,12 @@
 		background-size: 140px 30px;
 	}
 	.siteHeader__logo.siteHeader__logo--doodle {
-		filter: brightness(.75) sepia(55%) hue-rotate(115deg) saturate(34%)
+		filter: brightness(.75) sepia(55%) hue-rotate(115deg) saturate(34%);
+		-webkit-filter: brightness(.75) sepia(55%) hue-rotate(115deg) saturate(34%);
 	}
 	#siteheader #logo img {
-		filter: brightness(2) sepia(55%) hue-rotate(115deg) saturate(54%)
+		filter: brightness(2) sepia(55%) hue-rotate(115deg) saturate(54%);
+		-webkit-filter: brightness(2) sepia(55%) hue-rotate(115deg) saturate(54%)
 	}
 	#siteheader #logo {
 		position: relative
@@ -263,7 +265,7 @@
 		color: var(--limestone);
 	}
 	.gr-icon--authorBadge {
-		filter: brightness(3) sepia(55%) hue-rotate(115deg) saturate(34%)
+		/* filter: brightness(3) sepia(55%) hue-rotate(115deg) saturate(34%) */
 	}
 	/* Personal Nav icons */
 	.headerPersonalNav__icon,
@@ -657,7 +659,7 @@
 	.quizTitle,
 	.js-readingNote .spoilerContainer__showLink,
 	.responsiveSiteFooter__link {
-		color: var(--txt-link);
+		color: var(--txt-link) !important;
 	}
 	/* SVG LINK */
 	#rating_graph span,
@@ -1437,6 +1439,7 @@
     -----------*/
 	/* card book border */
 	.gr-book--border,
+    .gr-popover,
 	#choiceBody .rightContainer,
 	.readingChallengeBanner .bannerYear,
 	.readingChallengeBanner .challengeStatsContainer2,
@@ -1628,5 +1631,22 @@
     }
     div.TruncatedContent__gradientOverlay {
         background-image: none;
+    }
+    div.ReviewsList{
+        background-color:rgba(0,0,0,0.3);
+    }
+    div.pageContent,
+    div.mainContentFloat {
+        background-color: rgba(0, 0, 0, 85%);
+    }
+
+    /* new goodreads book pages */
+
+    main.PageFrame__main.BookPage {
+        background-color: rgba(0, 0, 0, 40%);
+    }
+    .gr-popover {
+        border-color: var(--border);
+        border-width: thin;
     }
 }
