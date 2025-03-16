@@ -1,0 +1,36 @@
+/* ==UserStyle==
+@name           github.com font feature settings hardcoded
+@namespace      github.com/holyspiritomb
+@version        2.0.0
+@description    For setting the font-feature-settings property of the monospace font and of the body font. The monospace font inherits from the body font. Hardcoded values are the dev's preferences and for use with Adguard on Android alongside some font-changing userscripts.
+@author         holyspiritomb
+@updateURL		https://raw.githubusercontent.com/holyspiritomb/userstyles/main/github/fonts-feature-settings-hardcoded.user.css
+==/UserStyle== */
+@-moz-document domain("github.com") {
+    :root {
+        --fontStack-monospace: "Victor Mono", ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace;
+    }
+    html,:root,body,
+    .markdown-body {
+        font-feature-settings: 'cv01' on, 'cv02' on, 'cv03' on, 'cv04' on, 'cv05' on, 'cv07' on, 'cv08' on, 'cv09' on, 'cv10' on;
+    }
+    .CheckStep-line,
+    .blob-code-inner,
+    .commit-ref,
+    .highlight pre,
+    .markdown-body :is(code, tt, pre),
+    .pl-c,
+    .pl-c span,
+    .react-blob-print-hide,
+    .text-mono,
+    [class ^= 'pl-'],
+    code .link-gray,
+    code,
+    kbd,
+    pre,
+    textarea#read-only-cursor-text-area,
+    textarea[style],
+    tt {
+        font-feature-settings: 'ss06' on, 'ss01' off, 'ss07' on !important;
+    }
+}
