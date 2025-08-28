@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Goodreads Dark Theme (Fork)
-@version      1.1.0
+@version      1.1.1
 @description  A dark theme for Goodreads
 @namespace    https://github.com/holyspiritomb
 @author       obscuredetour, moosedookie, holyspiritomb
@@ -19,6 +19,50 @@
 /*         / /_/ / /_/ / /_/ / ,< / /  __/*/
 /*        /_____/\____/\____/_/|_/_/\___/ */
 @-moz-document regexp('https://www\\.goodreads\\.com/(?!book/add_to_books_widget/).*') {
+	:root {
+		/* color variables - darkest to lightest */
+		--jet: oklch(0.2376 0 0);
+		--space: oklch(0.2484 0 0);
+		--raven: oklch(0.2689 0.0011 17.23);
+		--asher: oklch(0.2896 0.0013 17.23);
+		--aztec: oklch(32% 0.001 17.2);
+		--cape-cod: oklch(35.1% 0 0);
+		--corduroy: oklch(0.379 0.0018 17.24);
+		--mine: oklch(0.3994 0 0);
+		--mystic: oklch(0.4923 0 0);
+		--grey: oklch(0.7407 0 0);
+		--alabaster: oklch(87.8% 0.014 182.7);
+		--zircon: oklch(93% 0.001 17.2);
+		--concrete: oklch(96.2% 0 0);
+		--limestone: oklch(30.4% 0.018 181.5);
+		--elm: oklch(53% 0.083 178.4);
+		--jade: oklch(54.3% 0.08 174.1);
+		--robin: oklch(52.4% 0.042 178.5);
+		--neptune: oklch(74.3% 0.075 176.5);
+		--conch: oklch(74.2% 0.027 178.8);
+		--green-shadow: oklch(76.7% 0.049 177.9);
+		--powder-ash: oklch(81.7% 0.019 179.2);
+		--mint-ice: oklch(94.9% 0.039 178.7);
+		/* backgrounds */
+		--bkg-nav: var(--jet);
+		--bkg-main: var(--space);
+		--bkg-card: var(--raven);
+		--bkg-card-foot: var(--asher);
+		--bkg-nav-link-hover: var(--corduroy);
+		--bkg-button: var(--jade);
+		--bkg-button-hover: var(--elm);
+		/* text */
+		--txt-main: var(--concrete);
+		--txt-second: var(--zircon);
+		--txt-grey: var(--grey);
+		--txt-nav-link: var(--alabaster);
+		--txt-link: var(--neptune);
+		--txt-link-bright: var(--mint-ice);
+		--txt-button: var(--concrete);
+		/* borders */
+		--border: var(--mine);
+		--border-bright: var(--mystic);
+	}
     /* force dark mode on my mobile firefox */
     :root {
         --color-background-alert-caution: oklch(77.2% 0.074 43.3);
@@ -132,50 +176,6 @@
         --color-text-subdued: oklch(82.7% 0.009 247.9);
         --color-text-warning: oklch(59.7% 0.182 35.8);
     }
-	:root {
-		/* color variables - darkest to lightest */
-		--jet: oklch(0.2376 0 0);
-		--space: oklch(0.2484 0 0);
-		--raven: oklch(0.2689 0.0011 17.23);
-		--asher: oklch(0.2896 0.0013 17.23);
-		--aztec: oklch(32% 0.001 17.2);
-		--cape-cod: oklch(35.1% 0 0);
-		--corduroy: oklch(0.379 0.0018 17.24);
-		--mine: oklch(0.3994 0 0);
-		--mystic: oklch(0.4923 0 0);
-		--grey: oklch(0.7407 0 0);
-		--alabaster: oklch(87.8% 0.014 182.7);
-		--zircon: oklch(93% 0.001 17.2);
-		--concrete: oklch(96.2% 0 0);
-		--limestone: oklch(30.4% 0.018 181.5);
-		--elm: oklch(53% 0.083 178.4);
-		--jade: oklch(54.3% 0.08 174.1);
-		--robin: oklch(52.4% 0.042 178.5);
-		--neptune: oklch(74.3% 0.075 176.5);
-		--conch: oklch(74.2% 0.027 178.8);
-		--green-shadow: oklch(76.7% 0.049 177.9);
-		--powder-ash: oklch(81.7% 0.019 179.2);
-		--mint-ice: oklch(94.9% 0.039 178.7);
-		/* backgrounds */
-		--bkg-nav: var(--jet);
-		--bkg-main: var(--space);
-		--bkg-card: var(--raven);
-		--bkg-card-foot: var(--asher);
-		--bkg-nav-link-hover: var(--corduroy);
-		--bkg-button: var(--jade);
-		--bkg-button-hover: var(--elm);
-		/* text */
-		--txt-main: var(--concrete);
-		--txt-second: var(--zircon);
-		--txt-grey: var(--grey);
-		--txt-nav-link: var(--alabaster);
-		--txt-link: var(--neptune);
-		--txt-link-bright: var(--mint-ice);
-		--txt-button: var(--concrete);
-		/* borders */
-		--border: var(--mine);
-		--border-bright: var(--mystic);
-	}
 
     /* Search icon svg */
 
