@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         Goodreads Dark Theme (Fork)
-@version      1.0.4
+@version      1.0.5
 @description  A dark theme for Goodreads
 @namespace    https://github.com/holyspiritomb
 @author       obscuredetour, moosedookie, holyspiritomb
@@ -1648,5 +1648,35 @@
     .gr-popover {
         border-color: var(--border);
         border-width: thin;
+    }
+}
+
+@-moz-document url-prefix("https://www.goodreads.com/book/show/") {
+    @media (max-width: 600px) {
+        div.BookPageMetadataSection__description {
+            margin-bottom:15px;
+            margin-top: 15px;
+        }
+        div.BookPage__rightColumn {
+            backdrop-filter: brightness(70%);
+            border-radius: 7px;
+            padding-left: 15px;
+            padding-right: 15px;
+            padding-top: 10px;
+        }
+    }
+    .Label__generic > span.Text,
+    .ChoiceAwardBadge__flag > span.Text {
+        color: var(--jet);
+    }
+    .Formatted .spoiler__control:checked + .spoiler{
+        background-color: var(--color-background-wtr-base) !important;
+    }
+}
+@-moz-document url-prefix("https://www.goodreads.com/review") {
+    @media (max-width: 600px) {
+        html.desktop textarea[cols="55"] {
+            max-width: 100%;
+        }
     }
 }
