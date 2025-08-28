@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Goodreads personal modifications (phone)
 @namespace      github.com/holyspiritomb
-@version        1.22.12-15.0
+@version        1.22.12-15.1
 @description    Making goodreads look nicer for me on my phone
 @author         holyspiritomb
 @license        MIT
@@ -222,9 +222,11 @@
         display: none;
     }
 
-    div.ReviewsList{
-        max-height:40vh;
-        overflow-y: auto;
+    @media screen and (max-width: 600px) {
+        div.ReviewsList{
+            max-height:75vh;
+            overflow-y: auto;
+        }
     }
 
 }
