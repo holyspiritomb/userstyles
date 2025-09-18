@@ -1,0 +1,35 @@
+/* ==UserStyle==
+@name           404media.co article type
+@namespace      github.com/holyspiritomb
+@version        1.0.0
+@description    Adds helpful text telling you the post access types on article pages (public, members-only, paid).
+@author         holyspiritomb
+@homepageURL    https://github.com/holyspiritomb/userstyles/blob/main/404/article-type.user.css
+@updateURL      https://raw.githubusercontent.com/holyspiritomb/userstyles/main/404/article-type.user.css
+==/UserStyle== */
+@-moz-document domain("404media.co") {
+    main.main:has(article) div.post-hero__header::before {
+        font-family: var(--font-family-accent);
+        text-decoration-line: underline;
+        text-decoration-style: solid;
+        text-decoration-color: var(--color-primary);
+        text-decoration-thickness: 1px;
+        text-underline-offset: 5px;
+        color: var(--color-text);
+        position: relative;
+        top: 4px;
+        display: inline-block;
+        text-transform: uppercase;
+        float: right;
+        font-size: calc(var(--font-size-base)*0.8);
+    }
+    main.main:has(article.post-access-paid) div.post-hero__header::before {
+        content: "paid article";
+    }
+    main.main:has(article.post-access-members) div.post-hero__header::before {
+        content: "members-only article";
+    }
+    main.main:has(article.post-access-public) div.post-hero__header::before {
+        content: "public article";
+    }
+}
