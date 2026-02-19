@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Goodreads personal modifications (phone)
 @namespace      github.com/holyspiritomb
-@version        1.26.2
+@version        1.26.3
 @description    Making goodreads look nicer for me on my phone
 @author         holyspiritomb
 @license        MIT
@@ -249,6 +249,9 @@
         }
         div.leftContainer {
             width: 65vw !important;
+            div.right > a.gr-button {
+                color: var(--space) !important;
+            }
         }
     }
 }
