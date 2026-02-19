@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Goodreads personal modifications (phone)
 @namespace      github.com/holyspiritomb
-@version        1.22.12-15.1
+@version        1.26.2
 @description    Making goodreads look nicer for me on my phone
 @author         holyspiritomb
 @license        MIT
@@ -100,6 +100,7 @@
         }
     }
 }
+
 
 @-moz-document regexp('https://www\\.goodreads\\.com/(?!book/add_to_books_widget/).*') {
 
@@ -231,6 +232,26 @@
 
 }
 
+@-moz-document url-prefix('https://www.goodreads.com/shelf/edit') {
+    html.desktop {
+        div#bodycontainer.content {
+            width:100vw !important;
+        }
+        div.mainContentContainer {
+            width: calc(100vw) !important;
+        }
+        div.mainContent {
+            width: calc(100vw - 12px) !important;
+            margin-left: 5px !important;
+        }
+        div.mainContentFloat {
+            width: calc(100vw - 16px) !important;
+        }
+        div.leftContainer {
+            width: 65vw !important;
+        }
+    }
+}
 @-moz-document url-prefix('https://www.goodreads.com/list/show/') {
     /* listopia */
     div.rightContainer {
